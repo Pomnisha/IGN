@@ -9,7 +9,6 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -41,7 +40,6 @@ gem 'jquery-rails'
 
 # Refinery CMS
 gem 'refinerycms', '~> 2.0.0'
-
 # Specify additional Refinery CMS Extensions here (all optional):
 gem 'refinerycms-i18n', '~> 2.0.0'
 #  gem 'refinerycms-blog', '~> 2.0.0'

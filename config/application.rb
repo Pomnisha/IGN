@@ -61,5 +61,12 @@ module Ign6
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.before_initialize do
+      require 'restrict_access_for_member_role'
+    end
+    config.to_prepare do
+      ApplicationController.send :include, RestrictAccessForMemberRole
+      ApplicationController.send :before_filter, :restrict_access_for_member_role
+    end
   end
 end

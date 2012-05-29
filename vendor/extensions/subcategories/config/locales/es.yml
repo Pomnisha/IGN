@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      subcategories:
+        title: Subcategories
+#        article: masculino/femenino
+    subcategories:
+      admin:
+        subcategories:
+          actions:
+            create_new: Crear nuevo subcategory
+            reorder: Reordenar subcategories
+            reorder_done: Reordenación de subcategories completada
+          records:
+            title: Subcategories
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay subcategories todavía. Pulsa en "Crear nuevo Subcategory" para crear tu primer subcategory.
+          subcategory:
+            view_live_html: Ver este subcategory como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este subcategory
+            delete: Borrar este subcategory para siempre
+      subcategories:
+        show:
+          other: Otros subcategories
+  activerecord:
+    attributes:
+      'refinery/subcategories/subcategory':
+        id: Id
+        name: Name
+        category_id: Category

@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      subcategories:
+        title: Subcategories
+    subcategories:
+      admin:
+        subcategories:
+          actions:
+            create_new: Maak een nieuwe Subcategory
+            reorder: Wijzig de volgorde van de Subcategories
+            reorder_done: Klaar met het wijzingen van de volgorde van de Subcategories
+          records:
+            title: Subcategories
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Subcategories. Druk op 'Maak een nieuwe Subcategory' om de eerste aan te maken.
+          subcategory:
+            view_live_html: Bekijk deze subcategory op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze subcategory
+            delete: Verwijder deze subcategory voor eeuwig
+      subcategories:
+        show:
+          other: Andere Subcategories
+  activerecord:
+    attributes:
+      'refinery/subcategories/subcategory':
+        id: Id
+        name: Name
+        category_id: Category

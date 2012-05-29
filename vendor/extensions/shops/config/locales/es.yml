@@ -1,0 +1,40 @@
+es:
+  refinery:
+    plugins:
+      shops:
+        title: Shops
+#        article: masculino/femenino
+    shops:
+      admin:
+        shops:
+          actions:
+            create_new: Crear nuevo shop
+            reorder: Reordenar shops
+            reorder_done: Reordenación de shops completada
+          records:
+            title: Shops
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay shops todavía. Pulsa en "Crear nuevo Shop" para crear tu primer shop.
+          shop:
+            view_live_html: Ver este shop como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este shop
+            delete: Borrar este shop para siempre
+      shops:
+        show:
+          other: Otros shops
+  activerecord:
+    attributes:
+      'refinery/shops/shop':
+        url: Url
+        name: Name
+        short_description: Short Description
+        description: Description
+        subcategory_id: Subcategory
+        city: City
+        phone: Phone
+        working_time: Working Time
+        e_mail: E Mail
+        logo: Logo
+        map: Map
+        vip_code: Vip Code
+        user_id: User

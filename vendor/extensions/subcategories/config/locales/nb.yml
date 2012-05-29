@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      subcategories:
+        title: Subcategories
+    subcategories:
+      admin:
+        subcategories:
+          actions:
+            create_new: Lag en ny Subcategory
+            reorder: Endre rekkefølgen på Subcategories
+            reorder_done: Ferdig å endre rekkefølgen Subcategories
+          records:
+            title: Subcategories
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Subcategories enda. Klikk på "Lag en ny Subcategory" for å legge til din første subcategory.
+          subcategory:
+            view_live_html: Vis hvordan denne subcategory ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne subcategory
+            delete: Fjern denne subcategory permanent
+      subcategories:
+        show:
+          other: Andre Subcategories
+  activerecord:
+    attributes:
+      'refinery/subcategories/subcategory':
+        id: Id
+        name: Name
+        category_id: Category

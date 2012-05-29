@@ -1,0 +1,19 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(subcategory) -%>">
+  <span class='title'>
+    <%= "#{subcategory.name} [#{Refinery::Categories::Category.find(subcategory.category_id).name}]"%>
+  </span>
+  <span class='actions'>
+    
+    <%= link_to refinery_icon_tag("application_go.png"), refinery.subcategories_subcategory_path(subcategory),
+        :title => t('.view_live_html'),
+        :target => "_blank" %>
+    
+    <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_subcategories_admin_subcategory_path(subcategory),
+         :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), refinery.subcategories_admin_subcategory_path(subcategory),
+        :class => "cancel confirm-delete",
+        :title => t('.delete'),
+        :confirm => t('message', :scope => 'refinery.admin.delete', :title => subcategory.name),
+        :method => :delete %>
+  </span>
+</li>

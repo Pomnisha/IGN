@@ -1,0 +1,39 @@
+en:
+  refinery:
+    plugins:
+      shops:
+        title: Shops
+    shops:
+      admin:
+        shops:
+          actions:
+            create_new: Add New Shop
+            reorder: Reorder Shops
+            reorder_done: Done Reordering Shops
+          records:
+            title: Shops
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Shops yet. Click "Add New Shop" to add your first shop.
+          shop:
+            view_live_html: View this shop live <br/><em>(opens in a new window)</em>
+            edit: Edit this shop
+            delete: Remove this shop forever
+      shops:
+        show:
+          other: Other Shops
+  activerecord:
+    attributes:
+      'refinery/shops/shop':
+        url: Url
+        name: Name
+        short_description: Short Description
+        description: Description
+        subcategory_id: Subcategory
+        city: City
+        phone: Phone
+        working_time: Working Time
+        e_mail: E-Mail
+        logo: Logo
+        map: Map
+        vip_code: Vip Code
+        user_id: User

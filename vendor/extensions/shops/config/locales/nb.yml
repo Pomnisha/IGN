@@ -1,0 +1,39 @@
+nb:
+  refinery:
+    plugins:
+      shops:
+        title: Shops
+    shops:
+      admin:
+        shops:
+          actions:
+            create_new: Lag en ny Shop
+            reorder: Endre rekkefølgen på Shops
+            reorder_done: Ferdig å endre rekkefølgen Shops
+          records:
+            title: Shops
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Shops enda. Klikk på "Lag en ny Shop" for å legge til din første shop.
+          shop:
+            view_live_html: Vis hvordan denne shop ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne shop
+            delete: Fjern denne shop permanent
+      shops:
+        show:
+          other: Andre Shops
+  activerecord:
+    attributes:
+      'refinery/shops/shop':
+        url: Url
+        name: Name
+        short_description: Short Description
+        description: Description
+        subcategory_id: Subcategory
+        city: City
+        phone: Phone
+        working_time: Working Time
+        e_mail: E Mail
+        logo: Logo
+        map: Map
+        vip_code: Vip Code
+        user_id: User

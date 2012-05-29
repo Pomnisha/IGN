@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      subcategories:
+        title: Subcategories
+    subcategories:
+      admin:
+        subcategories:
+          actions:
+            create_new: Add New Subcategory
+            reorder: Reorder Subcategories
+            reorder_done: Done Reordering Subcategories
+          records:
+            title: Subcategories
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Subcategories yet. Click "Add New Subcategory" to add your first subcategory.
+          subcategory:
+            view_live_html: View this subcategory live <br/><em>(opens in a new window)</em>
+            edit: Edit this subcategory
+            delete: Remove this subcategory forever
+      subcategories:
+        show:
+          other: Other Subcategories
+  activerecord:
+    attributes:
+      'refinery/subcategories/subcategory':
+        id: Id
+        name: Name
+        category_id: Category

@@ -1,0 +1,21 @@
+<div id="top_left_menu"></div>
+  <div id="left_menu">
+<!--left menu.............................................................................-->  
+    <ul id="left_menu_body">
+    <%- Refinery::Categories::Category.all.each do |c| %>
+    <li><%= link_to c.name %>  </li>
+    <%- end %>
+      <li><a href="#">Одежда, обувь</a></li>
+      <li><a href="#">Продукты</a></li>
+      <li><a href="#">Промышленное обеспечение</a></li>
+      <li><a href="#">Сотовые телефоны</a></li>
+      <li><a href="#">Спорттовары</a></li>
+      <li><a href="#">Строительные товары</a></li>
+      <li><a href="#">Товары оптом</a></li>
+      <li><a href="#">Торговые центры</a></li>
+      <li><a href="#">Промтовары</a></li>
+      <li><a href="#">Детские товары</a></li>
+      <li><a href="#">Безопасность</a></li>
+    </ul>      
+  </div>
+  <div id="banner_left"><img src="../images/banner_left.png" width="240" height="400" /></div>

@@ -1,0 +1,39 @@
+fr:
+  refinery:
+    plugins:
+      shops:
+        title: Shops
+    shops:
+      admin:
+        shops:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Shop
+            reorder: Réordonner les Shops
+            reorder_done: Fin de réordonnancement des Shops
+          records:
+            title: Shops
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Shop. Cliquer sur "Créer un(e) nouve(au/l/lle) Shop" pour créer votre premi(er/ère) shop.'
+          shop:
+            view_live_html: Voir ce(t/tte) shop <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) shop
+            delete: Supprimer définitivement ce(t/tte) shop
+      shops:
+        show:
+          other: Autres Shops
+  activerecord:
+    attributes:
+      'refinery/shops/shop':
+        url: Url
+        name: Name
+        short_description: Short Description
+        description: Description
+        subcategory_id: Subcategory
+        city: City
+        phone: Phone
+        working_time: Working Time
+        e_mail: E Mail
+        logo: Logo
+        map: Map
+        vip_code: Vip Code
+        user_id: User

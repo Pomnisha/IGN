@@ -1,0 +1,39 @@
+nl:
+  refinery:
+    plugins:
+      shops:
+        title: Shops
+    shops:
+      admin:
+        shops:
+          actions:
+            create_new: Maak een nieuwe Shop
+            reorder: Wijzig de volgorde van de Shops
+            reorder_done: Klaar met het wijzingen van de volgorde van de Shops
+          records:
+            title: Shops
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Shops. Druk op 'Maak een nieuwe Shop' om de eerste aan te maken.
+          shop:
+            view_live_html: Bekijk deze shop op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze shop
+            delete: Verwijder deze shop voor eeuwig
+      shops:
+        show:
+          other: Andere Shops
+  activerecord:
+    attributes:
+      'refinery/shops/shop':
+        url: Url
+        name: Name
+        short_description: Short Description
+        description: Description
+        subcategory_id: Subcategory
+        city: City
+        phone: Phone
+        working_time: Working Time
+        e_mail: E Mail
+        logo: Logo
+        map: Map
+        vip_code: Vip Code
+        user_id: User

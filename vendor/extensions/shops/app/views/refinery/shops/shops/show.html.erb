@@ -1,99 +1,13 @@
-<% content_for :body_content_title do %>
-  <%= @shop.url %>
-<% end %>
-
-<% content_for :body_content_left do %>
-  <section>
-    <h1>Url</h1>
-    <p>
-      <%=raw @shop.url %>
-    </p>
-  </section>
-  <section>
-    <h1>Name</h1>
-    <p>
-      <%=raw @shop.name %>
-    </p>
-  </section>
-  <section>
-    <h1>Short Description</h1>
-    <p>
-      <%=raw @shop.short_description %>
-    </p>
-  </section>
-  <section>
-    <h1>Description</h1>
-    <p>
-      <%=raw @shop.description %>
-    </p>
-  </section>
-  <section>
-    <h1>Subcategory</h1>
-    <p>
-      <%=raw @shop.subcategory_id %>
-    </p>
-  </section>
-  <section>
-    <h1>City</h1>
-    <p>
-      <%=raw @shop.city %>
-    </p>
-  </section>
-  <section>
-    <h1>Phone</h1>
-    <p>
-      <%=raw @shop.phone %>
-    </p>
-  </section>
-  <section>
-    <h1>Working Time</h1>
-    <p>
-      <%=raw @shop.working_time %>
-    </p>
-  </section>
-  <section>
-    <h1>E Mail</h1>
-    <p>
-      <%=raw @shop.e_mail %>
-    </p>
-  </section>
-  <section>
-    <h1>Logo</h1>
-    <p>
-      <%= image_fu @shop.logo, nil %>
-    </p>
-  </section>
-  <section>
-    <h1>Map</h1>
-    <p>
-      <%=raw @shop.map %>
-    </p>
-  </section>
-  <section>
-    <h1>Vip Code</h1>
-    <p>
-      <%=raw @shop.vip_code %>
-    </p>
-  </section>
-  <section>
-    <h1>User</h1>
-    <p>
-      <%=raw @shop.user_id %>
-    </p>
-  </section>
-<% end %>
-
-<% content_for :body_content_right do %>
-  <aside>
-    <h2><%= t('.other') %></h2>
-    <ul id="shops">
-      <% @shops.each do |shop| %>
-        <li>
-          <%= link_to shop.url, refinery.shops_shop_path(shop) %>
-        </li>
-      <% end %>
-    </ul>
-  </aside>
-<% end %>
-
-<%= render '/refinery/content_page' %>
+<div class="onshop_container">      
+  <h1><%= Refinery:Categories.find(Refinery:Subcategories.find(shop.subcategoty_id).id).name -%></h1>
+  <div class="onshop">
+    <a class="shop_url" href="#"><% @shop.url %></a>        
+    <h2><% @shop.short_description %></h2>
+    <% @shop.description %>
+    <div class="contacts">
+      Телефон: <% @shop.phone  %>  <br />
+      E-mail: <% @shop.e_mail  %><br />
+      Режим работы: <% @shop.work_time %></div>
+    <div class="map"></div>
+  </div>
+</div>

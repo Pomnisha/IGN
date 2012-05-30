@@ -12,35 +12,3 @@
  *= require_tree .
 */
 
-@charset "utf-8";
-*{
-	margin: 0px;
-	padding: 0px;
-}
-body {
-	width: 100%;
-	margin: 0px;
-	padding: 0px;
-	font-family: Tahoma, Verdana, Arial;
-	font-size: 12px;
-	background-image: url(../images/space.png);
-}
-#wrap {
-	position: relative;
-	margin: 0px auto;
-	min-height: 1400px;
-	width: 1070px;
-}
-#space_top {
-	background-image: url(../images/space_top.png);
-	height: 647px;
-	width: 1070px;
-	position: absolute;
-}
-#space_bottom {
-	background-image: url(../images/space_bottom.png);
-	height: 455px;
-	width: 1070px;
-	position: absolute;
-	bottom: 0px;
-}

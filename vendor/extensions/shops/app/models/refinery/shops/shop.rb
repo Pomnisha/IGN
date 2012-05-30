@@ -7,6 +7,7 @@ module Refinery
                       :subcategory_id, :city, :phone, :e_mail, :logo_id, :vip_code
       acts_as_indexed :fields => [:url, :name, :short_description, :description, :city, :phone, :working_time]
       belongs_to :user
+      belongs_to :subcategory
 #      validates :url, :presence => true, :uniqueness => true
 
       belongs_to :logo, :class_name => '::Refinery::Image'

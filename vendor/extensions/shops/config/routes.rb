@@ -3,9 +3,6 @@ Refinery::Core::Engine.routes.append do
   # Frontend routes
   namespace :shops, :path => '' do
     resources :shops do
-      collection do
-        post :update_positions
-      end
     end
   end  
 

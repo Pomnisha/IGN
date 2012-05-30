@@ -15,7 +15,9 @@
         <%= render '/refinery/sidebar'-%>
       </div>
       <section id="page">
-        <%= yield %>
+        <div id="content">
+          <%= yield %>
+        </div>
       </section>
       <footer id="bottom">
         <%= render '/refinery/footer' -%>

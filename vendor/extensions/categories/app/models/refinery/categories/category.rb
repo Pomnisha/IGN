@@ -5,7 +5,7 @@ module Refinery
 
       attr_accessible :name, :position
 
-      acts_as_indexed :fields => [:id]
+      acts_as_indexed :fields => [:name]
 
       validates :name, :presence => true, :uniqueness => true
       has_many :subcategories

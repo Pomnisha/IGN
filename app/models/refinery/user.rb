@@ -8,7 +8,7 @@ module Refinery
     has_and_belongs_to_many :roles, :join_table => :refinery_roles_users
 
     has_many :plugins, :class_name => "UserPlugin", :order => "position ASC", :dependent => :destroy
-    has_many :shops, :dependent => :destroy
+    has_many :shops, :class_name => "Refinery::Shops::Shop", :dependent => :destroy
     friendly_id :username
 
     # Include default devise modules. Others available are:

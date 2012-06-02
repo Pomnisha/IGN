@@ -1,39 +1,15 @@
-<% content_for :body_content_title do %>
-  <%= @subcategory.name %>
+<% @subcategory.shops.each do |s| %>
+  <div class="categoryes">
+    <div class="icon_category">          
+      <img src="../images/icon_category.png" width="155" height="98" />
+    </div>
+    <div class="category_text">
+      <h2><%= s.short_description.html_safe %></h2>
+      <a href="#"><%= s.url %></a>
+      <%= s.description.html_safe %>
+      <div class="line"></div>
+      Телефон: <%= s.phone %>   e-mail: <%= s.e_mail  %>
+    </div>
+  </div>
 <% end %>
 
-<% content_for :body_content_left do %>
-  <section>
-    <h1>Id</h1>
-    <p>
-      <%=raw @subcategory.id %>
-    </p>
-  </section>
-  <section>
-    <h1>Name</h1>
-    <p>
-      <%=raw @subcategory.name %>
-    </p>
-  </section>
-  <section>
-    <h1>Category</h1>
-    <p>
-      <%=raw @subcategory.category_id %>
-    </p>
-  </section>
-<% end %>
-
-<% content_for :body_content_right do %>
-  <aside>
-    <h2><%= t('.other') %></h2>
-    <ul id="subcategories">
-      <% @subcategories.each do |subcategory| %>
-        <li>
-          <%= link_to subcategory.name, refinery.subcategories_subcategory_path(subcategory) %>
-        </li>
-      <% end %>
-    </ul>
-  </aside>
-<% end %>
-
-<%= render '/refinery/content_page' %>

@@ -1,13 +1,13 @@
 <div class="onshop_container">      
-  <h1><%= Refinery:Categories.find(Refinery:Subcategories.find(shop.subcategoty_id).id).name -%></h1>
+  <h1><%= Refinery::Categories::Category.find(Refinery::Subcategories::Subcategory.find(@shop.subcategory_id).id).name -%></h1>
   <div class="onshop">
     <a class="shop_url" href="#"><%= @shop.url -%></a>        
-    <h2><%= @shop.short_description -%></h2>
-    <%= @shop.description -%>
+    <h2><%= @shop.short_description.html_safe -%></h2>
+    <%= @shop.description.html_safe -%>
     <div class="contacts">
-      Телефон: <%= @shop.phone  -%>  <br />
+      Телефон: <%= @shop.phone.html_safe -%>  <br />
       E-mail: <%= @shop.e_mail  -%><br />
-      Режим работы: <%= @shop.work_time -%></div>
+      Режим работы: <%= @shop.working_time.html_safe -%></div>
     <div class="map"></div>
   </div>
 </div>

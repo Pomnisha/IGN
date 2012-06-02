@@ -6,7 +6,7 @@ module Refinery
 #      before_filter :find_page
       before_filter :correct_user ,:only => [:edit, :update, :destroy]
       
-      crudify :'refinery/shops/shop', :title_attribute => 'url', :xhr_paging => true
+crudify :'refinery/shops/shop', :title_attribute => 'url', :xhr_paging => true
       
       def index
         # you can use meta fields from your model instead (e.g. browser_title)
@@ -23,7 +23,39 @@ module Refinery
         # by swapping @page for @shop in the line below:
 #        present(@page)
       end
-
+      
+      def edit
+      # object gets found by find_#{singular_name} function
+      @shop = Shop.find(params[:id])
+      end
+      
+  def create
+    @shop = Shop.new(params[:shop])
+    @shop.user_id = current_refinery_user
+    if @shop.save
+      redirect_to @shop, notice: 'Shop was successfully created.'
+    else
+      render action: "new"
+    end
+  end
+  
+    def update
+      if @shop.update_attributes(params[:shop])
+        redirect_to refinery.shops_shop_path(@shop), notice: 'Shop was successfully updated.'
+      else
+        render action: "edit"
+      end
+    end      
+    
+      def destroy
+      # object gets found by find_#{singular_name} function
+      if @shop.destroy
+          redirect_to refinery.root_path, notice: 'Shop was successfully deleted.'
+        else
+          render action: "show"
+        end
+      end
+    
       Rails
     protected
 
@@ -34,9 +66,9 @@ module Refinery
 #      def find_page
 #        @page = ::Refinery::Page.where(:link_url => "/shops").first
 #      end
-
       def correct_user
-        current_refinery_user.shops.include(@shop)
+        @shop = Shop.find(params[:id])
+        current_refinery_user == @shop.user_id
       end
     end
   end

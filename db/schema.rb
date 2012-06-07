@@ -155,12 +155,12 @@ ActiveRecord::Schema.define(:version => 20120607213907) do
     t.text     "working_time"
     t.string   "e_mail"
     t.integer  "logo_id"
-    t.float    "map_lattitude"
     t.string   "vip_code"
     t.integer  "user_id"
     t.integer  "position"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.float    "map_latitude"
     t.float    "map_longtitude"
     t.string   "address"
   end

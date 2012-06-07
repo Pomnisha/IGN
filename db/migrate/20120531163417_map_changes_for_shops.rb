@@ -1,14 +1,14 @@
 class MapChangesForShops < ActiveRecord::Migration
   def up
-    change_column :refinery_shops, :map, :float
-    rename_column :refinery_shops, :map, :map_lattitude
+    remove_column :refinery_shops, :map
+    add_column :refinery_shops, :map_latitude, :float
     add_column :refinery_shops, :map_longtitude, :float
     add_column :refinery_shops, :address, :string
   end
 
   def down
-    change_column :refinery_shops, :map_latitude, :text
-    rename_column :refinery_shops, :map_lattitude, :map
+    add_column :refinery_shops, :map, :text
+    remove_column :refinery_shops, :map_latitude
     remove_column :refinery_shops, :map_longtitude
     remove_column :refinery_shops, :address
   end

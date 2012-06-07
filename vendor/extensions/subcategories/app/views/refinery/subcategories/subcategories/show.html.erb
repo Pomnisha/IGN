@@ -1,7 +1,17 @@
 <% @subcategory.shops.each do |s| %>
   <div class="categoryes">
     <div class="icon_category">          
-      <img src="../images/icon_category.png" width="155" height="98" />
+      <% unless s.logo.nil? -%>
+        <%= image_fu s.logo, Refinery::Images.user_image_sizes[:small],
+                     :class => "brown_border",
+                     :class => "current_picked_image" %>
+      <% else -%>
+        <img class="current_picked_image" src="" alt="" style='display: none' />
+      <% end -%>
+      <span class='no_picked_image_selected nothing_selected' <%= "style='display: none;'" if s.logo.present? %>>
+        <%= t('.none_selected') %>
+      </span>
+      <%=  link_to "редактировать данные",refinery.edit_shops_shop_path(s) if s.user == current_refinery_user %>
     </div>
     <div class="category_text">
       <h2><%= s.short_description.html_safe %></h2>

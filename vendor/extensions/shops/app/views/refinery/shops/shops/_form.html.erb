@@ -5,52 +5,54 @@
 
   
   <div class='field'>
-    <%= f.label :url -%>
+    <%= f.label :url, "Адрес сайта" -%>
     <%= f.text_field :url  -%>
   </div>
   <div class='field'>
-    <%= f.label :name -%>
+    <%= f.label :name , "Название магазина"-%>
     <%= f.text_field :name  -%>
   </div>
   <div class='field'>
-    <%= f.label :short_description -%>
+    <%= f.label :short_description , "Краткое описание"-%>
     <%= f.text_area :short_description  -%>
   </div>
    <div class='field'>
-    <%= f.label :description -%>
+    <%= f.label :description , "Описание"-%>
     <%= f.text_area :description  -%>
   </div> 
    <div class='field'>
-    <%= f.label :working_time -%>
+    <%= f.label :working_time , "Время работы"-%>
     <%= f.text_area :working_time  -%>
   </div> 
   <div class='field'>
-    <%= f.label :subcategory_id -%>
+    <%= f.label :subcategory_id , "Категория"-%>
     <%= f.select :subcategory_id, Refinery::Subcategories::Subcategory.all.collect {|p| [" #{p.name} [#{Refinery::Categories::Category.find(p.category_id).name}]", p.id ]} -%>
   </div>
   <div class='field'>
-    <%= f.label :city -%>
+    <%= f.label :city , "Город"-%>
     <%= f.text_field :city  -%>
   </div>
   <div class='field'>
-    <%= f.label :phone -%>
+    <%= f.label :phone , "Контактные телефоны"-%>
     <%= f.text_field :phone  -%>
   </div>
   <div class='field'>
-    <%= f.label :e_mail -%>
+    <%= f.label :e_mail , "Электронный адрес"-%>
     <%= f.text_field :e_mail  -%>
   </div>
-  <div class='field'>
+  <!--div class='field'>
     <%= f.label :logo -%>
     <%= render '/refinery/shops/image_picker',
                :f => f,
                :field => :logo_id,
                :image => @shop.logo,
                :toggle_image_display => false %>
-
-  </div>
+    <%= f.file_field :logo_id %>
+              
+              
+  </div-->
   <div class='field'>
-    <%= f.label :vip_code -%>
+    <%= f.label :vip_code , "VIP код"-%>
     <%= f.text_field :vip_code  -%>
 
   </div>

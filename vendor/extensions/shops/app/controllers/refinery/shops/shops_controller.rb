@@ -32,8 +32,11 @@ crudify :'refinery/shops/shop', :title_attribute => 'url', :xhr_paging => true
   def create
     @shop = Shop.new(params[:shop])
     @shop.user_id = current_refinery_user
+#    @pic = Refinery::Image.new(params[:shop[logo_id]])
+#    @shop.logo_id = @pic.id
+#    @pic.save
     if @shop.save
-      redirect_to @shop, notice: 'Shop was successfully created.'
+      render action: "show", notice: 'Shop was successfully created.'
     else
       render action: "new"
     end

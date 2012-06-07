@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Companies::Admin::CompaniesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.companies_admin_companies_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_companies_admin_company_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Companies::Admin::CompaniesController.sortable? && ::Refinery::Companies::Company.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Companies"),
+                 refinery.companies_admin_companies_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Companies"),
+                 refinery.companies_admin_companies_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

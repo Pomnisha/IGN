@@ -3,6 +3,10 @@ PATH
   specs:
     refinerycms-categories (1.0)
       refinerycms-core (~> 2.0.4)
+    refinerycms-companies (1.0)
+      refinerycms-core (~> 2.0.4)
+    refinerycms-services (1.0)
+      refinerycms-core (~> 2.0.4)
     refinerycms-shops (1.0)
       refinerycms-core (~> 2.0.4)
     refinerycms-subcategories (1.0)
@@ -194,7 +198,9 @@ DEPENDENCIES
   rails (= 3.2.3)
   refinerycms (~> 2.0.0)
   refinerycms-categories!
+  refinerycms-companies!
   refinerycms-i18n (~> 2.0.0)
+  refinerycms-services!
   refinerycms-shops!
   refinerycms-subcategories!
   sass-rails (~> 3.2.3)

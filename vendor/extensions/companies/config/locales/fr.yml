@@ -1,0 +1,40 @@
+fr:
+  refinery:
+    plugins:
+      companies:
+        title: Companies
+    companies:
+      admin:
+        companies:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Company
+            reorder: Réordonner les Companies
+            reorder_done: Fin de réordonnancement des Companies
+          records:
+            title: Companies
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Company. Cliquer sur "Créer un(e) nouve(au/l/lle) Company" pour créer votre premi(er/ère) company.'
+          company:
+            view_live_html: Voir ce(t/tte) company <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) company
+            delete: Supprimer définitivement ce(t/tte) company
+      companies:
+        show:
+          other: Autres Companies
+  activerecord:
+    attributes:
+      'refinery/companies/company':
+        url: Url
+        name: Name
+        short_description: Short Description
+        description: Description
+        service_id: Service
+        city: City
+        phone: Phone
+        working_time: Working Time
+        e_mail: E Mail
+        logo: Logo
+        map_latitude: Map Latitude
+        map_longtitude: Map Longtitude
+        address: Address
+        user_id: User

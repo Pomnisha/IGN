@@ -17,3 +17,9 @@ Refinery::Subcategories::Engine.load_seed
 
 # Added by Refinery CMS Shops extension
 Refinery::Shops::Engine.load_seed
+
+# Added by Refinery CMS Services extension
+Refinery::Services::Engine.load_seed
+
+# Added by Refinery CMS Companies extension
+Refinery::Companies::Engine.load_seed

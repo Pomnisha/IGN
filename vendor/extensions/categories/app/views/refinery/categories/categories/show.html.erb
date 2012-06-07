@@ -11,7 +11,7 @@
       <span class='no_picked_image_selected nothing_selected' <%= "style='display: none;'" if s.logo.present? %>>
         <%= t('.none_selected') %>
       </span>
-      <%= link_to "редактировать данные",refinery.edit_shops_shop_path(s) %>
+      <%= link_to "редактировать данные",refinery.edit_shops_shop_path(s) if s.user == current_refinery_user %>
     </div>
     <div class="category_text">
       

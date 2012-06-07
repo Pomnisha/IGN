@@ -1,0 +1,105 @@
+<% content_for :body_content_title do %>
+  <%= @company.url %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Url</h1>
+    <p>
+      <%=raw @company.url %>
+    </p>
+  </section>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @company.name %>
+    </p>
+  </section>
+  <section>
+    <h1>Short Description</h1>
+    <p>
+      <%=raw @company.short_description %>
+    </p>
+  </section>
+  <section>
+    <h1>Description</h1>
+    <p>
+      <%=raw @company.description %>
+    </p>
+  </section>
+  <section>
+    <h1>Service</h1>
+    <p>
+      <%=raw @company.service_id %>
+    </p>
+  </section>
+  <section>
+    <h1>City</h1>
+    <p>
+      <%=raw @company.city %>
+    </p>
+  </section>
+  <section>
+    <h1>Phone</h1>
+    <p>
+      <%=raw @company.phone %>
+    </p>
+  </section>
+  <section>
+    <h1>Working Time</h1>
+    <p>
+      <%=raw @company.working_time %>
+    </p>
+  </section>
+  <section>
+    <h1>E Mail</h1>
+    <p>
+      <%=raw @company.e_mail %>
+    </p>
+  </section>
+  <section>
+    <h1>Logo</h1>
+    <p>
+      <%= image_fu @company.logo, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Map Latitude</h1>
+    <p>
+      <%=raw @company.map_latitude %>
+    </p>
+  </section>
+  <section>
+    <h1>Map Longtitude</h1>
+    <p>
+      <%=raw @company.map_longtitude %>
+    </p>
+  </section>
+  <section>
+    <h1>Address</h1>
+    <p>
+      <%=raw @company.address %>
+    </p>
+  </section>
+  <section>
+    <h1>User</h1>
+    <p>
+      <%=raw @company.user_id %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="companies">
+      <% @companies.each do |company| %>
+        <li>
+          <%= link_to company.url, refinery.companies_company_path(company) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

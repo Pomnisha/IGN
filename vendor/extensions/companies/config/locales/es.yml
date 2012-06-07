@@ -1,0 +1,41 @@
+es:
+  refinery:
+    plugins:
+      companies:
+        title: Companies
+#        article: masculino/femenino
+    companies:
+      admin:
+        companies:
+          actions:
+            create_new: Crear nuevo company
+            reorder: Reordenar companies
+            reorder_done: Reordenación de companies completada
+          records:
+            title: Companies
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay companies todavía. Pulsa en "Crear nuevo Company" para crear tu primer company.
+          company:
+            view_live_html: Ver este company como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este company
+            delete: Borrar este company para siempre
+      companies:
+        show:
+          other: Otros companies
+  activerecord:
+    attributes:
+      'refinery/companies/company':
+        url: Url
+        name: Name
+        short_description: Short Description
+        description: Description
+        service_id: Service
+        city: City
+        phone: Phone
+        working_time: Working Time
+        e_mail: E Mail
+        logo: Logo
+        map_latitude: Map Latitude
+        map_longtitude: Map Longtitude
+        address: Address
+        user_id: User

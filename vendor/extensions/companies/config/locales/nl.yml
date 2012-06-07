@@ -1,0 +1,40 @@
+nl:
+  refinery:
+    plugins:
+      companies:
+        title: Companies
+    companies:
+      admin:
+        companies:
+          actions:
+            create_new: Maak een nieuwe Company
+            reorder: Wijzig de volgorde van de Companies
+            reorder_done: Klaar met het wijzingen van de volgorde van de Companies
+          records:
+            title: Companies
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Companies. Druk op 'Maak een nieuwe Company' om de eerste aan te maken.
+          company:
+            view_live_html: Bekijk deze company op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze company
+            delete: Verwijder deze company voor eeuwig
+      companies:
+        show:
+          other: Andere Companies
+  activerecord:
+    attributes:
+      'refinery/companies/company':
+        url: Url
+        name: Name
+        short_description: Short Description
+        description: Description
+        service_id: Service
+        city: City
+        phone: Phone
+        working_time: Working Time
+        e_mail: E Mail
+        logo: Logo
+        map_latitude: Map Latitude
+        map_longtitude: Map Longtitude
+        address: Address
+        user_id: User

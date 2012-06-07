@@ -1,0 +1,40 @@
+en:
+  refinery:
+    plugins:
+      companies:
+        title: Companies
+    companies:
+      admin:
+        companies:
+          actions:
+            create_new: Add New Company
+            reorder: Reorder Companies
+            reorder_done: Done Reordering Companies
+          records:
+            title: Companies
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Companies yet. Click "Add New Company" to add your first company.
+          company:
+            view_live_html: View this company live <br/><em>(opens in a new window)</em>
+            edit: Edit this company
+            delete: Remove this company forever
+      companies:
+        show:
+          other: Other Companies
+  activerecord:
+    attributes:
+      'refinery/companies/company':
+        url: Url
+        name: Name
+        short_description: Short Description
+        description: Description
+        service_id: Service
+        city: City
+        phone: Phone
+        working_time: Working Time
+        e_mail: E Mail
+        logo: Logo
+        map_latitude: Map Latitude
+        map_longtitude: Map Longtitude
+        address: Address
+        user_id: User

@@ -7,13 +7,11 @@
   <div class='field'>
     <%= f.label :url -%>
     <%= f.text_field :url, :class => 'larger widest'  -%>
-
   </div>
   
   <div class='field'>
     <%= f.label :name -%>
     <%= f.text_field :name  -%>
-
   </div>
   
   <div class='field'>
@@ -36,34 +34,25 @@
 
   </div>
   
-
-  </div>
-  
   <div class='field'>
     <%= f.label :service_id -%>
-    <%= f.number_field :service_id  -%>
-
+    <%= f.select :service_id , Refinery::Services::Service.all.collect {|p| [p.name, p.id ]} -%>
   </div>
   
   <div class='field'>
     <%= f.label :city -%>
     <%= f.text_field :city  -%>
-
   </div>
   
   <div class='field'>
     <%= f.label :phone -%>
     <%= f.text_field :phone  -%>
-
   </div>
   
 
-  </div>
-  
   <div class='field'>
     <%= f.label :e_mail -%>
     <%= f.text_field :e_mail  -%>
-
   </div>
   
   <div class='field'>
@@ -73,30 +62,26 @@
                :field => :logo_id,
                :image => @company.logo,
                :toggle_image_display => false %>
-
   </div>
   
   <div class='field'>
     <%= f.label :map_latitude -%>
     <%= f.text_field :map_latitude  -%>
-
   </div>
   
   <div class='field'>
     <%= f.label :map_longtitude -%>
     <%= f.text_field :map_longtitude  -%>
-
   </div>
   
   <div class='field'>
     <%= f.label :address -%>
     <%= f.text_field :address  -%>
-
   </div>
   
   <div class='field'>
-    <%= f.label :user_id -%>
-    <%= f.number_field :user_id  -%>
+    <%= f.label :vip_code , "VIP код"-%>
+    <%= f.text_field :vip_code  -%>
 
   </div>
   

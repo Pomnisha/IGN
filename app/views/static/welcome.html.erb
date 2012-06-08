@@ -6,12 +6,18 @@
   <div id="fb"><a href="http://www.facebook.com/"><img src="../images/fb.png" width="102" height="131" alt="Facebook" /></a></div>	
   <div id="vk"><a href="http://www.vk.com/"><img src="../images/vk.png" width="80" height="203" alt="VK" /></a></div>
   <div id="about"><a href="#">О проекте IGN</a></div>
-  <div id="uslugi"><a href="#">Услуги</a></div>
+  <div id="uslugi">
+    <%= link_to "Услуги", refinery.services_services_path %>
+  </div>
   <div id="home"><a href="#">Сделать домашней страницей</a></div>
   <div id="contact"><a href="#">Контакты</a></div>
-  <div id="catalog"><%= link_to "В каталог - жми на IGN", refinery.categories_categories_path %></div>
+  <div id="catalog">
+    <%= link_to "В каталог - жми на IGN", refinery.categories_categories_path %>
+  </div>
   <div id="forum"><a href="#">Форум</a></div>
-  <div id="login"><%= link_to "Зарегистрироваться", refinery.new_refinery_user_registration_path %></div>
+  <div id="login">
+    <%= link_to "Зарегистрироваться", refinery.new_refinery_user_registration_path %>
+  </div>
   <div id="search_title"><a href="#">Поиск по каталогу</a></div>
 </div>	
 <div id="footer"> 

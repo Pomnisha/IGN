@@ -2,32 +2,17 @@
   <%= @service.name %>
 <% end %>
 
-<% content_for :body_content_left do %>
-  <section>
-    <h1>Name</h1>
-    <p>
-      <%=raw @service.name %>
-    </p>
-  </section>
-  <section>
-    <h1>Logo</h1>
-    <p>
-      <%= image_fu @service.logo, nil %>
-    </p>
-  </section>
-<% end %>
-
-<% content_for :body_content_right do %>
-  <aside>
-    <h2><%= t('.other') %></h2>
-    <ul id="services">
-      <% @services.each do |service| %>
-        <li>
-          <%= link_to service.name, refinery.services_service_path(service) %>
-        </li>
-      <% end %>
-    </ul>
-  </aside>
-<% end %>
-
-<%= render '/refinery/content_page' %>
+<div id="categoryes_body">
+<%- @service.companies.each do |c| %>
+  <div id="categoryes_top"></div>
+  <div class="categoryes">
+    <div class="icon_category">          
+      <%= image_fu c.logo, '73x88' %>
+    </div>
+    <div class="category_text">
+      <h2><%= link_to "#{c.name} - #{c.short_description}", refinery.servises_service_path(c.id)  %></h2>
+        <%= c.description%>
+    </div>
+  </div>
+<%- end %>
+</div>

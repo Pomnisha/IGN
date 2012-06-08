@@ -1,0 +1,12 @@
+<div id="top_left_menu"></div>
+<div id="left_menu">
+    <ul id="left_menu_body">
+      <%- Refinery::Services::Service.all.each do |c| %>
+        <li><%= link_to c.name, refinery.services_service_path(c.id) %>  </li>
+      <%- end %>
+    </ul>      
+</div>
+<div id="bottom_left_menu"></div>
+<div id="banner_left">        
+      <img src="../images/banner_left.png" width="240" height="400" />
+</div>

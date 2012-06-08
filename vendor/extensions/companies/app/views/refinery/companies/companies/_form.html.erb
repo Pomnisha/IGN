@@ -1,0 +1,89 @@
+<%= form_for [refinery, :companies, @company] do |f| -%>
+  <%= render '/refinery/companies/error_messages',
+              :object => @company,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :url, "Адрес сайта" -%>
+    <%= f.text_field :url, :class => 'larger widest'  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :name, "Название" -%>
+    <%= f.text_field :name  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :short_description , "Краткое описание"-%>
+    <%= f.text_area :short_description  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :description , "Описание"-%>
+    <%= f.text_area :description  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :working_time , "Время работы"-%>
+    <%= f.text_area :working_time  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :service_id, "Тип услуг"  -%>
+    <%= f.select :service_id, Refinery::Services::Service.all.collect {|p| [p.name, p.id]}  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :city, "Город" -%>
+    <%= f.text_field :city  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :phone, "Контактные телефоны"  -%>
+    <%= f.text_field :phone  -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :e_mail , "Электронный адрес" -%>
+    <%= f.text_field :e_mail  -%>
+  </div>
+  
+  <!--div class='field'>
+    <%= f.label :logo -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :logo_id,
+               :image => @company.logo,
+               :toggle_image_display => false %>
+  </div-->
+  
+  <!--div class='field'>
+    <%= f.label :map_latitude -%>
+    <%= f.text_field :map_latitude  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :map_longtitude -%>
+    <%= f.text_field :map_longtitude  -%>
+  </div-->
+  
+  <div class='field'>
+    <%= f.label :address, "Адрес"  -%>
+    <%= f.text_field :address  -%>
+  </div>
+  
+  
+  
+  <%= render '/refinery/companies/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.companies.company'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @company.url) %>
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end %>

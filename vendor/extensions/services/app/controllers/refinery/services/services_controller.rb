@@ -1,14 +1,14 @@
 module Refinery
   module Services
     class ServicesController < ::ApplicationController
-
-      before_filter :find_all_services
-      before_filter :find_page
+      layout 'refinery/services'
+#      before_filter :find_all_services
+#      before_filter :find_page
 
       def index
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @service in the line below:
-        present(@page)
+#        present(@page)
       end
 
       def show
@@ -16,7 +16,7 @@ module Refinery
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @service in the line below:
-        present(@page)
+ #       present(@page)
       end
 
     protected

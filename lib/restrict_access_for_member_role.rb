@@ -7,7 +7,7 @@ module RestrictAccessForMemberRole
       "#{controller_path}##{action_name}" != 'refinery/users#create' &&
       "#{controller_path}##{action_name}" != 'refinery/sessions#new' &&
       "#{controller_path}##{action_name}" != 'refinery/sessions#create'
-        redirect_to "/welcome"
+        redirect_to refinery.new_refinery_user_session_path
     end
 #    flash[:notice]="Please become a member with us before accessing the blog."
      #or some other destination path that exists

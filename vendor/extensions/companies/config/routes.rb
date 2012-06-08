@@ -1,8 +1,9 @@
 Refinery::Core::Engine.routes.append do
 
   # Frontend routes
-  namespace :companies do
-    resources :companies, :path => '', :only => [:index, :show]
+  namespace :companies, :path => '' do
+    resources :companies do
+    end
   end
 
   # Admin routes
@@ -17,3 +18,4 @@ Refinery::Core::Engine.routes.append do
   end
 
 end
+

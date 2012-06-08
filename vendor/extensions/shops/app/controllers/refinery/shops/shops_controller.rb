@@ -6,7 +6,7 @@ module Refinery
 #      before_filter :find_page
       before_filter :correct_user ,:only => [:edit, :update, :destroy]
       
-crudify :'refinery/shops/shop', :title_attribute => 'url', :xhr_paging => true
+      crudify :'refinery/shops/shop', :title_attribute => 'url', :xhr_paging => true
       
       def index
         # you can use meta fields from your model instead (e.g. browser_title)

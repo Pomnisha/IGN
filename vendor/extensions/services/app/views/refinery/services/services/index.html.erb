@@ -1,11 +1,19 @@
-<% content_for :body_content_left do %>
-  <ul id="services">
-    <% @services.each do |service| %>
-      <li>
-        <%= link_to service.name, refinery.services_service_path(service) %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= render '/refinery/content_page' %>
+<div id="content_banners">
+  <%- Refinery::Services::Service.all.each do |s| %>
+    <div class="banner_service"><%= image_fu s.logo, nil %></div>
+  <%- end %>
+</div>
+<div id="categoryes_body">
+<%- Refinery::Companies::Company.last(3) do |c| %>
+  <div id="categoryes_top"></div>
+  <div class="categoryes">
+    <div class="icon_category">          
+      <%= image_fu c.logo, '73x88' %>
+    </div>
+    <div class="category_text">
+      <h2><%= link_to "#{c.name} - #{c.short_description}", refinery.servises_service_path(c.id)  %></h2>
+        <%= c.description%>
+    </div>
+  </div>
+<%- end %>
+</div>

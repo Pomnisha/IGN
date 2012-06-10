@@ -4,9 +4,12 @@ module Refinery
     layout 'refinery/layouts/login'
 
     before_filter :clear_unauthenticated_flash, :only => [:new]
-
+    
     def create
-      super
+      resource = warden.authenticate!(auth_options)
+      set_flash_message(:notice, :signed_in) if is_navigational_format?
+      sign_in(resource_name, resource)
+      respond_with resource, :location => '/'
     rescue ::BCrypt::Errors::InvalidSalt, ::BCrypt::Errors::InvalidHash
       flash[:error] = t('password_encryption', :scope => 'refinery.users.forgot')
       redirect_to refinery.new_refinery_user_password_path

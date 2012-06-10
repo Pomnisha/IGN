@@ -6,7 +6,7 @@
     <%= site_bar -%>
     <%= render '/refinery/ie6check' if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
     <div id="photo_main"><img src="./images/bg.jpg"></div>	
-    <div id="page_content">
+    <div id="wrapper">
       <%= yield %>
     </div>
     <%= render '/refinery/javascripts' %>

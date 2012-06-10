@@ -11,9 +11,9 @@ end
 group :development, :test do
   gem 'sqlite3'
 #  gem 'ruby-debug-base19'
-  gem 'linecache19', '0.5.13'
-  gem 'ruby-debug-base19', '0.11.26'
-  gem 'ruby-debug19', :require => 'ruby-debug'
+#  gem 'ruby-debug19', :require => false
+#  gem 'ruby-debug-base19', :git => 'https://github.com/tribune/ruby-debug-base19.git', :require => false
+#  gem 'linecache19' , :git => 'https://github.com/chuckg/linecache19.git', :branch => "0_5_13/dependencies", :require => false
 end
 
 # Gems used only for assets and not required

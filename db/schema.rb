@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120607213907) do
+ActiveRecord::Schema.define(:version => 20120610111518) do
 
   create_table "refinery_categories", :force => true do |t|
     t.string   "name"
     t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "logo_id"
   end
 
   create_table "refinery_companies", :force => true do |t|

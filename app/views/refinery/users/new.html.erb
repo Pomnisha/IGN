@@ -22,6 +22,11 @@
     <%= f.password_field :password_confirmation, :class => 'larger widest' %>
   </div>
 
+  <div class='clearfix'>
+    <div class='field forgot_password'>
+      <%= link_to "Я уже зарегистророванный позьлователь", refinery.new_refinery_user_session_path %>
+    </div>  
+  </div>
   <%= render '/refinery/admin/form_actions', :f => f,
              :submit_continue => false,
 #             :submit_button_text => t('Зарегистрироваться', :scope => 'refinery.users.new'),

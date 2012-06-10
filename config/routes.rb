@@ -1,7 +1,6 @@
 Ign6::Application.routes.draw do
 
-  match "welcome" => 'static#welcome', :as => "welcome_page"
-
+  match '/welcome' => 'static#welcome', :as => 'welcome_page'
   # This line mounts Refinery's routes at the root of your application.
   # This means, any requests to the root URL of your application will go to Refinery::PagesController#home.
   # If you would like to change where this extension is mounted, simply change the :at option to something different.
@@ -11,7 +10,7 @@ Ign6::Application.routes.draw do
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
-
+  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

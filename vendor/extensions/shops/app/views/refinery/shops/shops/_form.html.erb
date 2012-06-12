@@ -2,7 +2,6 @@
   <%= render '/refinery/shops/error_messages',
               :object => @shop,
               :include_object_name => true %>
-
   
   <div class='field'>
     <%= f.label :url, "Адрес сайта" -%>
@@ -40,21 +39,19 @@
     <%= f.label :e_mail , "Электронный адрес"-%>
     <%= f.text_field :e_mail  -%>
   </div>
-  <!--div class='field'>
-    <%= f.label :logo -%>
+  <div class='field'>
+    <%= f.label :logo, "Логотип" -%>
     <%= render '/refinery/shops/image_picker',
                :f => f,
                :field => :logo_id,
                :image => @shop.logo,
                :toggle_image_display => false %>
-    <%= f.file_field :logo_id %>
-              
-              
-  </div-->
+    <!--%= f.file_field :logo_id %-->
+  </div>
 
 
 
-  <%= render '/refinery/shops/form_actions', :f => f,
+<%= render '/refinery/shops/form_actions', :f => f,
              :continue_editing => false,
              :delete_title => t('delete', :scope => 'refinery.shops.shop'),
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @shop.url) %>

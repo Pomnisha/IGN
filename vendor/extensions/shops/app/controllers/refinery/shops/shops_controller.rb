@@ -5,6 +5,7 @@ module Refinery
       before_filter :find_all_shops
 #      before_filter :find_page
       before_filter :correct_user ,:only => [:edit, :update, :destroy]
+      before_save :add_user_into
       
       crudify :'refinery/shops/shop', :title_attribute => 'url', :xhr_paging => true
       
@@ -29,18 +30,17 @@ module Refinery
       @shop = Shop.find(params[:id])
       end
       
-  def create
-    @shop = Shop.new(params[:shop])
-    @shop.user_id = current_refinery_user
+#  def create
+#    @shop = Shop.new(params[:shop])
 #    @pic = Refinery::Image.new(params[:shop[logo_id]])
 #    @shop.logo_id = @pic.id
 #    @pic.save
-    if @shop.save
-      render action: "show", notice: 'Shop was successfully created.'
-    else
-      render action: "new"
-    end
-  end
+#    if @shop.save
+#      render action: "show", notice: 'Shop was successfully created.'
+#    else
+#      render action: "new"
+#    end
+#  end
   
     def update
       if @shop.update_attributes(params[:shop])
@@ -62,6 +62,10 @@ module Refinery
       Rails
     protected
 
+      def add_user_into
+        @shop.user_id = current_refinery_user
+      end
+        
       def find_all_shops
         @shops = Shop.order('position ASC')
       end

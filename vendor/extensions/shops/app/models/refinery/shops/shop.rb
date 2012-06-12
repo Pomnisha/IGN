@@ -11,6 +11,9 @@ module Refinery
 #      validates :url, :presence => true, :uniqueness => true
 
       belongs_to :logo, :class_name => '::Refinery::Image'
+      image_accessor :logo
+      
+      
     end
   end
 end

@@ -5,7 +5,6 @@ module Refinery
       before_filter :find_all_shops
 #      before_filter :find_page
       before_filter :correct_user ,:only => [:edit, :update, :destroy]
-      before_save :add_user_into
       
       crudify :'refinery/shops/shop', :title_attribute => 'url', :xhr_paging => true
       
@@ -30,25 +29,25 @@ module Refinery
       @shop = Shop.find(params[:id])
       end
       
-#  def create
-#    @shop = Shop.new(params[:shop])
-#    @pic = Refinery::Image.new(params[:shop[logo_id]])
-#    @shop.logo_id = @pic.id
-#    @pic.save
-#    if @shop.save
-#      render action: "show", notice: 'Shop was successfully created.'
-#    else
-#      render action: "new"
-#    end
-#  end
-  
-    def update
-      if @shop.update_attributes(params[:shop])
-        redirect_to refinery.shops_shop_path(@shop), notice: 'Shop was successfully updated.'
-      else
-        render action: "edit"
+      def create
+        @shop = Shop.new(params[:shop])
+        @pic = Refinery::Image.new(params[:shop[logo_id]])
+        @shop.logo_id = @pic.id
+        @pic.save
+        if @shop.save
+          render action: "show", notice: 'Shop was successfully created.'
+        else
+          render action: "new"
+        end
       end
-    end      
+  
+      def update
+        if @shop.update_attributes(params[:shop])
+          redirect_to refinery.shops_shop_path(@shop), notice: 'Shop was successfully updated.'
+        else
+          render action: "edit"
+        end
+      end      
     
       def destroy
       # object gets found by find_#{singular_name} function

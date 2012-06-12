@@ -64,8 +64,20 @@ GEM
     dragonfly (0.9.12)
       rack
     erubis (2.7.0)
+    excon (0.13.4)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    fog (1.3.1)
+      builder
+      excon (~> 0.13.0)
+      formatador (~> 0.2.0)
+      mime-types
+      multi_json (~> 1.0)
+      net-scp (~> 1.0.4)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5.0)
+      ruby-hmac
+    formatador (0.2.3)
     friendly_id (4.0.6)
     globalize3 (0.2.0)
       activemodel (>= 3.0.0)
@@ -85,6 +97,10 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.18)
     multi_json (1.3.6)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-ssh (2.5.2)
+    nokogiri (1.5.4)
     orm_adapter (0.0.7)
     paper_trail (2.6.3)
       activerecord (~> 3.0)
@@ -160,6 +176,7 @@ GEM
       refinerycms-core (= 2.0.4)
     routing-filter (0.3.1)
       actionpack
+    ruby-hmac (0.4.0)
     sass (3.1.19)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -193,6 +210,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  fog
   jquery-rails
   pg
   rails (= 3.2.3)

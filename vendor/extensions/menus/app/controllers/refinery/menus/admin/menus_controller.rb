@@ -4,7 +4,7 @@ module Refinery
       class MenusController < ::Refinery::AdminController
 
         crudify :'refinery/menus/menu',
-                :title_attribute => 'type', :xhr_paging => true
+                :title_attribute => 'menu_type', :xhr_paging => true
 
       end
     end

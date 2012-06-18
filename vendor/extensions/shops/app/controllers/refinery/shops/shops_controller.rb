@@ -34,17 +34,18 @@ module Refinery
       @shop = Shop.find(params[:id])
       end
       
-      def create
-        @pic = ::Refinery::Image.new(params[:shop[:logo]])
-        @shop = Shop.new(params[:shop])
-        @shop.logo_id = @pic.id
-        @pic.save
-        if @shop.save
-          render action: "show", notice: 'Shop was successfully created.'
-        else
-          render action: "new"
-        end
-      end
+#      def create
+#        @pic = ::Refinery::Image.new(params[:shop[:logo]])
+
+#        @shop = Shop.new(params[:shop])
+#        @shop.logo_id = @pic.image_uid
+#        @pic.save
+#        if @shop.save
+#          render action: "show", notice: 'Shop was successfully created.'
+#        else
+#          render action: "new"
+#        end
+#      end
   
       def update
         if @shop.update_attributes(params[:shop])

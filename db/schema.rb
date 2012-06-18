@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120617231525) do
+ActiveRecord::Schema.define(:version => 20120618192634) do
 
   create_table "refinery_banners", :force => true do |t|
     t.string   "url"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20120617231525) do
     t.datetime "updated_at",  :null => false
     t.integer  "image_id"
     t.integer  "banner_type"
+    t.string   "name"
   end
 
   create_table "refinery_categories", :force => true do |t|
@@ -64,11 +65,12 @@ ActiveRecord::Schema.define(:version => 20120617231525) do
   end
 
   create_table "refinery_menus", :force => true do |t|
-    t.string   "type"
     t.string   "url"
     t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.integer  "menu_type"
   end
 
   create_table "refinery_page_part_translations", :force => true do |t|

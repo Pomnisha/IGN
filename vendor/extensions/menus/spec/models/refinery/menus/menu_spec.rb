@@ -6,12 +6,12 @@ module Refinery
       describe "validations" do
         subject do
           FactoryGirl.create(:menu,
-          :type => "Refinery CMS")
+          :menu_type => "Refinery CMS")
         end
 
         it { should be_valid }
         its(:errors) { should be_empty }
-        its(:type) { should == "Refinery CMS" }
+        its(:menu_type) { should == "Refinery CMS" }
       end
     end
   end

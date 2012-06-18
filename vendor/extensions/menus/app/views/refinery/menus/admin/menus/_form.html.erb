@@ -5,11 +5,15 @@
 
   
   <div class='field'>
-    <%= f.label :type -%>
-    <%= f.text_field :type, :class => 'larger widest'  -%>
+    <%= f.label :menu_type -%>
+    <%= f.select :menu_type, (1..8).collect {|n| ["Тип #{n}", n]}   -%>
 
   </div>
-  
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name  -%>
+
+  </div>  
   <div class='field'>
     <%= f.label :url -%>
     <%= f.text_field :url  -%>
@@ -19,5 +23,5 @@
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
              :delete_title => t('delete', :scope => 'refinery.menus.admin.menus.menu'),
-             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @menu.type) %>
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @menu.menu_type) %>
 <% end -%>

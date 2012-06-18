@@ -2,36 +2,35 @@
 	<h2>Покупателям</h2>
 	<div class="clear"></div>
 	<ul>
-		<li><a href="#">Каталог магазинов</a></li>
-		<li><a href="#">Новости проекта</a></li>
-		<li><a href="#">Пользовательское соглашение</a></li>
+    <% Refinery::Menus::Menu.where(:menu_type => 5).each do |m| %>  
+      <li><%= link_to m.name, m.url  %></li>
+    <% end %>
 	</ul>
 </div>
 <div id="bottom_menu2">
 	<h2>Покупателям</h2>
 	<div class="clear"></div>
 	<ul>
-		<li><a href="#">Каталог магазинов</a></li>
-		<li><a href="#">Новости проекта</a></li>
-		<li><a href="#">Пользовательское соглашение</a></li>
-		<li><a href="#">Новости проекта</a></li>
+    <% Refinery::Menus::Menu.where(:menu_type => 6).each do |m| %>  
+      <li><%= link_to m.name, m.url  %></li>
+    <% end %>
 	</ul>
 </div>
 <div id="bottom_menu3">
 	<h2>Покупателям</h2>
 	<div class="clear"></div>
 	<ul>
-		<li><a href="#">Каталог магазинов</a></li>
-		<li><a href="#">Новости проекта</a></li>
-		<li><a href="#">Пользовательское соглашение</a></li>
+    <% Refinery::Menus::Menu.where(:menu_type => 7).each do |m| %>  
+      <li><%= link_to m.name, m.url  %></li>
+    <% end %>
 	</ul>
 </div>
 <div id="bottom_menu4">
   <h2>Покупателям</h2>
   <div class="clear"></div>
   <ul>
-		<li><a href="#">Каталог магазинов</a></li>
-		<li><a href="#">Новости проекта</a></li>
-		<li><a href="#">Пользовательское соглашение</a></li>
+    <% Refinery::Menus::Menu.where(:menu_type => 8).each do |m| %>  
+      <li><%= link_to m.name, m.url  %></li>
+    <% end %>
 	</ul>
 </div>	

@@ -1,4 +1,4 @@
-<%= form_for [refinery, :shops, @shop] do |f| -%>
+<%= form_for [refinery, :shops, @shop], :html => { :multipart => true } do |f| -%>
   <%= render '/refinery/shops/error_messages',
               :object => @shop,
               :include_object_name => true %>
@@ -39,12 +39,10 @@
     <%= f.label :e_mail , "Электронный адрес"-%>
     <%= f.text_field :e_mail  -%>
   </div>
-
   <div class='field'> 
     <%= f.label :logo , "Логотип"-%>
     <%= f.file_field :logo %>  
   </div>  
-
 
 <%= render '/refinery/shops/form_actions', :f => f,
              :continue_editing => false,

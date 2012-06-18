@@ -2,37 +2,36 @@
   <h2>Покупателям</h2>
 	<div class="clear"></div>
   <ul>
-    <li><a href="#">Каталог магазинов</a></li>
-  	<li><a href="#">Новости проекта</a></li>
-  	<li><a href="#">Пользовательское соглашение</a></li>
+    <% Refinery::Menus::Menu.where(:menu_type => 1).each do |m| %>  
+      <li><%= link_to m.name, m.url  %></li>
+    <% end %>
   </ul>
 </div>
 <div id="bottom_menu2">
   <h2>Магазинам</h2>
   <div class="clear"></div>
   <ul>
-    <li><a href="#">Реклама на IGN.su</a></li>
-  	<li><a href="#">Партнерские программы</a></li>
-  	<li><%= link_to "Услуги", refinery.services_services_path %></li>
-    <li><%= link_to "Добавить магазин", refinery.new_shops_shop_path %></li>
-  	<li><%= link_to "Добавить свои услуги", refinery.new_companies_company_path %></li>
+    <% Refinery::Menus::Menu.where(:menu_type => 2).each do |m| %>  
+      <li><%= link_to m.name, m.url  %></li>
+    <% end %>
   </ul>	
 </div>
 <div id="bottom_menu3">
   <h2>О компании</h2>
   <div class="clear"></div>
   <ul>
-    <li><a href="#">Контакты</a></li>
-	  <li><a href="#">Форум</a></li>
-		<li><a href="#">Что такое IGN</a></li>
+    <% Refinery::Menus::Menu.where(:menu_type => 3).each do |m| %>  
+      <li><%= link_to m.name, m.url  %></li>
+    <% end %>
   </ul>
 </div>
 <div id="bottom_menu4">
   <h2>Полезная информация</h2>
   <div class="clear"></div>
   <ul>
-    <li><a href="#">Покупки на IGN</a></li>
-  	<li><a href="#">Преимущества покупок</a></li>
+    <% Refinery::Menus::Menu.where(:menu_type => 4).each do |m| %>  
+      <li><%= link_to m.name, m.url  %></li>
+    <% end %>
   </ul>
 </div>
 <a id="logo_bottom" href="#"><img src="../images/logo_bottom.png" /></a>

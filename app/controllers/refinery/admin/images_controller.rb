@@ -8,7 +8,7 @@ module Refinery
               :xhr_paging => true
 
       before_filter :change_list_mode_if_specified, :init_dialog
-
+    
       def new
         @image = ::Refinery::Image.new if @image.nil?
 

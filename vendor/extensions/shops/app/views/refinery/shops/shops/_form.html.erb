@@ -39,16 +39,11 @@
     <%= f.label :e_mail , "Электронный адрес"-%>
     <%= f.text_field :e_mail  -%>
   </div>
-  <div class='field'>
-    <%= f.label :logo, "Логотип" -%>
-    <%= render '/refinery/shops/image_picker',
-               :f => f,
-               :field => :logo_id,
-               :image => @shop.logo,
-               :toggle_image_display => false %>
-    <!--%= f.file_field :logo_id %-->
-  </div>
 
+  <div class='field'> 
+    <%= f.label :logo , "Логотип"-%>
+    <%= f.file_field :logo %>  
+  </div>  
 
 
 <%= render '/refinery/shops/form_actions', :f => f,

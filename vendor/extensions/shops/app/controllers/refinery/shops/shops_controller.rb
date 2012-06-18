@@ -3,7 +3,7 @@ module Refinery
     class ShopsController < ::ApplicationController
 
       before_filter :find_all_shops
-#      before_filter :find_page
+#      before_filter :find_page:
       before_filter :correct_user ,:only => [:edit, :update, :destroy]
       
       crudify :'refinery/shops/shop', :title_attribute => 'name', :xhr_paging => true
@@ -12,7 +12,7 @@ module Refinery
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @shop in the line below:
  #       present(@page)
-        @shops = Shop.search(params[:search])
+        @shops = Shop.search(params[:search]).page(params[:page]).per_page("5")
       end
       
       def new
@@ -35,8 +35,8 @@ module Refinery
       end
       
       def create
+        @pic = ::Refinery::Image.new(params[:shop[:logo]])
         @shop = Shop.new(params[:shop])
-        @pic = Refinery::Image.new(params[:shop[logo_id]])
         @shop.logo_id = @pic.id
         @pic.save
         if @shop.save

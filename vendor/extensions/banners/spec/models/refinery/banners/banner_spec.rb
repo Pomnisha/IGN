@@ -6,12 +6,12 @@ module Refinery
       describe "validations" do
         subject do
           FactoryGirl.create(:banner,
-          :type => "Refinery CMS")
+          :banner_type => "Refinery CMS")
         end
 
         it { should be_valid }
         its(:errors) { should be_empty }
-        its(:type) { should == "Refinery CMS" }
+        its(:banner_type) { should == "Refinery CMS" }
       end
     end
   end

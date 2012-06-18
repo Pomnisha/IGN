@@ -9,8 +9,8 @@ describe Refinery do
 
         describe "banners list" do
           before(:each) do
-            FactoryGirl.create(:banner, :type => "UniqueTitleOne")
-            FactoryGirl.create(:banner, :type => "UniqueTitleTwo")
+            FactoryGirl.create(:banner, :banner_type => "UniqueTitleOne")
+            FactoryGirl.create(:banner, :banner_type => "UniqueTitleTwo")
           end
 
           it "shows two items" do
@@ -47,7 +47,7 @@ describe Refinery do
           end
 
           context "duplicate" do
-            before(:each) { FactoryGirl.create(:banner, :type => "UniqueTitle") }
+            before(:each) { FactoryGirl.create(:banner, :banner_type => "UniqueTitle") }
 
             it "should fail" do
               visit refinery.banners_admin_banners_path
@@ -65,7 +65,7 @@ describe Refinery do
         end
 
         describe "edit" do
-          before(:each) { FactoryGirl.create(:banner, :type => "A type") }
+          before(:each) { FactoryGirl.create(:banner, :banner_type => "A type") }
 
           it "should succeed" do
             visit refinery.banners_admin_banners_path
@@ -83,7 +83,7 @@ describe Refinery do
         end
 
         describe "destroy" do
-          before(:each) { FactoryGirl.create(:banner, :type => "UniqueTitleOne") }
+          before(:each) { FactoryGirl.create(:banner, :banner_type => "UniqueTitleOne") }
 
           it "should succeed" do
             visit refinery.banners_admin_banners_path

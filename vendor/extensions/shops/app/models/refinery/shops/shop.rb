@@ -4,7 +4,7 @@ module Refinery
       self.table_name = 'refinery_shops'
 
       attr_accessible :url, :position, :name, :short_description, :description, :working_time, :map_latitude, :map_longtitude, 
-                      :subcategory_id, :city, :phone, :e_mail, :logo_id, :vip_code
+                      :subcategory_id, :city, :phone, :e_mail, :logo_id, :vip_code, :logo
       acts_as_indexed :fields => [:url, :name, :short_description, :description, :city, :phone, :working_time, :address]
       belongs_to :user, :class_name => "Refinery::User"
       belongs_to :subcategory, :class_name => "Refinery::Subcategories::Subcategory"
@@ -15,7 +15,7 @@ module Refinery
       
       def self.search(search)
         if search
-          find(:all, :conditions => ['name LIKE ?', "%#{search}%"]) + find(:all, :conditions => ['short_description LIKE ?', "%#{search}%"]) + find(:all, :conditions => ['description LIKE ?', "%#{search}%"])
+          find(:all, :conditions => ['name LIKE ?', "%#{search}%"]) & find(:all, :conditions => ['short_description LIKE ?', "%#{search}%"]) & find(:all, :conditions => ['description LIKE ?', "%#{search}%"])
         else
           find(:all)
         end

@@ -13,8 +13,7 @@
   <%= stylesheet_link_tag "main" if controller_name == "pages" %>
   <%= stylesheet_link_tag "welcome" if controller_name == "static" %>
   <%= stylesheet_link_tag "shop" if ["shops", "categories", "subcategories"].include?(controller_name) %>
-  <%= stylesheet_link_tag "service" if controller_name == "services" %>  
-  <%= stylesheet_link_tag "service" if controller_name == "companies" %>  
+  <%= stylesheet_link_tag "service" if ["services", "companies"].include?(controller_name) %>  
 
   <%= yield :stylesheets %>
 

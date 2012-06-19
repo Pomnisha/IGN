@@ -13,7 +13,7 @@ module Refinery
           plugin.pathname = root
           plugin.activity = {
             :class_name => :'refinery/banners/banner',
-            :title => 'type'
+            :title => 'banner_type'
           }
           
         end

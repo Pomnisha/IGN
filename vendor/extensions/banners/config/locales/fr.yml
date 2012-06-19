@@ -24,6 +24,6 @@ fr:
   activerecord:
     attributes:
       'refinery/banners/banner':
-        type: Type
+        banner_type: Type
         url: Url
         image: Image

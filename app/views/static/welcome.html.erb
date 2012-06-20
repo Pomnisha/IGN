@@ -16,7 +16,9 @@
   </div>
   <div id="forum"><a href="#">Форум</a></div>
   <div id="login">
-    <%= link_to "Зарегистрироваться", refinery.new_refinery_user_registration_path %>
+    <!--%= link_to "Зарегистрироваться", refinery.new_refinery_user_registration_path %-->
+    <!-- a href="<% refinery.new_refinery_user_registration_url %>" class = "lightbox_R">Зарегистрироваться</a-->
+    <a href="#" class = "lightbox_R">Зарегистрироваться</a>
   </div>
   <div id="search_title"><a href="#">Поиск по каталогу</a></div>
 </div>	
@@ -25,4 +27,13 @@
   <div id="copyright"><a href="#">Все права защищены © IGN</a></div>
 </div>
 
-
+<div class="backdrop_R"></div>
+<div class="box_R">
+	<div class="close_R">x</div>
+  <%= render "refinery/users/new"%>
+</div>
+<div class="backdrop_S"></div>
+<div class="box_S">
+	<div class="close_S">x</div>
+  <!--%= render "refinery/sessions/new"%-->
+</div>

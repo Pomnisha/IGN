@@ -7,7 +7,7 @@ module Refinery
 
       acts_as_indexed :fields => [:menu_type, :url]
 
-      validates :menu_type, :presence => true, :uniqueness => true
+      validates :menu_type, :presence => true
     end
   end
 end

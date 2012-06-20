@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(:version => 20120617231525) do
 
   create_table "refinery_banners", :force => true do |t|
-    t.integer  "banner_type", :limit => 255
     t.string   "url"
     t.integer  "position"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "image_id"
+    t.integer  "banner_type"
   end
 
   create_table "refinery_categories", :force => true do |t|

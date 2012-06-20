@@ -79,12 +79,6 @@
     <%= f.text_field :address  -%>
   </div>
   
-  <div class='field'>
-    <%= f.label :vip_code , "VIP код"-%>
-    <%= f.text_field :vip_code  -%>
-
-  </div>
-  
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
              :delete_title => t('delete', :scope => 'refinery.companies.admin.companies.company'),

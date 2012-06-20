@@ -12,6 +12,9 @@ module Refinery
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @company in the line below:
 #        present(@page)
+
+        @companyies = Company.search(params[:search])
+
       end
       def new
         @company = Company.new

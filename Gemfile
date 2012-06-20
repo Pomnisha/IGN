@@ -31,6 +31,7 @@ end
 
 gem 'jquery-rails'
 gem 'therubyracer'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -60,3 +61,5 @@ gem 'refinerycms-subcategories', :path => 'vendor/extensions'
 gem 'refinerycms-shops', :path => 'vendor/extensions'
 gem 'refinerycms-services', :path => 'vendor/extensions'
 gem 'refinerycms-companies', :path => 'vendor/extensions'
+gem 'refinerycms-banners', :path => 'vendor/extensions'
+gem 'refinerycms-menus', :path => 'vendor/extensions'

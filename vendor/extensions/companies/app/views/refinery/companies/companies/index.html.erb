@@ -1,11 +1,14 @@
-<% content_for :body_content_left do %>
-  <ul id="companies">
-    <% @companies.each do |company| %>
-      <li>
-        <%= link_to company.url, refinery.companies_company_path(company) %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= render '/refinery/content_page' %>
+<div id="categoryes_body">
+<%- @companies.each do |c| %>
+  <div id="categoryes_top"></div>
+  <div class="categoryes">
+    <div class="icon_category">          
+      <%= image_fu c.logo, '73x88' %>
+    </div>
+    <div class="category_text">
+      <h2><%= link_to "#{c.name.html_safe} - #{c.short_description.html_safe}", refinery.companies_company_path(c.id)  %></h2>
+        <%= c.description.html_safe %>
+    </div>
+  </div>
+<%- end %>
+</div>

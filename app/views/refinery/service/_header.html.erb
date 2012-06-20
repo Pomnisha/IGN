@@ -3,7 +3,8 @@
 	<img id="logo_soc_seti" src="../images/logo_soc_seti.png" />
 </div>
 <div id="top_banner">
-	<img src="../images/slide.png" />
+  <% b = Refinery::Banners::Banner.where(:banner_type => 6).first%>  
+  <%= link_to (image_fu b.image, '240x400'), b.url unless b.nil? %>
   </div>
   <div class="clear"></div>
 <!--top menu.............................................................................-->
@@ -21,13 +22,10 @@
 			</ul>
 		</div>
 		<div id="form_search">
-			<form action="" method="get">
-				<input  id="submit" name="submit" type="image" src="../images/submit_.png">
-				<input name="searching" id="search" type="text" value="Поиск" onfocus=find()>
-				<script>
-					function find() {document.getElementById("search").value=""} 
-				</script>
-			</form>
+      <%= form_tag refinery.companies_companies_path, :method => 'get' do %>
+        <%= submit_tag "Search", :id => "submit", :class => "submit", :type => "image", :src => "../images/submit_.png", :name => nil %>
+        <%= text_field_tag :search, params[:search] %>
+      <% end %>
 		</div>
 	</div>
 	<div id="top_menu_side_right"></div>

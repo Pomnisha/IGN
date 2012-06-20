@@ -23,3 +23,9 @@ Refinery::Services::Engine.load_seed
 
 # Added by Refinery CMS Companies extension
 Refinery::Companies::Engine.load_seed
+
+# Added by Refinery CMS Banners extension
+Refinery::Banners::Engine.load_seed
+
+# Added by Refinery CMS Menus extension
+Refinery::Menus::Engine.load_seed

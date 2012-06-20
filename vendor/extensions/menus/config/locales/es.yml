@@ -1,0 +1,29 @@
+es:
+  refinery:
+    plugins:
+      menus:
+        title: Menus
+#        article: masculino/femenino
+    menus:
+      admin:
+        menus:
+          actions:
+            create_new: Crear nuevo menu
+            reorder: Reordenar menus
+            reorder_done: Reordenación de menus completada
+          records:
+            title: Menus
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay menus todavía. Pulsa en "Crear nuevo Menu" para crear tu primer menu.
+          menu:
+            view_live_html: Ver este menu como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este menu
+            delete: Borrar este menu para siempre
+      menus:
+        show:
+          other: Otros menus
+  activerecord:
+    attributes:
+      'refinery/menus/menu':
+        type: Type
+        url: Url

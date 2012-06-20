@@ -2,9 +2,19 @@
   <div id="left_menu">
 <!--left menu.............................................................................-->  
     <ul id="left_menu_body">
-      <%- Refinery::Categories::Category.all.each do |c| %>
-        <li><%= link_to c.name, refinery.categories_category_path(c.id) %>  </li>
-      <%- end %>
+      <% Refinery::Categories::Category.all.each do |c| %>
+        <li>
+          <%= link_to c.name, refinery.categories_category_path(c.id) %>
+          <ul class="subnav">
+            <% c.subcategories.each do |s| %>
+              <li><%= link_to s.name, refinery.subcategories_subcategory_path(s.id) %></li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
     </ul>      
   </div>
-<div id="banner_left"><img src="../images/banner_left.png" width="240" height="400" /></div>
+<div id="banner_left">
+  <% b = Refinery::Banners::Banner.where(:banner_type => 4).first%>  
+  <%= link_to (image_fu b.image, '240x400'), b.url unless b.nil? %>
+</div>

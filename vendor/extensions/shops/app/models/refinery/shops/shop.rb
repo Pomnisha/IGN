@@ -13,6 +13,13 @@ module Refinery
       belongs_to :logo, :class_name => '::Refinery::Image'
 #      image_accessor :logo
       
+      def self.search(search)
+        if search
+          find(:all, :conditions => ['name LIKE ?', "%#{search}%"]) + find(:all, :conditions => ['short_description LIKE ?', "%#{search}%"]) + find(:all, :conditions => ['description LIKE ?', "%#{search}%"])
+        else
+          find(:all)
+        end
+      end
       
     end
   end

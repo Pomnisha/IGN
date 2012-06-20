@@ -1,0 +1,28 @@
+nb:
+  refinery:
+    plugins:
+      menus:
+        title: Menus
+    menus:
+      admin:
+        menus:
+          actions:
+            create_new: Lag en ny Menu
+            reorder: Endre rekkefølgen på Menus
+            reorder_done: Ferdig å endre rekkefølgen Menus
+          records:
+            title: Menus
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Menus enda. Klikk på "Lag en ny Menu" for å legge til din første menu.
+          menu:
+            view_live_html: Vis hvordan denne menu ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne menu
+            delete: Fjern denne menu permanent
+      menus:
+        show:
+          other: Andre Menus
+  activerecord:
+    attributes:
+      'refinery/menus/menu':
+        type: Type
+        url: Url

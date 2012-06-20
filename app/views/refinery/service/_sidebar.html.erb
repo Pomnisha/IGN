@@ -8,5 +8,6 @@
 </div>
 <div id="bottom_left_menu"></div>
 <div id="banner_left">        
-      <img src="../images/banner_left.png" width="240" height="400" />
+  <% b = Refinery::Banners::Banner.where(:banner_type => 4).first%>  
+  <%= link_to (image_fu b.image, '240x400'), b.url unless b.nil? %>
 </div>

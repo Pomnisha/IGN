@@ -11,6 +11,7 @@ module Refinery
 
       belongs_to :logo, :class_name => '::Refinery::Image'
       has_many :companies, :class_name => "Refinery::Companies::Company"
+      
     end
   end
 end

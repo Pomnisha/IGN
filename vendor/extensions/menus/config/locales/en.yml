@@ -1,0 +1,28 @@
+en:
+  refinery:
+    plugins:
+      menus:
+        title: Menus
+    menus:
+      admin:
+        menus:
+          actions:
+            create_new: Add New Menu
+            reorder: Reorder Menus
+            reorder_done: Done Reordering Menus
+          records:
+            title: Menus
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Menus yet. Click "Add New Menu" to add your first menu.
+          menu:
+            view_live_html: View this menu live <br/><em>(opens in a new window)</em>
+            edit: Edit this menu
+            delete: Remove this menu forever
+      menus:
+        show:
+          other: Other Menus
+  activerecord:
+    attributes:
+      'refinery/menus/menu':
+        type: Type
+        url: Url

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120610111518) do
+ActiveRecord::Schema.define(:version => 20120617231525) do
+
+  create_table "refinery_banners", :force => true do |t|
+    t.integer  "banner_type", :limit => 255
+    t.string   "url"
+    t.integer  "position"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.integer  "image_id"
+  end
 
   create_table "refinery_categories", :force => true do |t|
     t.string   "name"
@@ -19,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20120610111518) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "logo_id"
+    t.boolean  "popular"
   end
 
   create_table "refinery_companies", :force => true do |t|
@@ -51,6 +61,14 @@ ActiveRecord::Schema.define(:version => 20120610111518) do
     t.string   "image_ext"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "refinery_menus", :force => true do |t|
+    t.string   "type"
+    t.string   "url"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "refinery_page_part_translations", :force => true do |t|

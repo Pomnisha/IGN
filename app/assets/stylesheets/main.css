@@ -52,24 +52,16 @@ a img {
 	padding-right: 50px;
 }
 #top_banner1 {
-	background-image: url(../images/banner_top1.png);
 	float: left;
-	height: 62px;
-	width: 207px;
 	margin-right: 4px;
 }
 #top_banner2 {
-	background-image: url(../images/banner_top2.png);
 	float: left;
-	height: 62px;
-	width: 229px;
 	margin-right: 4px;
 }
 #top_banner3 {
-	background-image: url(../images/banner_top3.png);
 	float: left;
-	height: 62px;
-	width: 190px;
+
 }
 #form_search {
 	float: right;
@@ -191,6 +183,7 @@ ul#left_menu_body {
 	float: left;
 	clear: left;
 	margin-bottom: 3px;
+	width: 230px;
   /*    */
   -moz-border-radius: 11px; /* Firefox */
   -webkit-border-radius: 11px; /* Safari, Chrome */
@@ -211,6 +204,53 @@ ul#left_menu_body li a {
 	color: #fff;
 	padding: 3px 6px 0;
 }
+
+ul#left_menu_body li:hover {
+	background-color: #b82b2b; /*069BEF, 20b2fd*/ 
+}
+
+ul#left_menu_body li a{
+	color: #fff;
+	float: left;
+}
+ul#left_menu_body li a:hover{
+/*	background: url(topnav_hover.gif) no-repeat center top;*/
+}
+ul#left_menu_body li span { /*--Drop down trigger styles--*/
+	width: 17px;
+	height: 35px;
+	float: left;
+}
+ul#left_menu_body li span.subhover {background-position: center bottom; cursor: pointer;} /*--Hover effect for trigger--*/
+ul#left_menu_body li ul.subnav {
+	font-weight: bold;
+  list-style: none;
+	position: absolute; /*--Important - Keeps subnav from affecting main navigation flow--*/
+	left: 254px;
+/*  top: 0px; */
+	background: transparent;
+	margin: 0; padding: 0;
+	display: none;
+	float: left;
+	width: 170px;
+}
+ul#left_menu_body li ul.subnav li{
+	margin: 0; 	padding: 3px 6px 0;
+	border-top: 1px solid #252525; /*--Create bevel effect--*/
+	border-bottom: 1px solid #444; /*--Create bevel effect--*/
+	clear: both;
+	width: 170px;
+  height: 25px;
+}
+html ul#left_menu_body li ul.subnav li a {
+	float: left;
+	width: 145px;
+	padding-left: 20px;
+}
+html ul#left_menu_body li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
+  background: #b82b2b; /*url(dropdown_linkbg.gif) no-repeat 10px center; */
+}
+
 #banner_left {
 	float: left;
 	height: 400px;

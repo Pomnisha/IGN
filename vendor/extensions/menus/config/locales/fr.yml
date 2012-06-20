@@ -1,0 +1,28 @@
+fr:
+  refinery:
+    plugins:
+      menus:
+        title: Menus
+    menus:
+      admin:
+        menus:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Menu
+            reorder: Réordonner les Menus
+            reorder_done: Fin de réordonnancement des Menus
+          records:
+            title: Menus
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Menu. Cliquer sur "Créer un(e) nouve(au/l/lle) Menu" pour créer votre premi(er/ère) menu.'
+          menu:
+            view_live_html: Voir ce(t/tte) menu <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) menu
+            delete: Supprimer définitivement ce(t/tte) menu
+      menus:
+        show:
+          other: Autres Menus
+  activerecord:
+    attributes:
+      'refinery/menus/menu':
+        type: Type
+        url: Url

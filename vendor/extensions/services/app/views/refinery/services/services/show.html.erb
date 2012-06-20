@@ -10,8 +10,8 @@
       <%= image_fu c.logo, '73x88' %>
     </div>
     <div class="category_text">
-      <h2><%= link_to "#{c.name} - #{c.short_description}", refinery.servises_service_path(c.id)  %></h2>
-        <%= c.description%>
+      <h2><%= link_to "#{c.name.html_safe} - #{c.short_description.html_safe}", refinery.companies_company_path(c.id)  %></h2>
+        <%= c.description.html_safe %>
     </div>
   </div>
 <%- end %>

@@ -1,0 +1,33 @@
+<%= form_for [refinery, :banners_admin, @banner] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @banner,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :url -%>
+    <%= f.text_field :url  -%>
+
+  </div>
+  
+  <div  class='field'>
+    <%= f.label :banner_type -%>
+    <%= f.select :banner_type, (1..6).collect {|n| ["Тип #{n}", n]} -%>
+  </div>
+
+
+  
+  <div class='field'>
+    <%= f.label :image -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :image_id,
+               :image => @banner.image,
+               :toggle_image_display => false %>
+
+  </div>  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.banners.admin.banners.banner'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @banner.banner_type) %>
+<% end -%>

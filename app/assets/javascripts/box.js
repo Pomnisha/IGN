@@ -61,12 +61,12 @@ $(document).ready(function(){
     success: showResponse2,
     timeout: 3000
   };
-  $('#myForm').submit(function() { 
+  $('#reg_f').submit(function() { 
     $(this).ajaxSubmit(options1); 
     return false;
   }); 
   
-  $('#myForm').submit(function() { 
+  $('#log_f').submit(function() { 
     $(this).ajaxSubmit(options2); 
     return false;
   }); 

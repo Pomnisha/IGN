@@ -1,0 +1,6 @@
+.slides_container div {
+	display:block;
+}
+.slides_container {
+	display:none;
+}    

@@ -3,7 +3,12 @@
 <% end %>
 
 <div id="categoryes_body">
+<% i = 0 %>  
 <%- @service.companies.each do |c| %>
+<% i = i + 1 %>
+<% if i == 4 then%>
+  <%= render "refinery/slider2" %>
+<% end %>
   <div id="categoryes_top"></div>
   <div class="categoryes">
     <div class="icon_category">          

@@ -25,12 +25,20 @@
     <% end %>
   </div>      
 </div>
-<div id="running_line">Здесь бегущая строка</div>
+<div id="running_line">
+  <div class="bg">
+    <div class="move">
+      <p>
+      <% Refinery::Banners::Banner.where(:banner_type => 5).each do |b| %>  
+        <%= link_to b.name, b.url  %>
+      <% end %>
+      </p>
+    </div>
+  </div>
+</div>
 <div id="inet_shops">
   <div id="inet_shops_top"></div>
   <div id="slides">
-    <a id="array_left" href="#"class="prev"></a>
-    <a id="array_right" href="#" class="next"></a>
     <div id="slides_container" class="slides_container">
     <% i = 0 %>
     <% Refinery::Banners::Banner.where(:banner_type => 3).each do |b|  %>
@@ -46,10 +54,12 @@
       <% end %>
       
     <% end %>
-      <% if (i % 4 != 0)  then %>
+    <% if (i % 4 != 0)  then %>
         </div>
-      <% end %>
+    <% end %>
 
     </div>
+    <a id="array_left" href="#" class="prev"></a>
+    <a id="array_right" href="#" class="next"></a>
   </div>
 </div>

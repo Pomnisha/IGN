@@ -80,6 +80,9 @@
              :delete_title => t('delete', :scope => 'refinery.companies.company'),
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @company.url) %>
 <% end -%>
+
+  <%= render "refinery/slider2" %>
+
 <% content_for :javascripts do %>
   <script>
     $(document).ready(function(){

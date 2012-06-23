@@ -309,7 +309,7 @@ html ul#left_menu_body li ul.subnav li a:hover { /*--Hover effect for subnav lin
 	color:#FFF;
 	font-size: 13px;	
 }
-.category_text a{
+.category_text .out_link{
 	display: block;
 	background-color: #0A243F;
 	color: #92D8FF;
@@ -355,7 +355,6 @@ html ul#left_menu_body li ul.subnav li a:hover { /*--Hover effect for subnav lin
 	float: left;
 }
 .onshop > h2 {
-	height: 35px;
 	padding: 3px 0 0;
 	margin: 0;
 	text-align: center;
@@ -375,35 +374,7 @@ html ul#left_menu_body li ul.subnav li a:hover { /*--Hover effect for subnav lin
 	height: 251px;
 	width: 484px;	
 }
-#slider {
-	margin-left: 5px;
-	padding: 27px 50px 27px 46px;
-	position: relative;
-	background-image: url(../images/slider_bg.png);
-	height: 92px;
-	width: 560px;
-}
-#array_left {
-	background-image: url(../images/array_left.png);
-	height: 42px;
-	width: 33px;
-	position: absolute;
-	left: 7px;
-	top: 50px;
-}
-#array_right {
-	background-image: url(../images/array_right.png);
-	height: 42px;
-	width: 33px;
-	position: absolute;
-	right: 11px;
-	top: 50px;
-}
-#slide {
-	background-image: url(../images/slide.png);
-	height: 92px;
-	width: 560px;
-}
+
 #count_pages  {
 	padding-top: 25px;
 	text-align: center;

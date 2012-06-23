@@ -2,7 +2,7 @@
 	<h2>Покупателям</h2>
 	<div class="clear"></div>
 	<ul>
-    <% Refinery::Menus::Menu.where(:menu_type => 5).each do |m| %>  
+    <% Refinery::Menus::Menu.where(:menu_type => 1).each do |m| %>  
       <li><%= link_to m.name, m.url  %></li>
     <% end %>
 	</ul>
@@ -11,7 +11,7 @@
 	<h2>Покупателям</h2>
 	<div class="clear"></div>
 	<ul>
-    <% Refinery::Menus::Menu.where(:menu_type => 6).each do |m| %>  
+    <% Refinery::Menus::Menu.where(:menu_type => 2).each do |m| %>  
       <li><%= link_to m.name, m.url  %></li>
     <% end %>
 	</ul>
@@ -20,7 +20,7 @@
 	<h2>Покупателям</h2>
 	<div class="clear"></div>
 	<ul>
-    <% Refinery::Menus::Menu.where(:menu_type => 7).each do |m| %>  
+    <% Refinery::Menus::Menu.where(:menu_type => 3).each do |m| %>  
       <li><%= link_to m.name, m.url  %></li>
     <% end %>
 	</ul>
@@ -29,7 +29,7 @@
   <h2>Покупателям</h2>
   <div class="clear"></div>
   <ul>
-    <% Refinery::Menus::Menu.where(:menu_type => 8).each do |m| %>  
+    <% Refinery::Menus::Menu.where(:menu_type => 4).each do |m| %>  
       <li><%= link_to m.name, m.url  %></li>
     <% end %>
 	</ul>

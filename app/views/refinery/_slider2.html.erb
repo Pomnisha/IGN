@@ -1,0 +1,11 @@
+<div id="slides2">
+  <div id="slides_container" class="slides_container">
+    <% Refinery::Banners::Banner.where(:banner_type => 7).each do |b|  %>
+      <div class='slide2'>
+          <%= image_fu b.image, '560x92' unless b.nil? %>
+      </div>
+    <% end %>
+  </div>
+  <a id="array_left2" href="#" class="prev"></a>
+  <a id="array_right2" href="#" class="next"></a>
+</div>  

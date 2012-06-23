@@ -256,24 +256,37 @@ ul#left_menu_body li a {
 	height: 29px;
 } 
 .categoryes {
-	margin: 15px 0;
+	margin: 5px 0 0 4px;
 	background-image: url(../images/categoryes_bg.png);
-	background-color: #FFF;
-	height: 97px;	
+	height: 134px;
+	width: 660px;		
 }
 .icon_category {
-	padding: 12px 10px 0;
+	padding: 17px 10px;
 	float: left;
-	width: 73px;
+	height: 100px;
+	width: 155px;
 }
 .category_text {
-	color: #000;
-	padding: 6px 5px 0 85px;
+	color: #fff;
+	padding: 6px 5px 0 175px;
 }
-.category_text h2 a{
-	color:#000;
+.category_text h2{
+	color:#FFF;
 	font-size: 13px;	
 }
+.category_text a{
+	display: block;
+	background-color: #0A243F;
+	color: #92D8FF;
+	font-size: 14px;
+	text-align: center;
+	height: 20px;
+	margin: 5px;
+	border-right: 1px solid #6F6A7A;
+	border-bottom: 1px solid #6F6A7A;
+}
+
 #slogan {
 	background-image: url(../images/slogan.png);
 	height: 42px;

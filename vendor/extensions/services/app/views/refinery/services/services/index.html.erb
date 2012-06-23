@@ -4,16 +4,19 @@
   <%- end %>
 </div>
 <div id="categoryes_body">
-<%- Refinery::Companies::Company.last(3) do |c| %>
   <div id="categoryes_top"></div>
+<%- Refinery::Companies::Company.last(3).each do |c| %>
   <div class="categoryes">
     <div class="icon_category">          
-      <%= image_fu c.logo, '73x88#' %>
+      <%= image_fu c.logo, '73x88#' unless c.logo.nil?%>
     </div>
     <div class="category_text">
-      <h2><%= link_to "#{c.name} - #{c.short_description}", refinery.servises_service_path(c.id)  %></h2>
-        <%= c.description%>
+      <h2>
+      <a href="<%= refinery.companies_company_path(c.id) %>"> <%= c.name.html_safe + " - " + c.short_description.html_safe  %> </a>
+      <%= c.description.html_safe %>
     </div>
   </div>
 <%- end %>
 </div>
+
+

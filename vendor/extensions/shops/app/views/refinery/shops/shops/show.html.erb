@@ -11,11 +11,4 @@
     <div class="map"></div>
   </div>
 </div>
-  <div id="slider">
-    <div id="array_left"></div>
-    <div id="array_right"></div>
-    <div id="slide">
-      <% b = Refinery::Banners::Banner.where(:banner_type => 7).first %>        
-      <%= image_fu b.image, '92x560' unless b.nil? %>
-    </div>
-  </div>     
+  <%= render "refinery/slider2" %>

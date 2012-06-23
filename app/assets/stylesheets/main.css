@@ -361,16 +361,7 @@ font-size: 16px;
 	color:#fff;
 	font-family: Arial, Helvetica, sans-serif;
 }
-#running_line {
-	padding-top: 3px;
-	margin-bottom: 25px;
-	font-size: 18px;
-	color: #FFF;
-	background-image: url(../images/running_line_bg.png);
-	background-repeat: repeat-y;
-	text-align: center;
-	height: 30px;
-}
+
 #inet_shops {
 	height: 352px;
 }
@@ -378,14 +369,6 @@ font-size: 16px;
 	margin-bottom: 15px;
 	background-image: url(../images/inet_shops.png);
 	height: 29px;	
-}
-#slides {
-	position: relative;
-	margin-left: 19px;
-	background-image: url(../images/slider_bg_.png);
-	height: 288px;
-	width: 558px;
-	padding: 20px 0 0 75px;
 }
 
 /*--bottom...........................................................................*/

@@ -15,11 +15,15 @@
   <%= stylesheet_link_tag "shop" if ["shops", "categories", "subcategories"].include?(controller_name) %>
   <%= stylesheet_link_tag "service" if ["services", "companies"].include?(controller_name) %>  
   <%= stylesheet_link_tag "box" %>
+  <%= stylesheet_link_tag "banner" %>
   <%= yield :stylesheets %>
 
   <%= render '/refinery/google_analytics' %>
   <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag 'modernizr-min' %>
+  <%= javascript_include_tag 'slider' %>  
   <%= javascript_include_tag 'box' %>
+
+  <%= javascript_include_tag 'banner' %>
 
 </head>

@@ -1,6 +1,30 @@
-.slides_container div {
+.slide {
 	display:block;
+  width: 588px;  
+  height: 288px;
 }
 .slides_container {
 	display:none;
 }    
+.slide div{
+	float: left;
+	padding: 0 17px 9px 0;
+	height: 131px;
+	width: 250px;
+}
+.prev {
+	background-image: url(../images/array_left.png);
+	height: 42px;
+	width: 33px;
+	position: absolute;
+	left: 7px;
+	top: 130px;
+}
+.next {
+	background-image: url(../images/array_right.png);
+	height: 42px;
+	width: 33px;
+	position: absolute;
+	right: 10px;
+	top: 130px;
+}

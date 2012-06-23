@@ -387,28 +387,7 @@ font-size: 16px;
 	width: 558px;
 	padding: 20px 0 0 75px;
 }
-#array_left {
-	background-image: url(../images/array_left.png);
-	height: 42px;
-	width: 33px;
-	position: absolute;
-	left: 7px;
-	top: 130px;
-}
-#array_right {
-	background-image: url(../images/array_right.png);
-	height: 42px;
-	width: 33px;
-	position: absolute;
-	right: 10px;
-	top: 130px;
-}
-#slide1, #slide2, #slide3, #slide4 {
-	float: left;
-	padding: 0 17px 9px 0;
-	height: 131px;
-	width: 250px;
-}
+
 /*--bottom...........................................................................*/
 #bottom {
 	padding-left: 100px;

@@ -31,36 +31,25 @@
   <div id="slides">
     <a id="array_left" href="#"class="prev"></a>
     <a id="array_right" href="#" class="next"></a>
-<!-- banner 3 -->
     <div id="slides_container" class="slides_container">
-      <div class="slide">
-        <div id="slide1" style="">
-          <img width="232" height="119" src="images/slide1.png">
+    <% i = 0 %>
+    <% Refinery::Banners::Banner.where(:banner_type => 3).each do |b|  %>
+      <% i = i + 1 %>
+      <% if (i % 4 == 1) then   %>
+        <div class='slide'>
+      <% end%>
+          <div>
+            <%= link_to (image_fu b.image), b.url  %>
+          </div>
+      <% if (i % 4 == 0)  then %>
         </div>
-        <div id="slide2">
-          <img width="233" height="119" src="images/slide2.png">
+      <% end %>
+      
+    <% end %>
+      <% if (i % 4 != 0)  then %>
         </div>
-        <div id="slide3">
-          <img width="232" height="131" src="images/slide3.png">
-        </div>
-        <div id="slide4">
-          <img width="232" height="131" src="images/slide4.png">
-        </div>    
-      </div>
-      <div class="slide">
-        <div id="slide1" style="">
-          <img width="232" height="119" src="images/slide1.png">
-        </div>
-        <div id="slide2">
-          <img width="233" height="119" src="images/slide2.png">
-        </div>
-        <div id="slide3">
-          <img width="232" height="131" src="images/slide3.png">
-        </div>
-        <div id="slide4">
-          <img width="232" height="131" src="images/slide4.png">
-        </div>
-      </div>
+      <% end %>
+
     </div>
   </div>
 </div>

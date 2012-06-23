@@ -7,20 +7,23 @@ $(document).ready(function(){
 	});
 
 	$('.close_R').click(function(){
-		close_box();
+		close_box_R();
 	});
 
 	$('.backdrop_R').click(function(){
-		close_box();
+		close_box_R();
 	});
 
 });
 
-function close_box()
+function close_box_R()
 {
-	$('.backdrop_R, .box_R').animate({'opacity':'0'}, 300, 'linear', function(){
+//	$('.backdrop_R, .box_R').animate({'opacity':'0'}, 300, 'linear', function(){
+//		$('.backdrop_R, .box_R').css('display', 'none');
+//	});
+		$('.backdrop_R, .box_R').animate({'opacity':'0'}, 300, 'linear');
+		$('.box_R').animate({'opacity':'0'}, 300, 'linear');
 		$('.backdrop_R, .box_R').css('display', 'none');
-	});
 }
 
 $(document).ready(function(){
@@ -32,20 +35,23 @@ $(document).ready(function(){
 	});
 
 	$('.close_S').click(function(){
-		close_box();
+		close_box_S();
 	});
 
 	$('.backdrop_S').click(function(){
-		close_box();
+		close_box_S();
 	});
 
 });
 
-function close_box()
+function close_box_S()
 {
-	$('.backdrop_S, .box_S').animate({'opacity':'0'}, 300, 'linear', function(){
+//	$('.backdrop_S, .box_S').animate({'opacity':'0'}, 300, 'linear', function(){
+//		$('.backdrop_S, .box_S').css('display', 'none');
+//	}); 
+		$('.backdrop_S, .box_S').animate({'opacity':'0'}, 300, 'linear');
+		$('.box_S').animate({'opacity':'0'}, 300, 'linear');
 		$('.backdrop_S, .box_S').css('display', 'none');
-	});
 }
 
 

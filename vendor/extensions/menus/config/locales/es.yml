@@ -25,5 +25,5 @@ es:
   activerecord:
     attributes:
       'refinery/menus/menu':
-        type: Type
+        menu_type: Type
         url: Url

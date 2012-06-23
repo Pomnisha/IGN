@@ -13,7 +13,7 @@ module Refinery
           plugin.pathname = root
           plugin.activity = {
             :class_name => :'refinery/menus/menu',
-            :title => 'type'
+            :title => 'menu_type'
           }
           
         end

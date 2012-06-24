@@ -71,12 +71,12 @@
 	color: #FFF;
 	background-image: url(../images/running_line_bg.png);
 	background-repeat: repeat-y;
-	text-align: center;
 	height: 30px;
 }
 
 #mvDiv 
 {
+  left: 670px;
 	position: relative;
 	display: inline-block;
 }

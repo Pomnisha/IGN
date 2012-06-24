@@ -27,7 +27,7 @@
 </div>
 <div id="running_line">
   <div id="mvDiv">
-    <p id="mvDivP">
+    <p id="mvDivP" style="padding:0px;">
       <% Refinery::Banners::Banner.where(:banner_type => 5).each do |b| %>  
         <%= link_to b.name, b.url  %>
       <% end %>

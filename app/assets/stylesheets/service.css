@@ -341,3 +341,86 @@ ul#left_menu_body li a {
 	text-decoration: none;
 	font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+
+
+#form_top {
+	margin: 0 auto;
+	background-image: url(../images/form_top.png);
+	height: 9px;
+	width: 640px;	
+}
+
+#company{
+	margin: 0 auto;
+	background: url(../images/form_bg.png) repeat-y;
+	width: 640px;	
+}
+
+#company .button {
+margin-left: 220px;
+margin-top: 20px;
+	background: url(../images/button.png) no-repeat;
+	width: 212 px;
+	height: 39px;
+	padding-bottom: 20px;
+	}
+
+#company .field {
+padding-top: 10px;
+float: left;
+}
+
+#company label {
+color: #000;
+float: left;
+font-size: 14px;
+font-weight: bold;
+padding-left: 20px;
+padding-top: 10px;
+padding-right: 20px;
+}
+
+#company .short {
+background: url(../images/short.png) ;
+	height: 107px;
+	width: 454px;	
+	float: left;
+	}
+	
+#company .full {
+background: url(../images/full.png) ;
+	height: 258px;
+	width: 451px;	
+	float: left;
+	}
+	
+#shop .cat {
+background: url(../images/cat.png) ;
+	height: 34px;
+	width: 314px;	
+	float: left;
+	}
+	
+#company .vip {
+background: url(../images/vip.png) ;
+	height: 35px;
+	width: 145px;	
+	float: left;
+	}
+
+#company .punkt {
+background: url(../images/punkt.png) ;
+	height: 35px;
+	width: 353px;	
+	float: left;
+	}
+
+#form_bottom {
+	margin: 0 auto;
+	background-image: url(../images/form_bottom.png);
+	height: 9px;
+	width: 640px;	
+}

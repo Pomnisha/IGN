@@ -425,3 +425,88 @@ html ul#left_menu_body li ul.subnav li a:hover { /*--Hover effect for subnav lin
 	position: relative;
 	top: 30px;
 }
+
+
+
+
+#form_top {
+	margin: 0 auto;
+	background-image: url(../images/form_top.png);
+	height: 9px;
+	width: 640px;	
+}
+
+#shop{
+	margin: 0 auto;
+	background: url(../images/form_bg.png) repeat-y;
+	width: 640px;	
+}
+
+#shop .button {
+margin-left: 220px;
+margin-top: 20px;
+	background: url(../images/button.png) no-repeat;
+	width: 212 px;
+	height: 39px;
+	padding-bottom: 20px;
+	}
+
+#shop .field {
+padding-top: 10px;
+float: left;
+}
+
+#shop label {
+color: #000;
+float: left;
+font-size: 14px;
+font-weight: bold;
+padding-left: 20px;
+padding-top: 10px;
+padding-right: 20px;
+}
+
+#shop .short {
+background: url(../images/short.png) ;
+	height: 107px;
+	width: 454px;	
+	float: left;
+	}
+	
+#shop .full {
+background: url(../images/full.png) ;
+	height: 258px;
+	width: 451px;	
+	float: left;
+	}
+	
+#shop .cat {
+background: url(../images/cat.png) ;
+	height: 34px;
+	width: 314px;	
+	float: left;
+	}
+	
+#shop .vip {
+background: url(../images/vip.png) ;
+	height: 35px;
+	width: 145px;	
+	float: left;
+	}
+
+#shop .punkt {
+background: url(../images/punkt.png) ;
+	height: 35px;
+	width: 353px;	
+	float: left;
+	}
+
+#form_bottom {
+	margin: 0 auto;
+	background-image: url(../images/form_bottom.png);
+	height: 9px;
+	width: 640px;	
+}
+
+
+

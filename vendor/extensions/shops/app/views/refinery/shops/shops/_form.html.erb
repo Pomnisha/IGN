@@ -1,43 +1,46 @@
-<%= form_for [refinery, :shops, @shop], :html => { :multipart => true } do |f| -%>
+<h1>РЕГИСТРАЦИЯ ИНТЕРНЕТ-МАГАЗИНА</h1>
+<div id="form_top"> </div>
+
+<%= form_for [refinery, :shops, @shop], :html => { :multipart => true, :id => "shop" } do |f| -%>
   <%= render '/refinery/shops/error_messages',
               :object => @shop,
               :include_object_name => true %>
   
   <div class='field'>
     <%= f.label :url, "Адрес сайта" -%>
-    <%= f.text_field :url  -%>
+    <%= f.text_field :url, :class => "punkt"  -%>
   </div>
   <div class='field'>
     <%= f.label :name , "Название магазина"-%>
-    <%= f.text_field :name  -%>
+    <%= f.text_field :name, :class => "punkt"   -%>
   </div>
   <div class='field'>
-    <%= f.label :short_description , "Краткое описание"-%>
-    <%= f.text_area :short_description  -%>
+    <%= f.label :short_description , "Краткое описание" -%>
+    <%= f.text_area :short_description, :class => "short" -%>
   </div>
    <div class='field'>
     <%= f.label :description , "Описание"-%>
-    <%= f.text_area :description  -%>
+    <%= f.text_area :description, :class => "full" -%>
   </div> 
    <div class='field'>
     <%= f.label :working_time , "Время работы"-%>
-    <%= f.text_area :working_time  -%>
+    <%= f.text_area :working_time, :class => "short" -%>
   </div> 
   <div class='field'>
     <%= f.label :subcategory_id , "Категория"-%>
-    <%= f.select :subcategory_id, Refinery::Subcategories::Subcategory.all.collect {|p| [" #{p.name} [#{Refinery::Categories::Category.find(p.category_id).name}]", p.id ]} -%>
+    <%= f.select :subcategory_id, Refinery::Subcategories::Subcategory.all.collect {|p| [" #{p.name} [#{Refinery::Categories::Category.find(p.category_id).name}]", p.id ]}, :class => "cat" -%>
   </div>
   <div class='field'>
     <%= f.label :city , "Город"-%>
-    <%= f.text_field :city  -%>
+    <%= f.text_field :city, :class => "punkt"  -%>
   </div>
   <div class='field'>
     <%= f.label :phone , "Контактные телефоны"-%>
-    <%= f.text_field :phone  -%>
+    <%= f.text_field :phone, :class => "punkt"  -%>
   </div>
   <div class='field'>
     <%= f.label :e_mail , "Электронный адрес"-%>
-    <%= f.text_field :e_mail  -%>
+    <%= f.email_field :e_mail, :class => "punkt"  -%>
   </div>
   <div class='field'> 
     <%= f.label :logo , "Логотип"-%>
@@ -49,6 +52,8 @@
              :delete_title => t('delete', :scope => 'refinery.shops.shop'),
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @shop.url) %>
 <% end -%>
+
+<div id="form_bottom"> </div>
   <%= render "refinery/slider2" %>
 
 <% content_for :javascripts do %>
@@ -58,3 +63,4 @@
     });
   </script>
 <% end %>
+

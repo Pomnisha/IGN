@@ -19,12 +19,30 @@ $(function(){
   });
 });
 
+      
+$(document).ready(function() {
 
-$(function(){
-  $('#running_line').crawlLine({
-    speed:2,
-    crawElement:'div', // для примера div.move
-    textElement:'p',
-    hoverClass:'viewText'
-  });
+var textStrLength = $('#mvDivP').width();
+var startPoint = $('#running_line').width();
+
+function crawlline () {
+  $('#mvDiv').css({left: startPoint + 1})
+	$('#mvDiv').animate({
+		left: 0 - textStrLength
+	},  (startPoint + 2 * textStrLength) * 10, 'linear', function () { 
+		crawlline();
+	}
+	)};
+	
+crawlline();
+	
+	$('#mvDiv').hover(
+		function () {
+			$(this).stop();
+		},
+		function () {
+			crawlline();
+		} 
+	)
+	
 });

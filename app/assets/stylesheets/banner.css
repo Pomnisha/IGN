@@ -64,6 +64,7 @@
 
 #running_line {
   overflow:hidden;  
+	white-space: nowrap;  
 	padding-top: 3px;
 	margin-bottom: 25px;
 	font-size: 18px;
@@ -73,7 +74,17 @@
 	text-align: center;
 	height: 30px;
 }
-#running_line div.move {
-    overflow:hidden;
-    width:99999px;
+
+#mvDiv 
+{
+	position: relative;
+	display: inline-block;
 }
+#mvDivP
+{
+  padding:0px;
+	position: relative;
+}
+
+
+

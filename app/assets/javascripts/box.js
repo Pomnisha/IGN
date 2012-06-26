@@ -14,17 +14,6 @@ $(document).ready(function(){
 		close_box_R();
 	});
 
-});
-
-function close_box_R()
-{
-		$('.backdrop_R, .box_R').animate({'opacity':'0'}, 300, 'linear');
-		$('.box_R').animate({'opacity':'0'}, 300, 'linear');
-		$('.backdrop_R, .box_R').css('display', 'none');
-}
-
-$(document).ready(function(){
-
 	$('.lightbox_S').click(function(){
 		$('.backdrop_S, .box_S').animate({'opacity':'.50'}, 300, 'linear');
 		$('.box_S').animate({'opacity':'1.00'}, 300, 'linear');
@@ -38,8 +27,16 @@ $(document).ready(function(){
 	$('.backdrop_S').click(function(){
 		close_box_S();
 	});
-
+  
 });
+
+function close_box_R()
+{
+		$('.backdrop_R, .box_R').animate({'opacity':'0'}, 300, 'linear');
+		$('.box_R').animate({'opacity':'0'}, 300, 'linear');
+		$('.backdrop_R, .box_R').css('display', 'none');
+}
+
 
 function close_box_S()
 {
@@ -50,31 +47,22 @@ function close_box_S()
 
 
 $(document).ready(function(){
-  var options1= { 
-  	target: "#reg_f",
-    success: showResponse1,
-    timeout: 3000
-  };
-  
-  var options2= { 
-  	target: "#log_f",
-    success: showResponse2,
-    timeout: 3000
-  };
-  $('#reg_f').submit(function() { 
-    $(this).ajaxSubmit(options1); 
-    return false;
-  }); 
-  
-  $('#log_f').submit(function() { 
-    $(this).ajaxSubmit(options2); 
-    return false;
-  }); 
+    $('#log_iframe').load(function(){
+      w = $(this).contents().find('body').width();
+      h = $(this).contents().find('body').height();
+      alert(w); alert(h);
+      $('.box_S').animate({'width': w}, 150, 'linear');
+      $('.box_S').animate({'height': h}, 150, 'linear');
+    });
 });
 
-function showResponse1(responseText, statusText)  { 
-	$('#reg_f').html(responseText);
-}
-function showResponse2(responseText, statusText)  { 
-	$('#log_f').html(responseText);
-}
+$(document).ready(function(){
+    $('#reg_iframe').load(function(){
+      w = $(this).contents().find('body').width();
+      h = $(this).contents().find('body').height();
+      alert(w); alert(h);
+      $('.box_R').animate({'width': w}, 150, 'linear');
+      $('.box_R').animate({'height': h}, 150, 'linear');
+    });
+});
+

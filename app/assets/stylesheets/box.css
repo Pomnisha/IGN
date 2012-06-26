@@ -37,14 +37,16 @@
 			float:right;
 			margin-right:6px;
 			cursor:pointer;
+      color: black;
 		}
 .fancybox-iframe
     {
+    background: white;
     border: 0 none;
     display: block;
     height: 100%;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     vertical-align: top;
     width: 100%;
     outline: 0 none;

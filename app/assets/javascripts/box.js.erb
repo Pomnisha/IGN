@@ -14,17 +14,6 @@ $(document).ready(function(){
 		close_box_R();
 	});
 
-});
-
-function close_box_R()
-{
-		$('.backdrop_R, .box_R').animate({'opacity':'0'}, 300, 'linear');
-		$('.box_R').animate({'opacity':'0'}, 300, 'linear');
-		$('.backdrop_R, .box_R').css('display', 'none');
-}
-
-$(document).ready(function(){
-
 	$('.lightbox_S').click(function(){
 		$('.backdrop_S, .box_S').animate({'opacity':'.50'}, 300, 'linear');
 		$('.box_S').animate({'opacity':'1.00'}, 300, 'linear');
@@ -38,8 +27,16 @@ $(document).ready(function(){
 	$('.backdrop_S').click(function(){
 		close_box_S();
 	});
-
+  
 });
+
+function close_box_R()
+{
+		$('.backdrop_R, .box_R').animate({'opacity':'0'}, 300, 'linear');
+		$('.box_R').animate({'opacity':'0'}, 300, 'linear');
+		$('.backdrop_R, .box_R').css('display', 'none');
+}
+
 
 function close_box_S()
 {
@@ -49,32 +46,31 @@ function close_box_S()
 }
 
 
+function changeFrameSize (a, b){
+    var url = window.location.host;
+    if (a.contents().find('#success').length != 0) {
+          window.location = url + '/';
+      } else {
+        w = a.contents().find('html').outerWidth();
+        h = a.contents().find('html').outerHeight();
+        a.contents().find('body').css({'background': 'white'});
+        a.css({'width': w + 50, 'height': h + 50});
+        b.animate({'width': w + 50}, 150, 'linear');
+        b.animate({'height': h + 60}, 150, 'linear');      
+      }
+}
+
+
+
 $(document).ready(function(){
-  var options1= { 
-  	target: "#reg_f",
-    success: showResponse1,
-    timeout: 3000
-  };
-  
-  var options2= { 
-  	target: "#log_f",
-    success: showResponse2,
-    timeout: 3000
-  };
-  $('#reg_f').submit(function() { 
-    $(this).ajaxSubmit(options1); 
-    return false;
-  }); 
-  
-  $('#log_f').submit(function() { 
-    $(this).ajaxSubmit(options2); 
-    return false;
-  }); 
+    $('#log_iframe').load(function(){
+      changeFrameSize($(this), $('.box_S'));
+    });
 });
 
-function showResponse1(responseText, statusText)  { 
-	$('#reg_f').html(responseText);
-}
-function showResponse2(responseText, statusText)  { 
-	$('#log_f').html(responseText);
-}
+$(document).ready(function(){
+    $('#reg_iframe').load(function(){
+      changeFrameSize($(this), $('.box_R'));
+    });
+});
+

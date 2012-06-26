@@ -20,6 +20,7 @@ module Refinery
         flash[:message] = "<h2>#{t('welcome', :scope => 'refinery.users.create', :who => @user.username).gsub(/\.$/, '')}.</h2>".html_safe
 
         sign_in(@user)
+#        render :partial => 'new'
         redirect_back_or_default(refinery.root_path)
 #        redirect_back_or_default(refinery.admin_root_path)
       else

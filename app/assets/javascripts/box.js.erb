@@ -46,23 +46,31 @@ function close_box_S()
 }
 
 
+function changeFrameSize (a, b){
+    var url = window.location.host;
+    if (a.contents().find('#success').length != 0) {
+          window.location = url + '/';
+      } else {
+        w = a.contents().find('html').outerWidth();
+        h = a.contents().find('html').outerHeight();
+        a.contents().find('body').css({'background': 'white'});
+        a.css({'width': w + 50, 'height': h + 50});
+        b.animate({'width': w + 50}, 150, 'linear');
+        b.animate({'height': h + 60}, 150, 'linear');      
+      }
+}
+
+
+
 $(document).ready(function(){
     $('#log_iframe').load(function(){
-      w = $(this).contents().find('body').width();
-      h = $(this).contents().find('body').height();
-      alert(w); alert(h);
-      $('.box_S').animate({'width': w}, 150, 'linear');
-      $('.box_S').animate({'height': h}, 150, 'linear');
+      changeFrameSize($(this), $('.box_S'));
     });
 });
 
 $(document).ready(function(){
     $('#reg_iframe').load(function(){
-      w = $(this).contents().find('body').width();
-      h = $(this).contents().find('body').height();
-      alert(w); alert(h);
-      $('.box_R').animate({'width': w}, 150, 'linear');
-      $('.box_R').animate({'height': h}, 150, 'linear');
+      changeFrameSize($(this), $('.box_R'));
     });
 });
 

@@ -3,7 +3,7 @@
 	<div class="clear"></div>
   <ul>
     <% Refinery::Menus::Menu.where(:menu_type => 1).each do |m| %>  
-      <li><%= m.name %></li>
+      <li><%= m.name.html_safe %></li>
       <!--li><%= link_to m.name, m.url  %></li-->      
     <% end %>
   </ul>
@@ -13,7 +13,7 @@
   <div class="clear"></div>
   <ul>
     <% Refinery::Menus::Menu.where(:menu_type => 2).each do |m| %>  
-      <li><%= m.name %></li>
+      <li><%= m.name.html_safe %></li>
       <!--li><%= link_to m.name, m.url  %></li-->      
     <% end %>
   </ul>	
@@ -23,7 +23,7 @@
   <div class="clear"></div>
   <ul>
     <% Refinery::Menus::Menu.where(:menu_type => 3).each do |m| %>  
-      <li><%= m.name %></li>
+      <li><%= m.name.html_safe %></li>
       <!--li><%= link_to m.name, m.url  %></li-->      
     <% end %>
   </ul>
@@ -33,7 +33,7 @@
   <div class="clear"></div>
   <ul>
     <% Refinery::Menus::Menu.where(:menu_type => 4).each do |m| %>  
-      <li><%= m.name %></li>
+      <li><%= m.name.html_safe %></li>
       <!--li><%= link_to m.name, m.url  %></li-->      
     <% end %>
   </ul>

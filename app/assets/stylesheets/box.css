@@ -18,11 +18,11 @@
 			position:absolute;
 			top:20%;
 			left:30%;
-			width:700px;
-			height:350px;
+			width:730px;
+			height:730px;
 			background:#ffffff;
 			z-index:51;
-			padding:10px;
+			padding:5px;
 			-webkit-border-radius: 5px;
 			-moz-border-radius: 5px;
 			border-radius: 5px;
@@ -35,7 +35,6 @@
 .close_S, .close_R
 		{
 			float:right;
-			margin-right:6px;
 			cursor:pointer;
       color: black;
 		}
@@ -44,10 +43,10 @@
     background: white;
     border: 0 none;
     display: block;
-    height: 100%;
-    margin: 0px;
+    height: 95%;
+    margin: auto;
     padding: 0px;
     vertical-align: top;
-    width: 100%;
+    width: 95%;
     outline: 0 none;
     }

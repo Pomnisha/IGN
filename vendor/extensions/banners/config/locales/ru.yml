@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      banners:
+        title: Баннеры
+    banners:
+      admin:
+        banners:
+          actions:
+            create_new: Добавить новый баннер
+            reorder: Сортировать беннеры
+            reorder_done: Сохранить сортировку баннеров
+          records:
+            title: Баннеры
+            sorry_no_results: Ни одного результата не найдено.
+            no_items_yet: Вы еще не имеете ни одного баннера. Нажмите на "Добавить новый баннер" и добавьте первый баннер.
+          banner:
+            view_live_html: View this banner live <br/><em>(opens in a new window)</em>
+            edit: Редактировать баннер
+            delete: Удалить баннер
+      banners:
+        show:
+          other: Другие баннеры
+  activerecord:
+    attributes:
+      'refinery/banners/banner':
+        banner_type: Тип
+        url: Ссылка
+        image: Картинка

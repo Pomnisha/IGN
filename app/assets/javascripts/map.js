@@ -52,8 +52,5 @@ myMap.controls.add("mapTools")
 myMap.geoObjects.add(myPlacemark);
 
 
-
-
-
 });
 

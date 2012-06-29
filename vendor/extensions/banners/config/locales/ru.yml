@@ -8,7 +8,7 @@ en:
         banners:
           actions:
             create_new: Добавить новый баннер
-            reorder: Сортировать беннеры
+            reorder: Сортировать баннеры
             reorder_done: Сохранить сортировку баннеров
           records:
             title: Баннеры

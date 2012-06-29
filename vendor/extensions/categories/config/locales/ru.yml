@@ -1,0 +1,28 @@
+en:
+  refinery:
+    plugins:
+      categories:
+        title: Категории
+    categories:
+      admin:
+        categories:
+          actions:
+            create_new: Добавить новую категорию
+            reorder: Сортировать категории
+            reorder_done: Сохранить сортировку категорий
+          records:
+            title: Категории
+            sorry_no_results: Результатов не найдено
+            no_items_yet: У вас еще нет категорий. Нажмите "Добавить новую категорию" чтобы добавить первую категорию.
+          category:
+            view_live_html: View this category live <br/><em>(opens in a new window)</em>
+            edit: Редактировать категорию
+            delete: Удалить категорию
+      categories:
+        show:
+          other: Другие категории
+  activerecord:
+    attributes:
+      'refinery/categories/category':
+        id: Id
+        name: Название

@@ -1,0 +1,38 @@
+en:
+  refinery:
+    plugins:
+      shops:
+        title: Магазины
+    shops:
+      admin:
+        shops:
+          actions:
+            create_new: Добавить новый магазин
+            reorder: Сортировать Магазины
+            reorder_done: Сохранить сортировку магазинов
+          records:
+            title: Мазагины
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Shops yet. Click "Add New Shop" to add your first shop.
+          shop:
+            view_live_html: View this shop live <br/><em>(opens in a new window)</em>
+            edit: Редактировать магазин
+            delete: Удалить магазин
+      shops:
+        show:
+          other: Другие магазины
+  activerecord:
+    attributes:
+      'refinery/shops/shop':
+        url: Url
+        name: Название
+        short_description: Краткое описание
+        description: Описание
+        subcategory_id: Категория
+        city: Город
+        phone: Телефон
+        working_time: Рабочее время
+        e_mail: E-Mail
+        logo: Logo
+        vip_code: Vip Code
+        user_id: User

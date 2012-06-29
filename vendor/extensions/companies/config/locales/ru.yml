@@ -1,0 +1,40 @@
+en:
+  refinery:
+    plugins:
+      companies:
+        title: Компании
+    companies:
+      admin:
+        companies:
+          actions:
+            create_new: Добавить новую компанию
+            reorder: Сортировать компании
+            reorder_done: Сохранить сортировку компаний
+          records:
+            title: Компании
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Companies yet. Click "Add New Company" to add your first company.
+          company:
+            view_live_html: View this company live <br/><em>(opens in a new window)</em>
+            edit: Редактировать компанию
+            delete: Удалить компанию
+      companies:
+        show:
+          other: Другие компании
+  activerecord:
+    attributes:
+      'refinery/companies/company':
+        url: Url
+        name: Название
+        short_description: Краткое описание
+        description: Описание
+        service_id: Предоставляемая услуга
+        city: Город
+        phone: Телефон
+        working_time: Рабочее время
+        e_mail: E Mail
+        logo: Logo
+        map_latitude: Map Latitude
+        map_longtitude: Map Longtitude
+        address: Адрес
+        user_id: User

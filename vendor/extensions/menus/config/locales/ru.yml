@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      menus:
+        title: Меню
+    menus:
+      admin:
+        menus:
+          actions:
+            create_new: Добавить новое меню
+            reorder: Сортировать меню
+            reorder_done: Сохранить сортировку меню
+          records:
+            title: Меню
+            sorry_no_results: Не найдено результатов
+            no_items_yet: У Вас еще нет ни одного меню. Нажмите "Добавить меню" чтобы создать первое меню.
+          menu:
+            view_live_html: View this menu live <br/><em>(opens in a new window)</em>
+            edit: Редактировать пункт меню
+            delete: Удалить пункт меню
+      menus:
+        show:
+          other: Другие пункты меню
+  activerecord:
+    attributes:
+      'refinery/menus/menu':
+        menu_type: Тип
+        url: Ссылка
+        name: Заголовок

@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      subcategories:
+        title: Категории
+    subcategories:
+      admin:
+        subcategories:
+          actions:
+            create_new: Добавить новую подкатегорию
+            reorder: Сортировать подкатегории
+            reorder_done: Сохранить сортировку подкатегорий
+          records:
+            title: Подкатегории
+            sorry_no_results: Результатов не найдено
+            no_items_yet: У вас еще нет подкатегорий. Нажмите "Добавить новую подкатегорию" чтобы добавить первую подкатегорию.
+          category:
+            view_live_html: View this category live <br/><em>(opens in a new window)</em>
+            edit: Редактировать подкатегорию
+            delete: Удалить подкатегорию
+      subcategories:
+        show:
+          other: Другие подкатегории
+  activerecord:
+    attributes:
+      'refinery/subcategories/subcategory':
+        id: Id
+        name: Название
+        category_id: Категория

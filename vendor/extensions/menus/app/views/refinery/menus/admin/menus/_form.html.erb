@@ -9,13 +9,7 @@
     <%= f.select :menu_type, (1..4).collect {|n| ["Тип #{n}", n]}   -%>
 
   </div>
-    
   <div class='field'>
-    <%= f.label :name -%>
-    <%= f.text_field :name  -%>
-
-  </div>  
-    <div class='field'>
     <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
       <ul id='page_parts'>
         <% [:name].each_with_index do |part, part_index| %>

@@ -1,4 +1,7 @@
-<%= form_for [refinery, :companies, @company] do |f| -%>
+<h1>РЕГИСТРАЦИЯ ИНТЕРНЕТ-МАГАЗИНА</h1>
+<div id="form_top"> </div>
+
+<%= form_for [refinery, :companies, @company], :html => { :multipart => true, :id => "company" } do |f| -%>
   <%= render '/refinery/companies/error_messages',
               :object => @company,
               :include_object_name => true %>
@@ -73,7 +76,9 @@
     <%= f.text_field :address  -%>
   </div>
   
-  
+  <div id="YMapsID" class="field">
+    
+</div>  
   
   <%= render '/refinery/companies/form_actions', :f => f,
              :continue_editing => false,

@@ -1,7 +1,36 @@
-<%# content_for :header, t('there_are_no_users', :scope => 'refinery.welcome') %>
-<div id = "reg_f">
-<p>Поздравляем. Регистрация прошла успешно.</p>
-<a href="<%= refinery.root_path %>">Перейти к каталогу магазинов</a>
-<a href="<%= refinery.new_shops_shop_url %>">Добавить свой магазин</a>
-<div id="success" style="display: none;"></div>
-</div>
+
+<div id="Reg"> Добро пожаловать в наш прекрастный каталог магазинов. Зарегистрируйтесь, пожалуйста.</div>
+
+<%= form_for :user, :html => {:id => 'regform'}, :url => refinery.refinery_user_registration_path do |f| -%>
+
+  <%= render '/refinery/admin/error_messages', :object => @user, :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label "Имя пользователя:" %>
+    <%= f.text_field :username, :class => 'larger widest' %>
+  </div>
+  <div class='field'>
+    <%= f.label "Элетронная почта:" %>
+    <%= f.text_field :email, :class => 'larger widest' %>
+  </div>
+  <div class='field'>
+    <%= f.label "Пароль:" %>
+    <%= f.password_field :password, :class => 'larger widest' %>
+  </div>
+  <div class='field'>
+    <%= f.label "Подтверждение пароля:" %>
+    <%= f.password_field :password_confirmation, :class => 'larger widest' %>
+  </div>
+
+  <div class='clearfix'>
+    <div class='field forgot_password'>
+      <%= link_to "Я уже зарегистрированный позьлователь", refinery.new_refinery_user_session_path %>
+    </div>  
+  </div>
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :submit_button_id => "reg_submit",
+             :submit_continue => false,
+             :submit_button_text => 'Зарегистрироваться',
+             :hide_delete => true,
+             :hide_cancel => true %>
+<% end -%>

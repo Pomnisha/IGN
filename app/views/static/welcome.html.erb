@@ -73,11 +73,14 @@
 <div class="backdrop_R"></div>
 <div class="box_R">
 	<div class="close_R">x</div>
+  <!--div id = "reg_f"> <%= render "refinery/users/new" %> </div-->
   <iframe scrolling="auto" id="reg_iframe" frameborder="0" hspace="0" class="fancybox-iframe" src="<%= refinery.new_refinery_user_registration_url %>"></iframe>  
 </div>
 
 <div class="backdrop_S"></div>
 <div class="box_S">
 	<div class="close_S">x</div>
+  <!--div id="log_f_none" style="display :none"></div-->
+  <!--div id="log_f"><%= render "refinery/sessions/new" %></div-->
   <iframe scrolling="auto" id="log_iframe" frameborder="0" hspace="0" class="fancybox-iframe" src="<%= refinery.new_refinery_user_session_url %>"></iframe>  
 </div>

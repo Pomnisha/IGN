@@ -32,6 +32,7 @@ end
 gem 'jquery-rails'
 gem 'therubyracer'
 gem 'will_paginate', '~> 3.0'
+gem 'haml'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -1,30 +1,33 @@
-<% content_for :header, t('.hello_please_sign_in') %>
+<div id="log"> 
+<% content_for :header, "Введите логин и пароль" %>
 
-<%= form_for resource, :as => resource_name,
+<%= form_for resource, :as => resource_name, :html => {:id => 'logform'},
                        :url => refinery.refinery_user_session_path do |f| %>
   <div class='field session_username clearfix'>
-    <%= f.label :login %>
-    <%= f.text_field :login, :class => 'larger widest' %>
+    <%= f.label :login, "Логин" %>
+    <%= f.text_field :login %>
   </div>
   <div class='field session_password clearfix'>
-    <%= f.label :password %>
-    <%= f.password_field :password, :autocomplete => 'off', :class => 'larger widest' %>
+    <%= f.label :password, "Пароль" %>
+    <%= f.password_field :password, :autocomplete => 'off' %>
   </div>
   <div class='clearfix'>
     <% if devise_mapping.rememberable? %>
       <div class='field remember_me'>
         <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+        <%= f.label :remember_me, "Запомнить" %>
       </div>
     <% end %>
     <div class='field forgot_password'>
-      <%= link_to t('.forgot_password'), refinery.new_refinery_user_password_path %>
+      <%= link_to "Забыл пароль", refinery.new_refinery_user_password_path %>
     </div>
     <div class='field forgot_password'>
       <%= link_to "Зарегистрироваться", refinery.new_refinery_user_registration_path %>
     </div>    
   </div>
   <%= render '/refinery/admin/form_actions', :f => f,
-             :submit_button_text => t('.sign_in'),
+             :submit_button_text => "Войти",
+            :submit_button_id => "log_submit",
              :hide_cancel => true %>
 <% end -%>
+</div>

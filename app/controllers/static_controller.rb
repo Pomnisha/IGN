@@ -1,9 +1,8 @@
 class StaticController < ApplicationController
-  #  def welcome
-  #    render :layout => 'static'
-  #  end
   layout 'static'
+  helper Refinery::Core::Engine.helpers
   
   def welcome
+    @user = Refinery::User.new
   end
 end

@@ -16,16 +16,20 @@ module Refinery
     def create
       @user = User.new(params[:user])
       @user.add_role("Member")
+    
       if @user.save
         flash[:message] = "<h2>#{t('welcome', :scope => 'refinery.users.create', :who => @user.username).gsub(/\.$/, '')}.</h2>".html_safe
 
         sign_in(@user)
-        render :partial => 'new'
-#        redirect_back_or_default(refinery.root_path)
+#        render :partial => 'success'
+        redirect_back_or_default(refinery.root_path)
 #        redirect_back_or_default(refinery.admin_root_path)
       else
-        render :new
+#        render :partial => 'new'
+        render 'new'
+        
       end
+
     end
 
     protected

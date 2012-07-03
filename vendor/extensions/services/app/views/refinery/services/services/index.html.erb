@@ -1,6 +1,8 @@
 <div id="content_banners">
   <%- Refinery::Services::Service.all.each do |s| %>
-    <div class="banner_service"><%= image_fu s.logo, '204x93' %></div>
+    <%- if !s.logo.nil? then%>
+    <div class="banner_service"><%= link_to (image_fu s.logo, '204x93'), refinery.services_service_path(s.id)  %></div>
+    <%- end %>
   <%- end %>
 </div>
 <div id="categoryes_body">
@@ -11,7 +13,7 @@
       <%= image_fu c.logo, '73x88#' unless c.logo.nil?%>
     </div>
     <div class="category_text">
-      <h2><%= link_to "#{c.name} - #{c.short_description}", refinery.companies_company_path(c.id)  %></h2>
+      <h2><%= link_to "#{c.name.html_safe} - #{c.short_description.html_safe}", refinery.companies_company_path(c.id)  %></h2>
       <p><%= c.description.html_safe %></p> 
     </div>
   </div>

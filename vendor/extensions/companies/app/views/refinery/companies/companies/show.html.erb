@@ -2,13 +2,13 @@
   <h1><%= Refinery::Services::Service.find(@company.service_id).name -%></h1>
   <div class="onshop">
     <a class="shop_url" href="#"><%= @company.url -%></a>        
-    <h2><%= @company.short_description.html_safe -%></h2>
+    <h2><a href="<%= refinery.companies_company_url(@company.id) %>"><%= @company.short_description.html_safe -%></a></h2>
     <%= @company.description.html_safe -%>
     <div class="contacts">
       Телефон: <%= @company.phone.html_safe -%>  <br />
       E-mail: <%= @company.e_mail  -%><br />
       Режим работы: <%= @company.working_time.html_safe -%></div>
-    <div class="map"></div>
+    <!--div class="map"></div-->
   </div>
 </div>
   <%= render "refinery/slider2" %>

@@ -5,18 +5,19 @@
 
   
   <div class='field'>
-    <%= f.label :url -%>
-    <%= f.text_field :url, :class => 'larger widest'  -%>
-  </div>
-  
-  <div class='field'>
 
-    <%= f.label :name -%>
-    <%= f.text_field :name  -%>
+    <%= f.label :name, "Название" -%>
+    <%= f.text_field :name, :class => 'larger widest'  -%>
+  </div>
+ <div class='field'>
+    <%= f.label :url, "Ссылка" -%>
+    <%= f.text_field :url  -%>
   </div>
   
+
+  
   <div class='field'>
-    <%= f.label :short_description -%>
+    <%= f.label :short_description, "Краткое описание" -%>
     <%= f.text_field :short_description  -%>
   </div>
   
@@ -42,23 +43,23 @@
   </div>
   
   <div class='field'>
-    <%= f.label :service_id -%>
+    <%= f.label :service_id , "Предоставляемая услуга"-%>
     <%= f.select :service_id , Refinery::Services::Service.all.collect {|p| [p.name, p.id ]} -%>
   </div>
   
   <div class='field'>
-    <%= f.label :city -%>
+    <%= f.label :city, "Город"-%>
     <%= f.text_field :city  -%>
   </div>
   
   <div class='field'>
-    <%= f.label :phone -%>
+    <%= f.label :phone, "Контактные телефоны" -%>
     <%= f.text_field :phone  -%>
   </div>
   
 
   <div class='field'>
-    <%= f.label :e_mail -%>
+    <%= f.label :e_mail , "E-Mail"-%>
     <%= f.text_field :e_mail  -%>
   </div>
   
@@ -82,7 +83,7 @@
   </div>
   
   <div class='field'>
-    <%= f.label :address -%>
+    <%= f.label :address, "Адрес" -%>
     <%= f.text_field :address  -%>
   </div>
   

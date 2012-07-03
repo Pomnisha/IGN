@@ -10,8 +10,8 @@ module Refinery
 #      resource = warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#failure")
       set_flash_message(:notice, :signed_in) if is_navigational_format?
       sign_in(resource_name, resource)
-#      respond_with resource, :location => '/'
-      render :partial => "success"
+      respond_with resource, :location => '/'
+#      render :partial => "success"
 #      return render :json => {:success => true, :content => render_to_string(:layout => false, :partial => 'success')}
       rescue ::BCrypt::Errors::InvalidSalt, ::BCrypt::Errors::InvalidHash
       flash[:error] = t('password_encryption', :scope => 'refinery.users.forgot')

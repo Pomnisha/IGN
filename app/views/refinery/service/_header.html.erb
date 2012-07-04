@@ -4,7 +4,7 @@
 </div>
 <div id="top_banner">
   <% b = Refinery::Banners::Banner.where(:banner_type => 6).first%>  
-  <%= link_to (image_fu b.image, '240x400'), b.url unless b.nil? %>
+  <%= link_to (image_fu b.image, '400x240'), b.url unless b.nil? %>
   </div>
   <div class="clear"></div>
 <!--top menu.............................................................................-->

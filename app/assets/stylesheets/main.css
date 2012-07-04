@@ -248,9 +248,7 @@ html ul#left_menu_body li ul.subnav li a {
 	width: 230px;
 	padding-left: 20px;
 }
-html ul#left_menu_body li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
-  background: #b82b2b; /*url(dropdown_linkbg.gif) no-repeat 10px center; */
-}
+
 
 #banner_left {
 	float: left;

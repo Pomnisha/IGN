@@ -2,7 +2,7 @@ en:
   refinery:
     plugins:
       subcategories:
-        title: Категории
+        title: Подкатегории
     subcategories:
       admin:
         subcategories:

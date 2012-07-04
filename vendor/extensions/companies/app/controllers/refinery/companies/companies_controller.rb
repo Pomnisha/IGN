@@ -2,7 +2,7 @@ module Refinery
   module Companies
     class CompaniesController < ::ApplicationController
       layout 'refinery/services'
-      
+      before_filter :allow_users_to_see_services
       before_filter :find_all_companies
 #      before_filter :find_page
       before_filter :correct_user ,:only => [:edit, :update, :destroy]
@@ -13,7 +13,7 @@ module Refinery
         # by swapping @page for @company in the line below:
 #        present(@page)
 
-        @companyies = Company.search(params[:search])
+        @companies = Company.search(params[:search])
 
       end
       def new
@@ -50,6 +50,10 @@ module Refinery
       def correct_user
         @company = Company.find(params[:id])
         redirect_to refinery.root_path unless current_refinery_user == @company.user_id
+      end
+      
+      def allow_users_to_see_services
+        redirect_to refinery.root_path unless current_refinery_user.shops.count > 0 
       end
     end
   end

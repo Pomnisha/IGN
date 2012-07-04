@@ -9,6 +9,7 @@ module Refinery
 
     has_many :plugins, :class_name => "UserPlugin", :order => "position ASC", :dependent => :destroy
     has_many :shops, :class_name => "Refinery::Shops::Shop", :dependent => :destroy
+    has_many :companies, :class_name => "Refinery::Companies::Company", :dependent => :destroy
     friendly_id :username
 
     # Include default devise modules. Others available are:

@@ -13,7 +13,7 @@ module Refinery
         # by swapping @page for @shop in the line below:
  #       present(@page)
 #        @shops = Shop.search(params[:search]).page(params[:page]).per_page("5")
-        @shops = Shop.search(params[:search]).page(params[:page]).per_page("5")
+        @shops = Shop.search(params[:search])
       end
       
       def new

@@ -8,22 +8,16 @@
     <div class="icon_category">    
       <a href="<%= refinery.shops_shop_url(s.id)%>">
       <% unless s.logo.nil? -%>
-        <%= image_fu s.logo, Refinery::Images.user_image_sizes[:small],
-                     :class => "brown_border",
-                     :class => "current_picked_image" %>
+        <%= image_fu s.logo, '155x98' %>
       <% else -%>
         <img class="current_picked_image" src="" alt="" style='display: none' />
       <% end -%>
       </a>
-      <span class='no_picked_image_selected nothing_selected' <%= "style='display: none;'" if s.logo.present? %>>
-        <%= t('.none_selected') %>
-      </span>
-      <%=  link_to "редактировать данные",refinery.edit_shops_shop_path(s) if s.user == current_refinery_user %>
     </div>
     <div class="category_text">
-      <h2><a href="<%= refinery.shops_shop_url(s.id)%>"><%= s.short_description.html_safe %></a></h2>
+      <h2><a href="<%= refinery.shops_shop_url(s.id)%>"><%= s.name.html_safe %></a></h2>
       <a class="out_link" href="<%= s.url %>"><%= s.url %></a>
-      <%= s.description.html_safe %>
+      <%= s.short_description.html_safe %>
       <div class="line"></div>
       Телефон: <%= s.phone %>   e-mail: <%= s.e_mail  %>
     </div>

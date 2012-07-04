@@ -10,8 +10,10 @@
   <%= render "refinery/slider2" %>
 <% end %>
 <div class="categoryes">
-    <div class="icon_category">          
-      <%= image_fu c.logo, '73x88' %>
+    <div class="icon_category">        
+    <%- if !c.logo.nil? then%>
+      <%= link_to (image_fu c.logo, '73x88'), refinery.companies_company_path(c.id)  %></div>
+    <%- end %>
     </div>
     <div class="category_text">
       <h2>

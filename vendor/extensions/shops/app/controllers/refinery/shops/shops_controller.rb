@@ -47,10 +47,21 @@ module Refinery
 #          render action: "new"
 #        end
 #      end
-  
+
+      def create 
+        @shop = Shop.new(params[:shop])
+        @shop.user_id = current_refinery_user
+        if @shop.save
+          render action: "show", notice: 'Shop was successfully created.'
+        else
+          render action: "new"
+        end
+      end 
+
+
       def update
         if @shop.update_attributes(params[:shop])
-          redirect_to refinery.shops_shop_path(@shop), notice: 'Shop was successfully updated.'
+          redirect_to refinery.shops_shop_path(@shop), notice: 'Shop was successfully created.'
         else
           render action: "edit"
         end
@@ -59,7 +70,7 @@ module Refinery
       def destroy
       # object gets found by find_#{singular_name} function
       if @shop.destroy
-          redirect_to refinery.root_path, notice: 'Shop was successfully deleted.'
+          redirect_to refinery.root_path, notice: 'The shop was deleted.'
         else
           render action: "show"
         end
@@ -81,8 +92,9 @@ module Refinery
 #      end
       def correct_user
         @shop = Shop.find(params[:id])
-        current_refinery_user == @shop.user_id
+        redirect_to refinery.root_path unless current_refinery_user == @shop.user_id
       end
     end
   end
 end
+

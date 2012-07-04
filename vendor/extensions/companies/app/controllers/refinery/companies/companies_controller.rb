@@ -49,7 +49,7 @@ module Refinery
       
       def correct_user
         @company = Company.find(params[:id])
-        current_refinery_user == @company.user_id
+        redirect_to refinery.root_path unless current_refinery_user == @company.user_id
       end
     end
   end

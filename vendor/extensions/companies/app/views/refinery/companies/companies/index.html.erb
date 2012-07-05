@@ -1,4 +1,5 @@
 <div id="categoryes_body">
+
 <%- @companies.each do |c| %>
   <div class="categoryes">
     <div class="icon_category">          
@@ -11,3 +12,4 @@
   </div>
 <%- end %>
 </div>
+<%= will_paginate @companies, previous_label: h("<-"), next_label: h("->")  %>

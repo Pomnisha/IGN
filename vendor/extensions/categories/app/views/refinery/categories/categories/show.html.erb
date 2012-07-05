@@ -1,5 +1,5 @@
 <% i = 0 %>
-<% @category.shops.each do |s| %>
+<% @shops.each do |s| %>
 <% i = i + 1 %>
 <% if i == 4 then%>
   <%= render "refinery/slider2" %>
@@ -24,3 +24,7 @@
     </div>
   </div>
 <% end %>
+
+<div id="count_pages">
+<%= will_paginate @shops, previous_label: h("<-"), next_label: h("->")  %>
+</div>

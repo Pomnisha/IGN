@@ -374,12 +374,16 @@ html ul#left_menu_body li ul.subnav li a:hover { /*--Hover effect for subnav lin
 	height: 251px;
 	width: 484px;	
 }
-
 #count_pages  {
 	padding-top: 25px;
 	text-align: center;
 	color:#FFF;
 }
+
+#count_pages  a{
+	color:#FFF;
+}
+
 /*--bottom...........................................................................*/
 #bottom {
 	padding-left: 100px;
@@ -439,16 +443,30 @@ html ul#left_menu_body li ul.subnav li a:hover { /*--Hover effect for subnav lin
 #shop{
 	margin: 0 auto;
 	background: url(../images/form_bg.png) repeat-y;
+  height: 820px;
 	width: 640px;	
 }
 
 #shop .button {
-margin-left: 220px;
-margin-top: 20px;
+/*	margin-left: 220px;*/
+	margin-top: 20px;
 	background: url(../images/button.png) no-repeat;
-	width: 212 px;
+	width: 212px;
+	float: left;
 	height: 39px;
+	margin-left: 50px;
 	padding-bottom: 20px;
+	}
+
+#shop .close_dialog {
+background: url(../images/cancel.png) no-repeat;
+	width: 139px;
+	height: 39px;
+	float:left;
+	margin-left: 130px;
+	margin-top: 20px;
+	padding-bottom: 20px;
+	
 	}
 
 #shop .field {
@@ -462,21 +480,21 @@ float: left;
 font-size: 14px;
 font-weight: bold;
 padding-left: 20px;
-padding-top: 10px;
+/*padding-top: 10px;*/
 padding-right: 20px;
 }
 
 #shop .short {
-background: url(../images/short.png) ;
-	height: 107px;
-	width: 454px;	
+background: url(../images/short.png) no-repeat ;
+	height: 109px;
+	width: 443px;	
 	float: left;
 	}
 	
 #shop .full {
-background: url(../images/full.png) ;
-	height: 258px;
-	width: 451px;	
+background: url(../images/full.png) no-repeat;
+	height: 231px;
+	width: 443px;	
 	float: left;
 	}
 	
@@ -489,15 +507,15 @@ background: url(../images/cat.png) ;
 	
 #shop .vip {
 background: url(../images/vip.png) ;
-	height: 35px;
-	width: 145px;	
+	height: 25px;
+	width: 193px;	
 	float: left;
 	}
 
 #shop .punkt {
 background: url(../images/punkt.png) ;
-	height: 35px;
-	width: 353px;	
+	height: 25px;
+	width: 345px;	
 	float: left;
 	}
 

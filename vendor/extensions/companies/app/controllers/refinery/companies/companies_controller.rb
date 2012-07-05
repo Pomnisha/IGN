@@ -13,7 +13,8 @@ module Refinery
         # by swapping @page for @company in the line below:
 #        present(@page)
 
-        @companies = Company.search(params[:search])
+#        @companies = Company.search(params[:search])
+        @companies = Company.search(params[:search]).page(params[:page]).per_page(5)        
 
       end
       def new

@@ -1,10 +1,10 @@
 <div id="wrapper">
 <div id="flash">
   <div>
-  <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="1280" height="626" id="flash" align="middle">
+  <!--object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="1280" height="626" id="flash" align="middle">
     <param name="allowScriptAccess" value="sameDomain" />
     <param name="movie" value="./flash.swf" /><param name="quality" value="high" /><param name="wmode" value="transparent" /><param name="bgcolor" value="#000000" /><embed src="flash.swf" quality="high" wmode="transparent" bgcolor="#000000" width="1280" height="626" name="flash" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
-  </object>
+  </object-->
   </div>  
   <div id="fb"><a href="http://www.facebook.com/"><img src="../images/fb.png" width="102" height="131" alt="Facebook" /></a></div>	
   <div id="vk"><a href="http://www.vk.com/"><img src="../images/vk.png" width="80" height="203" alt="VK" /></a></div>
@@ -25,7 +25,7 @@
   <% end %>
   </div>
   
-  <div id="home"><a href="javascript:{document.body.style.behavior='url(#default#homepage)';document.body.setHomePage('http://davidwalsh.name');}" >Сделать домашней страницей</a></div>
+  <div id="home"><a href="http://www.ign.su/welcome" title='Чтобы сделать эту страницу стартовой просто перетащите эту ссылку на значок домашней страницы в ващем браузере.' onclick="document.body.style.behavior='url(#default#homepage)'; document.body.setHomePage('http://www.ign.su/welcome');">Сделать домашней страницей</a></div>
   
   <div id="contact">
   <% if !current_refinery_user.nil? then %>
@@ -57,7 +57,7 @@
     <a href="#" class = "lightbox_R">Зарегистрироваться</a>
   </div>
   
-  <div id="search_title">
+  <div id="search">
   <% if !current_refinery_user.nil? then %>
     <%= link_to "В каталог - жми на IGN", refinery.categories_categories_path %>
   <% else %>  
@@ -66,7 +66,9 @@
   </div>
 </div>	
 <div id="footer"> 
-  <div id="share"> </div>
+<script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="button" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir"></div>
+
   <div id="copyright"><a href="#">Все права защищены © IGN</a></div>
 </div>
 </div>

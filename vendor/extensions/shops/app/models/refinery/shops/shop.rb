@@ -15,10 +15,10 @@ module Refinery
       
       def self.search(search)
         if search
-          find(:all, :conditions => ['name LIKE ? OR short_description LIKE ? OR description LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%" ])
+          where('name LIKE ? OR short_description LIKE ? OR description LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
 #          find(:all, :conditions => ['description LIKE ?', "%#{search}%"])
         else
-          find(:all)
+          scoped
         end
       end
       

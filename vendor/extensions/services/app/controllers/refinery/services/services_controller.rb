@@ -15,7 +15,7 @@ module Refinery
 
       def show
         @service = Service.find(params[:id])
-
+        @companies = @service.companies.page(params[:page]).per_page(5)  
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @service in the line below:
  #       present(@page)

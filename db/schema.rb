@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120618192634) do
+ActiveRecord::Schema.define(:version => 20120705181612) do
 
   create_table "refinery_banners", :force => true do |t|
     t.string   "url"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(:version => 20120618192634) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "image_id"
-    t.integer  "banner_type"
     t.string   "name"
+    t.string   "banner_type"
   end
 
   create_table "refinery_categories", :force => true do |t|

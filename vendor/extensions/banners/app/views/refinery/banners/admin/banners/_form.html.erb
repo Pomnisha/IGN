@@ -18,7 +18,7 @@
   
   <div  class='field'>
     <%= f.label :banner_type -%>
-    <%= f.select :banner_type, (1..7).collect {|n| ["Тип #{n}", n]} -%>
+    <%= f.select :banner_type, ::Refinery::Banners::Banner::BANNER_TYPE.collect {|n| ["#{n[1]}", n[0]]} -%>
   </div>
 
   <div class='field'>

@@ -3,6 +3,9 @@ Refinery::Core::Engine.routes.append do
   # Frontend routes
   namespace :companies, :path => '' do
     resources :companies do
+      collection do
+        post :create_asset
+      end
     end
   end
 

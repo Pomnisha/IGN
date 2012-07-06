@@ -1,7 +1,7 @@
 <h1>РЕГИСТРАЦИЯ ИНТЕРНЕТ-МАГАЗИНА</h1>
 <div id="form_top"> </div>
 
-<%= form_for [refinery, :shops, @shop], :html => { :multipart => true, :id => "shop" } do |f| -%>
+<%= form_for [refinery, :shops, @shop], :html => { :id => "shop" } do |f| -%>
   <%= render '/refinery/shops/error_messages',
               :object => @shop,
               :include_object_name => true %>
@@ -42,11 +42,8 @@
     <%= f.label :e_mail , "Электронный адрес"-%>
     <%= f.email_field :e_mail, :class => "punkt"  -%>
   </div>
-  <div class='field'> 
-    <%= f.label :logo , "Логотип"-%>
-    <%= f.file_field :logo %>  
-  </div>  
-  
+  <a href="" class = "lightbox_I"> Загрузить логотип </a>
+  <%= f.hidden_field :logo -%>    
   <div id="YMapsID" class="field">
     
   </div>
@@ -57,6 +54,18 @@
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @shop.url) %>
 <% end -%>
 
+    <div class="backdrop_I"></div>
+    <div class="box_I">
+    	<div class="close_I">x</div>
+      <div>
+        <%= form_for :image_form, :remote => true, :url => refinery.create_asset_shops_shops_path, :html => { :method => :post, :id => 'uploadForm', :multipart => true } do |f| %>
+          Выбрать файл: <%= f.file_field :uploaded_data %></br>
+          <a href="#" id="upldfile">Загрузить</a>
+        <% end %>
+      </div>
+    </div>
+
+
 <div id="form_bottom"> </div>
   <%= render "refinery/slider2" %>
 
@@ -65,6 +74,7 @@
     $(document).ready(function(){
       page_options.init(false, '', '');
     });
+    
   </script>
 <% end %>
 

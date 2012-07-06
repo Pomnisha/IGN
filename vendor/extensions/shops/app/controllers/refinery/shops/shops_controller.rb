@@ -27,8 +27,6 @@ module Refinery
         # by swapping @page for @shop in the line below:
 #        present(@page)
       end
-      def find_word
-      end
       
       def edit
       # object gets found by find_#{singular_name} function
@@ -75,6 +73,13 @@ module Refinery
           render action: "show"
         end
       end
+      
+      def create_asset
+        @image = ::Refinery::Image.new(params[:image_form])
+        @image.save
+        render :text => @image.id
+      end
+      
     
       Rails
     protected

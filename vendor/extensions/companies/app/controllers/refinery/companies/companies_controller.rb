@@ -37,6 +37,13 @@ module Refinery
           render action: "new"
         end
       end
+
+      def create_asset
+        @image = ::Refinery::Image.new(params[:image_form])
+        @image.save
+        render :text => @image.id
+      end      
+      
       
     protected
 

@@ -20,11 +20,13 @@
   <%= render '/refinery/google_analytics' %>
   <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag 'modernizr-min' %>
-  <script src="http://malsup.github.com/jquery.form.js" type="text/javascript"></script>
+  <%= javascript_include_tag 'aform' %>  
   <%= javascript_include_tag 'slider' %>  
   <%= javascript_include_tag 'box' %>
   <%= javascript_include_tag 'banner' %>
   <%= javascript_include_tag 'static' %>
+  <%= javascript_include_tag "shop" if ["shops"].include?(controller_name) %>  
+  <%= javascript_include_tag "company" if ["shops"].include?(controller_name) %>  
   <!--script src="http://api-maps.yandex.ru/2.0/?load=package.full&mode=debug&lang=ru-RU" type="text/javascript"></script-->
   <!--%= javascript_include_tag 'map' %-->  
 </head>

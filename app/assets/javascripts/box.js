@@ -7,7 +7,6 @@ $(document).ready(function(){
     $('.backdrop_R, .box_R').animate({'opacity':'.50'}, 300, 'linear');
 		$('.box_R').animate({'opacity':'1.00'}, 300, 'linear');
 		$('.backdrop_R, .box_R').css('display', 'block');
-
 	});
 
 	$('.close_R').click(function(){
@@ -92,7 +91,6 @@ function getPageSizeWithScroll()
 	arrayPageSizeWithScroll = new Array(pageWidth, pageHeight);
 	return arrayPageSizeWithScroll;
 }
-
 
 $(document).ready(function(){
     $('#log_iframe').contents().find('body').load(function (){

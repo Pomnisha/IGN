@@ -10,7 +10,43 @@
       Телефон: <%= @company.phone.html_safe -%>  <br />
       E-mail: <%= @company.e_mail  -%><br />
       Режим работы: <%= @company.working_time.html_safe -%></div>
-    <!--div class="map"></div-->
+    <div id="YMapsID" class="map">
+    <% if !@company.map_latitude.nil? and !@company.map_longtitude.nil? then%>  
+		<script>
+		  $(document).ready(function(){
+			  ymaps.ready(function () { 
+					var myMap = new ymaps.Map("YMapsID", {
+					center: [<%= "#{@company.map_latitude},#{@company.map_longtitude}" -%>],
+						zoom: 10,
+						type: "yandex#satellite"
+					}
+				);
+			
+				// Добавление стандартного набора кнопок
+				myMap.controls.add("mapTools")
+					// Добавление кнопки изменения масштаба 
+					.add("zoomControl")
+					// Добавление списка типов карты
+					.add("typeSelector");      
+				
+				var myPlacemark = new ymaps.Placemark(
+
+			  [<%= "#{@company.map_latitude},#{@company.map_longtitude}" -%>], 
+			  {
+								iconContent: "<%= @company.name.html_safe -%>",
+								balloonContent: "<%= @company.short_description.html_safe -%>"
+							}, {draggable: false, hideIconOnBallon: false}
+						);
+						// Добавление метки на карту
+				myMap.geoObjects.add(myPlacemark);
+			  });
+			});
+		</script>
+	<% end %>
+    </div>
   </div>
 </div>
   <%= render "refinery/slider2" %>
+  
+  
+

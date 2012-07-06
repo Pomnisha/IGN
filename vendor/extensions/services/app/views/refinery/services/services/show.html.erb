@@ -11,10 +11,15 @@
 <% end %>
 <div class="categoryes">
     <div class="icon_category">        
-    <%- if !c.logo.nil? then%>
-      <%= link_to (image_fu c.logo, '73x88'), refinery.companies_company_path(c.id)  %></div>
-    <%- end %>
-    </div>
+    
+    <a href="<%= refinery.companies_company_path(c.id)%>">
+      <% unless c.logo.nil? -%>
+        <%= image_fu c.logo, '73x88' %>
+      <% else -%>
+        <%= image_tag c.img.thumb('73x88').url if c.img_uid %>
+      <% end -%>
+    </a>
+  </div>
     <div class="category_text">
       <h2>
         <a href="<%= refinery.companies_company_url(c.id) %>"><%= c.name.html_safe + "-" + c.short_description.html_safe %></a>

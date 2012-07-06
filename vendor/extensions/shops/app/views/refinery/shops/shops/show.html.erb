@@ -1,6 +1,6 @@
 <div class="onshop_container">      
   <h1><%= Refinery::Categories::Category.find(Refinery::Subcategories::Subcategory.find(@shop.subcategory_id).id).name -%></h1>
-  <%= link_to "редактировать данные", refinery.edit_shops_shop_path(@shop.id) if @shop.user == current_refinery_user %>
+  <%= link_to "редактировать", refinery.edit_shops_shop_path(@shop.id) if @shop.user == current_refinery_user %>
   <div class="onshop">
     <a class="shop_url" href="<%= @shop.url %>"><%= @shop.url -%></a>
      
@@ -11,7 +11,40 @@
       Телефон: <%= @shop.phone.html_safe -%>  <br />
       E-mail: <%= @shop.e_mail  -%><br />
       Режим работы: <%= @shop.working_time.html_safe -%></div>
-    <!--div class="map"></div-->
+          <div id="YMapsID" class="map">
+    <% if !@shop.map_latitude.nil? and !@shop.map_longtitude.nil? then%>  
+		<script>
+		  $(document).ready(function(){
+			  ymaps.ready(function () { 
+					var myMap = new ymaps.Map("YMapsID", {
+					center: [<%= "#{@shop.map_latitude},#{@shop.map_longtitude}" -%>],
+						zoom: 10,
+						type: "yandex#satellite"
+					}
+				);
+			
+				// Добавление стандартного набора кнопок
+				myMap.controls.add("mapTools")
+					// Добавление кнопки изменения масштаба 
+					.add("zoomControl")
+					// Добавление списка типов карты
+					.add("typeSelector");      
+				
+				var myPlacemark = new ymaps.Placemark(
+
+			  [<%= "#{@shop.map_latitude},#{@shop.map_longtitude}" -%>], 
+			  {
+								iconContent: "<%= @shop.name.html_safe -%>",
+								balloonContent: "<%= @shop.short_description.html_safe -%>"
+							}, {draggable: false, hideIconOnBallon: false}
+						);
+						// Добавление метки на карту
+				myMap.geoObjects.add(myPlacemark);
+			  });
+			});
+		</script>
+	<% end %>
+    </div>
   </div>
 </div>
   <%= render "refinery/slider2" %>

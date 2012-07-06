@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120705181612) do
+ActiveRecord::Schema.define(:version => 20120706121632) do
 
   create_table "refinery_banners", :force => true do |t|
     t.string   "url"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20120705181612) do
     t.integer  "position"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "img_uid"
   end
 
   create_table "refinery_images", :force => true do |t|
@@ -184,6 +185,7 @@ ActiveRecord::Schema.define(:version => 20120705181612) do
     t.float    "map_latitude"
     t.float    "map_longtitude"
     t.string   "address"
+    t.string   "img_uid"
   end
 
   create_table "refinery_subcategories", :force => true do |t|

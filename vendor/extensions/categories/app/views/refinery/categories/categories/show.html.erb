@@ -4,14 +4,13 @@
 <% if i == 4 then%>
   <%= render "refinery/slider2" %>
 <% end %>
-
   <div class="categoryes">
     <div class="icon_category">          
       <a href="<%= refinery.shops_shop_url(s.id)%>">
       <% unless s.logo.nil? -%>
         <%= image_fu s.logo, '155x98' %>
       <% else -%>
-        <img class="current_picked_image" src="" alt="" style='display: none' />
+        <%= image_tag s.img.thumb('155x98').url if s.img_uid %>
       <% end -%>
       </a>
     </div>

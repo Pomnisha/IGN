@@ -3,16 +3,11 @@
     <div class="icon_category">    
       <a href="<%= refinery.shops_shop_url(s.id)%>">
       <% unless s.logo.nil? -%>
-        <%= image_fu s.logo, Refinery::Images.user_image_sizes[:small],
-                     :class => "brown_border",
-                     :class => "current_picked_image" %>
+        <%= image_fu s.logo, '155x98' %>
       <% else -%>
-        <img class="current_picked_image" src="" alt="" style='display: none' />
+        <%= image_tag s.img.thumb('155x98').url if s.img_uid %>
       <% end -%>
       </a>
-      <span class='no_picked_image_selected nothing_selected' <%= "style='display: none;'" if s.logo.present? %>>
-        <%= t('.none_selected') %>
-      </span>
     </div>
     <div class="category_text">
       

@@ -74,13 +74,6 @@ module Refinery
         end
       end
       
-      def create_asset
-        @image = ::Refinery::Image.new(params[:image_form])
-        @image.save
-        render :text => @image.id
-      end
-      
-    
       Rails
     protected
 
@@ -97,7 +90,7 @@ module Refinery
 #      end
       def correct_user
         @shop = Shop.find(params[:id])
-        redirect_to refinery.root_path unless current_refinery_user == @shop.user_id
+        redirect_to refinery.root_path unless current_refinery_user.id == @shop.user_id
       end
     end
   end

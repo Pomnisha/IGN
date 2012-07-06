@@ -1,4 +1,4 @@
-<% i = 0%>
+<% i = 0 %>
 <% @shops.each do |s| %>
 <% i = i + 1 %>
 <% if i == 4 then%>
@@ -10,7 +10,7 @@
       <% unless s.logo.nil? -%>
         <%= image_fu s.logo, '155x98' %>
       <% else -%>
-        <img class="current_picked_image" src="" alt="" style='display: none' />
+        <%= image_tag s.img.thumb('155x98').url if s.img_uid %>
       <% end -%>
       </a>
     </div>

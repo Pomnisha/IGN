@@ -369,10 +369,11 @@ html ul#left_menu_body li ul.subnav li a:hover { /*--Hover effect for subnav lin
 	font-family: Tahoma, Geneva, sans-serif;
 }
 .map {
-	background-image: url(../images/map.png);
 	margin: 40px auto;
-	height: 251px;
-	width: 484px;	
+	height: 300px;
+	width: 600px;	
+  position:relative;
+  float: left;
 }
 #count_pages  {
 	padding-top: 25px;
@@ -443,8 +444,8 @@ html ul#left_menu_body li ul.subnav li a:hover { /*--Hover effect for subnav lin
 #shop{
 	margin: 0 auto;
 	background: url(../images/form_bg.png) repeat-y;
-  height: 820px;
 	width: 640px;	
+  height: 1215px;
 }
 
 #shop .button {
@@ -470,32 +471,49 @@ background: url(../images/cancel.png) no-repeat;
 	}
 
 #shop .field {
-padding-top: 10px;
+padding-top: 5px;
+width:100%;
 float: left;
-width: 100%;
+clear: right;
+}
+
+#shop .field input, #shop .field textarea, #shop .field select{
+padding: 10px;
+border: none;
+float: left;
+}
+
+#shop_img {
+  background: url(../images/cancel.png) no-repeat;
+  width: 443px;
+  float: right;
 }
 
 #shop label {
 color: #000;
 float: left;
+text-align: right;
 font-size: 14px;
 font-weight: bold;
-padding-left: 20px;
-/*padding-top: 10px;*/
-padding-right: 20px;
+padding-left: 10px;
+padding-right: 10px;
+width: 150px;
 }
+#shop .map{
+  margin: 0px 20px;
+}  
 
 #shop .short {
 background: url(../images/short.png) no-repeat ;
 	height: 109px;
-	width: 443px;	
+	width: 430px;	
 	float: left;
 	}
 	
 #shop .full {
 background: url(../images/full.png) no-repeat;
-	height: 231px;
-	width: 443px;	
+	height: 249px;
+	width: 430px;	
 	float: left;
 	}
 	
@@ -515,8 +533,8 @@ background: url(../images/vip.png) ;
 
 #shop .punkt {
 background: url(../images/punkt.png) ;
-	height: 25px;
-	width: 345px;	
+	height: 15px;
+	width: 333px;	
 	float: left;
 	}
 
@@ -527,42 +545,4 @@ background: url(../images/punkt.png) ;
 	width: 640px;	
 }
 
-.backdrop_I
-		{
-			position:absolute;
-			top:0px;
-			left:0px;
-			width:100%;
-			height:100%;
-			background:#000;
-			opacity: .0;
-			filter:alpha(opacity=0);
-			z-index:50;
-			display:none;
-		}
- 
-.box_I
-		{
-			position:absolute;
-			width:350px;
-			height:50px;
-      left: 159px;
-      top: 480px;
-			background:#ffffff;
-			z-index:51;
-			padding:5px;
-			-webkit-border-radius: 5px;
-			-moz-border-radius: 5px;
-			border-radius: 5px;
-			-moz-box-shadow:0px 0px 5px #444444;
-			-webkit-box-shadow:0px 0px 5px #444444;
-			box-shadow:0px 0px 5px #444444;
-			display:none;
-		}
- 
-.close_I
-		{
-			float:right;
-			cursor:pointer;
-      color: black;
-		}
+

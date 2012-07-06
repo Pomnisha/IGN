@@ -47,38 +47,23 @@
     <%= f.text_field :phone, :class => "punkt"  -%>
   </div>
 
-  <div class='field'>
+   <div class='field'>
     <%= f.label :e_mail , "Электронный адрес" -%>
     <%= f.text_field :e_mail, :class => "punkt"  -%>
   </div>
-  
-  <!--div class='field'>
-    <%= f.label :logo -%>
-    <%= render '/refinery/admin/image_picker',
-               :f => f,
-               :field => :logo_id,
-               :image => @company.logo,
-               :toggle_image_display => false %>
-  </div-->
-  
-  <!--div class='field'>
-    <%= f.label :map_latitude -%>
-    <%= f.text_field :map_latitude  -%>
-  </div>
-  
   <div class='field'>
-    <%= f.label :map_longtitude -%>
-    <%= f.text_field :map_longtitude  -%>
-  </div-->
-  
-  <div class='field'>
-    <%= f.label :address, "Адрес"  -%>
+    <%= f.label :address -%>
     <%= f.text_field :address, :class => "punkt" -%>
+  </div>  
+  <%= image_tag @company.img.thumb('155x98').url if @company.img_uid %>
+  <div class="field">
+    <%= f.label :img, "Загрузить логотип"%>
+    <%= f.file_field :img %>
+    <%= f.hidden_field :retained_img %>
   </div>
-  
-  <div id="YMapsID" class="field">
-    
-</div>  
+    <%= f.hidden_field :map_longtitude -%>
+    <%= f.hidden_field :map_latitude -%>
+  <div id="YMapsID" class="map"></div>  
   
   <%= render '/refinery/companies/form_actions', :f => f,
              :continue_editing => false,
@@ -90,8 +75,31 @@
 
 <% content_for :javascripts do %>
   <script>
-    $(document).ready(function(){
-      page_options.init(false, '', '');
-    });
-  </script>
+$(document).ready(function(){
+ymaps.ready(function () { 
+var myMap = new ymaps.Map("YMapsID", {
+        // Центр карты
+        center: [55.76, 37.64],
+        // Коэффициент масштабирования
+        zoom: 15,
+        // Тип карты
+        type: "yandex#satellite"
+    }
+);
+      myMap.events.add("click",
+        function(e) {
+            var cords = e.get("coordPosition").toString().split(',');      
+            myMap.balloon.open( e.get("coordPosition"), {contentBody: "Значение: " + e.get("coordPosition")});
+            $('#company_map_latitude').val(cords[0]);
+            $('#company_map_longtitude').val(cords[1]);
+      });
+// Добавление стандартного набора кнопок
+myMap.controls.add("mapTools")
+    // Добавление кнопки изменения масштаба 
+    .add("zoomControl")
+    // Добавление списка типов карты
+    .add("typeSelector");    
+});
+});
+    </script>
 <% end %>

@@ -317,10 +317,11 @@ ul#left_menu_body li a {
 	font-family: Tahoma, Geneva, sans-serif;
 }
 .map {
-	background-image: url(../images/map.png);
 	margin: 40px auto;
-	height: 251px;
-	width: 484px;	
+	height: 300px;
+	width: 600px;	
+  position:relative;
+  float: left;
 }
 
 
@@ -394,7 +395,8 @@ ul#left_menu_body li a {
 	margin: 0 auto;
 	background: url(../images/form_bg.png) repeat-y;
 	width: 640px;	
-  height: 820px;
+  height: 1215px;
+
 }
 
 #company .button {
@@ -420,34 +422,52 @@ background: url(../images/cancel.png) no-repeat;
 	}
 
 #company .field {
-padding-top: 10px;
+padding-top: 5px;
+width:100%;
 float: left;
+clear: right;
+}
+
+#company .field input, #company .field textarea, #company .field select{
+padding: 10px;
+border: none;
+float: left;
+}
+
+#company_img {
+  background: url(../images/cancel.png) no-repeat;
+  width: 443px;
+  float: right;
 }
 
 #company label {
 color: #000;
 float: left;
+text-align: right;
 font-size: 14px;
 font-weight: bold;
-padding-left: 20px;
-/*padding-top: 10px;*/
-padding-right: 20px;
+padding-left: 10px;
+padding-right: 10px;
+width: 150px;
 }
 
 #company .short {
 background: url(../images/short.png) no-repeat ;
 	height: 109px;
-	width: 443px;	
+	width: 430px;	
 	float: left;
 	}
 	
 #company .full {
 background: url(../images/full.png) no-repeat;
-	height: 231px;
-	width: 443px;	
+	height: 249px;
+	width: 430px;	
 	float: left;
 	}
-	
+
+#company .map{
+  margin: 0px 20px;
+}  
 #company .cat {
 background: url(../images/cat.png) ;
 	height: 34px;
@@ -464,11 +484,15 @@ background: url(../images/vip.png) ;
 
 #company .punkt {
 background: url(../images/punkt.png) ;
-	height: 25px;
-	width: 345px;	
+	height: 15px;
+	width: 333px;	
 	float: left;
 	}
-
+  
+#company .form_actions {
+	width: 100%;	
+}
+  
 #form_bottom {
 	margin: 0 auto;
 	background-image: url(../images/form_bottom.png);

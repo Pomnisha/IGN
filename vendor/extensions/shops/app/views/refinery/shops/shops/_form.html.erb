@@ -1,7 +1,7 @@
 <h1>РЕГИСТРАЦИЯ ИНТЕРНЕТ-МАГАЗИНА</h1>
 <div id="form_top"> </div>
 
-<%= form_for [refinery, :shops, @shop], :html => { :id => "shop" } do |f| -%>
+<%= form_for [refinery, :shops, @shop], :html => { :id => "shop", :multipart => true } do |f| -%>
   <%= render '/refinery/shops/error_messages',
               :object => @shop,
               :include_object_name => true %>
@@ -42,11 +42,21 @@
     <%= f.label :e_mail , "Электронный адрес"-%>
     <%= f.email_field :e_mail, :class => "punkt"  -%>
   </div>
-  <a href="" class = "lightbox_I"> Загрузить логотип </a>
-  <%= f.hidden_field :logo -%>    
-  <div id="YMapsID" class="field">
-    
+  <div class='field'>
+    <%= f.label :address, "Адрес" -%>
+    <%= f.text_field :address, :class => "punkt" -%>
   </div>
+  <%= image_tag @shop.img.thumb('155x98').url if @shop.img_uid %>
+  <div class="field">
+    <%= f.label :img, "Загрузить логотип"%>
+    <%= f.file_field :img %>
+    <%= f.hidden_field :retained_img %>
+  </div>
+    <%= f.hidden_field :map_longtitude  -%>
+    <%= f.hidden_field :map_latitude  -%> 
+  <div id="YMapsID" class="map"></div> 
+    
+
 
 <%= render '/refinery/shops/form_actions', :f => f,
              :continue_editing => false,
@@ -54,27 +64,38 @@
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @shop.url) %>
 <% end -%>
 
-    <div class="backdrop_I"></div>
-    <div class="box_I">
-    	<div class="close_I">x</div>
-      <div>
-        <%= form_for :image_form, :remote => true, :url => refinery.create_asset_shops_shops_path, :html => { :method => :post, :id => 'uploadForm', :multipart => true } do |f| %>
-          Выбрать файл: <%= f.file_field :uploaded_data %></br>
-          <a href="#" id="upldfile">Загрузить</a>
-        <% end %>
-      </div>
-    </div>
-
 
 <div id="form_bottom"> </div>
   <%= render "refinery/slider2" %>
 
 <% content_for :javascripts do %>
   <script>
-    $(document).ready(function(){
-      page_options.init(false, '', '');
-    });
-    
-  </script>
+$(document).ready(function(){
+ymaps.ready(function () { 
+var myMap = new ymaps.Map("YMapsID", {
+        // Центр карты
+        center: [55.76, 37.64],
+        // Коэффициент масштабирования
+        zoom: 15,
+        // Тип карты
+        type: "yandex#satellite"
+    }
+);
+      myMap.events.add("click",
+        function(e) {
+            var cords = e.get("coordPosition").toString().split(',');      
+            myMap.balloon.open( e.get("coordPosition"), {contentBody: "Значение: " + e.get("coordPosition")});
+            $('#shop_map_latitude').val(cords[0]);
+            $('#shop_map_longtitude').val(cords[1]);
+      });
+// Добавление стандартного набора кнопок
+myMap.controls.add("mapTools")
+    // Добавление кнопки изменения масштаба 
+    .add("zoomControl")
+    // Добавление списка типов карты
+    .add("typeSelector");    
+});
+});
+    </script>
 <% end %>
 

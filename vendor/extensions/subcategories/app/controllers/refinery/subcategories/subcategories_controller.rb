@@ -13,10 +13,10 @@ module Refinery
 
       def show
         @subcategory = Subcategory.find(params[:id])
-        @shops = @subcategory.shops.paginate(params[:page]).per_page(5)
+        @shops = @subcategory.shops.page(params[:page]).per_page(5)
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @subcategory in the line below:
-        present(@page)
+        #present(@page)
       end
 
     protected

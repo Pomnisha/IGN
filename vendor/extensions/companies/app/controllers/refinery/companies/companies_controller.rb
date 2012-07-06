@@ -29,7 +29,7 @@ module Refinery
       end
       
       def create
-        @company = Company.new(params[:shop])
+        @company = Company.new(params[:company])
         @company.user_id = current_refinery_user
         if @company.save
           render action: "show", notice: 'Company was successfully created.'
@@ -37,13 +37,14 @@ module Refinery
           render action: "new"
         end
       end
-
-      def create_asset
-        @image = ::Refinery::Image.new(params[:image_form])
-        @image.save
-        render :text => @image.id
-      end      
       
+      def update
+        if @company.update_attributes(params[:company])
+          redirect_to refinery.companies_company_path(@company), notice: 'Company was successfully updated.'
+        else
+          render action: "edit"
+        end
+      end   
       
     protected
 
@@ -57,7 +58,7 @@ module Refinery
       
       def correct_user
         @company = Company.find(params[:id])
-        redirect_to refinery.root_path unless current_refinery_user == @company.user_id
+        redirect_to refinery.root_path unless current_refinery_user.id == @company.user_id
       end
       
       def allow_users_to_see_services

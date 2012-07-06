@@ -215,10 +215,12 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  dragonfly (~> 0.9.12)
   fog
   haml
   jquery-rails
   pg
+  rack-cache
   rails (= 3.2.3)
   refinerycms (~> 2.0.0)
   refinerycms-banners!

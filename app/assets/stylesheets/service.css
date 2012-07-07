@@ -221,6 +221,7 @@ ul#left_menu_body li a {
 	background-image: url(../images/content_bg.png);
 	background-repeat: repeat-y;
 }
+#content h1{color:#fff;}
 .content_top_bot {
 	background-image: url(../images/content_top_bot.png);
 	background-repeat: no-repeat;
@@ -435,7 +436,6 @@ float: left;
 }
 
 #company_img {
-  background: url(../images/cancel.png) no-repeat;
   width: 443px;
   float: right;
 }

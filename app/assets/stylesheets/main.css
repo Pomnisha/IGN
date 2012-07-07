@@ -12,6 +12,9 @@ body {
 	font-size: 13px;
 	background-image: url(../images/space.png);
 }
+h2 {color: #fff;}
+p {color:#fff; text-indent:2em;font-size:13px;}
+
 #wrap {
 	position: relative;
 	margin: 0px auto;
@@ -199,7 +202,7 @@ ul#left_menu_body li a {
 	font-size: 13px;
 	font-weight: bold;
 	display: block;
-	height: 22px;
+	min-height: 22px;
 	text-decoration: none;
 	color: #fff;
 	padding: 3px 6px 0;

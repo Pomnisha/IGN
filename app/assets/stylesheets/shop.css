@@ -206,7 +206,7 @@ ul#left_menu_body li a {
 	font-size: 13px;
 	font-weight: bold;
 	display: block;
-	height: 22px;
+	min-height: 22px;
 	text-decoration: none;
 	color: #fff;
 	padding: 3px 6px 0;
@@ -275,6 +275,7 @@ html ul#left_menu_body li ul.subnav li a:hover { /*--Hover effect for subnav lin
 	background-image: url(../images/content_bg.png);
 	background-repeat: repeat-y;
 }
+#content h1{color:#fff;}
 .content_top_bot {
 	background-image: url(../images/content_top_bot.png);
 	background-repeat: no-repeat;
@@ -460,7 +461,7 @@ html ul#left_menu_body li ul.subnav li a:hover { /*--Hover effect for subnav lin
 	}
 
 #shop .close_dialog {
-background: url(../images/cancel.png) no-repeat;
+  background: url(../images/cancel.png) no-repeat;
 	width: 139px;
 	height: 39px;
 	float:left;
@@ -484,7 +485,6 @@ float: left;
 }
 
 #shop_img {
-  background: url(../images/cancel.png) no-repeat;
   width: 443px;
   float: right;
 }

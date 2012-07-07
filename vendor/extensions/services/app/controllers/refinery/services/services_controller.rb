@@ -32,7 +32,7 @@ module Refinery
       end
       
       def allow_users_to_see_services
-        redirect_to refinery.root_path unless current_refinery_user.shops.count > 0 
+        redirect_to refinery.root_path unless (current_refinery_user.shops.count > 0 or current_refinery_user.has_role?(:superuser))
       end
     end
   end

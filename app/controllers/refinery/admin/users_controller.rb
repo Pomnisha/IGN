@@ -29,10 +29,11 @@ module Refinery
             @user.roles = @selected_role_names.collect { |r| Refinery::Role[r.downcase.to_sym] }
           end
 
-          redirect_to refinery.admin_users_path,
-                      :notice => t('created', :what => @user.username, :scope => 'refinery.crudify')
+          redirect_to refinery.admin_users_path, :notice => t('created', :what => @user.username, :scope => 'refinery.crudify')
+#          render :partial => 'refinery/users/success'
         else
           render :action => 'new'
+#          render :partial => 'refinery/users/new'
         end
       end
 

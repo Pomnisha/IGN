@@ -1,7 +1,7 @@
 
-<div id="Reg"> Добро пожаловать в наш прекрастный каталог магазинов. Зарегистрируйтесь, пожалуйста.</div>
+<div id="reg">
 
-<%= form_for :user, :html => {:id => 'regform'}, :url => refinery.refinery_user_registration_path do |f| -%>
+<%= form_for :refinery_user, :html => {:id => 'regform'}, :url => refinery.refinery_user_registration_path do |f| -%>
 
   <%= render '/refinery/admin/error_messages', :object => @user, :include_object_name => true %>
 
@@ -34,3 +34,4 @@
              :hide_delete => true,
              :hide_cancel => true %>
 <% end -%>
+</div>

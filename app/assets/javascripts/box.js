@@ -95,35 +95,31 @@ function getPageSizeWithScroll()
 $(document).ready(function(){
     $('#log_iframe').contents().find('body').load(function (){
       changeFrameSize($('#log_iframe'),$('.box_S'))
-//      alert("Yes");
     });
     
     $('#log_iframe').load(function(){
       changeFrameSize($(this), $('.box_S'));
-//      alert("Yes");
     });
 
     $('#reg_iframe').contents().find('body').load(function (){
       changeFrameSize($('#log_iframe'),$('.box_S')) 
-//      alert("Yes");      
+    
     });
 
     $('#reg_iframe').load(function(){
       changeFrameSize($(this), $('.box_R'));
-//      alert("Yes");
     });
 
     
     $(window).resize( function() {
         var pagesize = getPageSizeWithScroll(); 
         $('.box_S').css({'left': (pagesize[0] / 2 - 225)});
-        $('.box_S').css({'top': (pagesize[1] / 2 - 350)});   
+        $('.box_S').css({'top': (pagesize[1] / 2 - 150)});   
         $('.box_R').css({'left': (pagesize[0] / 2 - 225)});
-        $('.box_R').css({'top': (pagesize[1] / 2 - 350)});
+        $('.box_R').css({'top': (pagesize[1] / 2 - 150)});
     });
     
     
-/*    
     var reg_options = { 
     target: '#reg_f', 
     success: showResponseReg   
@@ -140,57 +136,26 @@ $(document).ready(function(){
     }; 
     
     $('#logform').live("submit", function(){
-      $(this).ajaxSubmit(log_options); 
-    return false;
-    })
-    
-   $('form#sign_in').live('ajax:success', function(e, data, status, xhr) {
-    console.log(data);
-    if(data.success) {
-      window.location = "/"
-    } else {
-      $('#user_login_box').prepend(data.errors.join('<br />'));
-    }
-  });
-*/   
+        $(this).ajaxSubmit(log_options); 
+      return false;
+    });
 
 
+   
 });
 
 
-/*
 function showResponseReg(responseText, statusText, xhr, $form)  { 
     if (responseText.indexOf("success") != -1) {window.location = "/"}
     else {
-      var reg_options = { 
-      target: '#reg_f', 
-      success: showResponseReg   
-      }; 
-    
-      $('#regform').live("submit", function(){
-        $(this).ajaxSubmit(reg_options); 
-      return false;
-    })
+
     }
 } 
 
 function showResponseLog(responseText, statusText, xhr, $form)  { 
     if (responseText.indexOf("success") != -1) {window.location = "/"}
     else {
-      
-      $('#log_f_none').html(responseText);
-      $('#log_f').html($('#log').html());
-      $('#log_f_none').html("");
-      
-      
-      var log_options = { 
-      target: '#log_f', 
-      success: showResponseLog   
-      }; 
+  
     
-      $('#logform').live("submit", function(){
-        $(this).ajaxSubmit(log_options); 
-      return false;
-      })
     }
-} */
+} 

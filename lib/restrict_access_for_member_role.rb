@@ -7,8 +7,7 @@ module RestrictAccessForMemberRole
       "#{controller_name}##{action_name}" != 'static#welcome' &&
       "#{controller_path}##{action_name}" != 'refinery/users#new' &&
       "#{controller_path}##{action_name}" != 'refinery/users#create' &&
-      "#{controller_path}##{action_name}" != 'refinery/sessions#new' &&
-      "#{controller_path}##{action_name}" != 'refinery/sessions#create' &&
+      "#{controller_path}" != 'refinery/sessions' &&
       "#{controller_path}" != 'refinery/passwords'
       redirect_to refinery.new_refinery_user_session_path
 #    elsif 

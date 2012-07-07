@@ -1,8 +1,8 @@
-<%# content_for :header, t('there_are_no_users', :scope => 'refinery.welcome') %>
 
+<div id="reg">
 <% content_for :header, "Добро пожаловать в наш каталог магазинов. Зарегистрируйтесь, пожалуйста." %>
 
-<%= form_for :user, :html => {:id => 'regform'}, :url => refinery.refinery_user_registration_path do |f| -%>
+<%= form_for :refinery_user, :html => {:id => 'regform'}, :url => refinery.refinery_user_registration_path do |f| -%>
 
   <%= render '/refinery/admin/error_messages', :object => @user, :include_object_name => true %>
 
@@ -35,3 +35,4 @@
              :hide_delete => true,
              :hide_cancel => true %>
 <% end -%>
+</div>

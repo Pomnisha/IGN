@@ -1,32 +1,30 @@
 
 <div id="reg">
-
+  <header style="width:390px">
+      <h1>Форма регистрации</h1>
+  </header>
+  
 <%= form_for :refinery_user, :html => {:id => 'regform'}, :url => refinery.refinery_user_registration_path do |f| -%>
 
   <%= render '/refinery/admin/error_messages', :object => @user, :include_object_name => true %>
 
   <div class='field'>
     <%= f.label "Имя пользователя:" %>
-    <%= f.text_field :username, :class => 'larger widest' %>
+    <%= f.text_field :username %>
   </div>
   <div class='field'>
     <%= f.label "Элетронная почта:" %>
-    <%= f.text_field :email, :class => 'larger widest' %>
+    <%= f.email_field :email %>
   </div>
   <div class='field'>
     <%= f.label "Пароль:" %>
-    <%= f.password_field :password, :class => 'larger widest' %>
+    <%= f.password_field :password %>
   </div>
   <div class='field'>
     <%= f.label "Подтверждение пароля:" %>
-    <%= f.password_field :password_confirmation, :class => 'larger widest' %>
+    <%= f.password_field :password_confirmation %>
   </div>
 
-  <div class='clearfix'>
-    <div class='field forgot_password'>
-      <%= link_to "Я уже зарегистрированный позьлователь", refinery.new_refinery_user_session_path %>
-    </div>  
-  </div>
   <%= render '/refinery/admin/form_actions', :f => f,
              :submit_button_id => "reg_submit",
              :submit_continue => false,

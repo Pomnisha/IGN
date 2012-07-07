@@ -50,3 +50,120 @@
     width: 95%;
     outline: 0 none;
     }
+    
+#regform{margin: 0 auto;
+      width: 390px;
+      padding: 10px 0px;
+}
+
+#reg {
+  color: #41403C;
+  line-height: 1.5em;
+  font-family: Arial;
+  font-size: 13px;
+}
+
+#reg header{
+    width: 390px;
+    color: #41403C;    
+    background: none repeat scroll 0 0 #EAEAEA;
+    height: auto;
+    padding: 0 15px 1em;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    text-align: left;
+    font-family: Arial;
+    font-size: 13px;
+
+}
+
+#reg h1 {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 30px;
+    padding-bottom: 0;
+    padding-top: 15px;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+
+#reg .field {
+    clear: both;
+    color: #41403C;
+    content: ".";
+    display: block;
+    height: 40px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    display: block;
+    text-align: left;
+
+}
+
+#reg label {
+    color: #41403C;
+    font-size: 14px;
+    margin-top: 0;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: Arial;
+    text-align: left;
+
+}
+
+#reg input {
+    border: 1px solid #7F9DB9;
+    line-height: 20px;
+    padding: 0.4% 0.5%;
+}
+
+
+.form-actions {
+    border-radius: 5px 5px 5px 5px;
+    background-color: #F2F2F2;
+    border: 1px solid #CCCCCC;
+    height: 40px;
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    text-align: left; }
+    
+#reg_submit {
+    padding-bottom: 3px;
+    background: none repeat scroll 0 0 #22A7F2;
+    border: 0 none;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 0;
+    margin-top: 0;
+    border-radius: 6px 6px 6px 6px;
+}
+
+.form-actions-left {
+    border-radius: 5px 5px 5px 5px;
+    background-color: #F2F2F2;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-align: center; 
+  }
+
+.form-actions-right {
+    border-radius: 5px 5px 5px 5px;
+    background-color: #F2F2F2;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    text-align: center; }
+    

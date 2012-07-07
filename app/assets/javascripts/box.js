@@ -2,8 +2,8 @@ $(document).ready(function(){
 
 	$('.lightbox_R').click(function(){
     var pagesize = getPageSizeWithScroll();
-    $('.box_R').css({'left': (pagesize[0] / 2 - 225)});
-    $('.box_R').css({'top': (pagesize[1] / 2 - 350)});
+    $('.box_R').css({'left': (pagesize[0] / 2 - 230)});
+    $('.box_R').css({'top': (pagesize[1] / 2 - 225)});
     $('.backdrop_R, .box_R').animate({'opacity':'.50'}, 300, 'linear');
 		$('.box_R').animate({'opacity':'1.00'}, 300, 'linear');
 		$('.backdrop_R, .box_R').css('display', 'block');
@@ -19,8 +19,8 @@ $(document).ready(function(){
 
 	$('.lightbox_S').click(function(){
     var pagesize = getPageSizeWithScroll(); 
-    $('.box_S').css({'left': (pagesize[0] / 2 - 225)});
-    $('.box_S').css({'top': (pagesize[1] / 2 - 350)});   
+    $('.box_S').css({'left': (pagesize[0] / 2 - 230)});
+    $('.box_S').css({'top': (pagesize[1] / 2 - 225)});   
     $('.backdrop_S, .box_S').animate({'opacity':'.50'}, 300, 'linear');
 		$('.box_S').animate({'opacity':'1.00'}, 300, 'linear');
 		$('.backdrop_S, .box_S').css('display', 'block');
@@ -113,10 +113,10 @@ $(document).ready(function(){
     
     $(window).resize( function() {
         var pagesize = getPageSizeWithScroll(); 
-        $('.box_S').css({'left': (pagesize[0] / 2 - 225)});
-        $('.box_S').css({'top': (pagesize[1] / 2 - 150)});   
-        $('.box_R').css({'left': (pagesize[0] / 2 - 225)});
-        $('.box_R').css({'top': (pagesize[1] / 2 - 150)});
+        $('.box_S').css({'left': (pagesize[0] / 2 - 230)});
+        $('.box_S').css({'top': (pagesize[1] / 2 - 225)});   
+        $('.box_R').css({'left': (pagesize[0] / 2 - 230)});
+        $('.box_R').css({'top': (pagesize[1] / 2 - 225)});
     });
     
     
@@ -131,7 +131,7 @@ $(document).ready(function(){
     })
     
     var log_options = { 
-    target: '#log_f', 
+    target: '#log_f',
     success: showResponseLog   
     }; 
     
@@ -155,7 +155,7 @@ function showResponseReg(responseText, statusText, xhr, $form)  {
 function showResponseLog(responseText, statusText, xhr, $form)  { 
     if (responseText.indexOf("success") != -1) {window.location = "/"}
     else {
-  
-    
+
     }
+    
 } 

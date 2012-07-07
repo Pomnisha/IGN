@@ -2,11 +2,11 @@
 <%= form_for resource, :as => resource_name, :html => {:id => 'logform'}, 
                        :url => refinery.refinery_user_session_path do |f| %>
   <div class='field session_username clearfix'>
-    <%= f.label :login %>
+    <%= f.label :login, "Логин" %>
     <%= f.text_field :login %>
   </div>
   <div class='field session_password clearfix'>
-    <%= f.label :password %>
+    <%= f.label :password, "Пароль" %>
     <%= f.password_field :password, :autocomplete => 'off' %>
   </div>
   <div class='clearfix'>

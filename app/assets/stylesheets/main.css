@@ -92,6 +92,16 @@ a img {
 	
 	margin-left: 10px;
 }
+#soc_seti {
+	height: 17px;
+	float: right;
+  clear:right;
+  position:relative;
+  right: 60px;
+}
+
+
+
 .clear {
 	clear: both;
 	float: none;
@@ -103,10 +113,7 @@ a img {
 	margin-bottom: 22px;
 	margin-bottom: 22px;
 }
-#soc_seti {
-  float:right;
-	height: 17px;
-}
+
 #logo_soc_seti {
 	float: right;
 }
@@ -245,7 +252,7 @@ ul#left_menu_body li ul.subnav li{
 	border-bottom: 1px solid #444; /*--Create bevel effect--*/
 	clear: both;
 	width: 230px;
-  height: 25px;
+  min-height: 25px;
 }
 html ul#left_menu_body li ul.subnav li a {
 	float: left;

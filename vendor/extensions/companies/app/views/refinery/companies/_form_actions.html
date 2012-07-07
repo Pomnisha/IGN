@@ -1,6 +1,6 @@
 <%
   unless (hide_submit ||= false)
-    submit_button_text  ||= ""
+    submit_button_text  ||= " "
     submit_button_id    ||= "submit_button"
     submit_button_title ||= nil
   end
@@ -8,7 +8,7 @@
   hide_cancel = from_dialog? unless defined?(hide_cancel).presence
 
   unless hide_cancel
-    cancel_button_text  ||= ""
+    cancel_button_text  ||= " "
     unless defined?(cancel_title)
       cancel_title = t('.cancel_lose_changes')
     end
@@ -25,7 +25,7 @@
   end
 
   unless hide_delete
-    delete_button_text  ||= ""
+    delete_button_text  ||= " "
     delete_title        ||= nil
     delete_confirmation ||= nil
     delete_button_id    ||= "delete_button"

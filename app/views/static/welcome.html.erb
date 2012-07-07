@@ -57,13 +57,20 @@
     <a href="#" class = "lightbox_R">Зарегистрироваться</a>
   </div>
   
-  <div id="search">
+
   <% if !current_refinery_user.nil? then %>
-    <%= link_to "В каталог - жми на IGN", refinery.categories_categories_path %>
+    <div id="form_search_title">
+      <%= form_tag refinery.shops_shops_path, :method => 'get' do %>
+        <%= submit_tag "Search", :class => "submit", :type => "image", :id => "submit", :src => "../images/submit2.png", :name => nil %>
+        <%= text_field_tag :search, params[:search] %>
+      <% end %>
+    </div>	
   <% else %>  
-    <a href="#" class="lightbox_S">Поиск по каталогу</a>
+    <div id="search_link">
+      <a href="#" class="lightbox_S">Поиск по каталогу</a>
+    </div>
   <% end %>
-  </div>
+
 </div>	
 <div id="footer"> 
 <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>

@@ -48,6 +48,8 @@ a img {
 #soc_seti {
 	height: 17px;
 	float: right;
+  position: relative;
+  
 }
 #logo_soc_seti {
 	float: right;

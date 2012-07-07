@@ -14,7 +14,7 @@
   <% Refinery::Categories::Category.where(:popular => true).first(3).each do |c| %>
   <% i = i + 1 %>
     <div id="<%= "middle_menu#{i}" %>">
-      <%= image_fu c.logo, '90x92' %>
+      <%= image_fu c.logo, '80x82' %>
       <h2><%= c.name %></h2>
         <% c.subcategories.first(4).each do |s| %>
           <ul>

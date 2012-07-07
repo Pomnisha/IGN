@@ -228,7 +228,7 @@ right: 490px;
 	background: url(../images/search2.png) no-repeat;
 	background-repeat: no-repeat;
 }
-#search {
+#search_title {
 	border: none;
 	background: none;
 
@@ -244,7 +244,7 @@ right: 490px;
 	font-family: Verdana, Geneva, sans-serif;
 	color: #000;
 }
-#submit {
+#submit_title {
 	
 	position: relative;
 	right: 69px;

@@ -61,8 +61,8 @@
   <% if !current_refinery_user.nil? then %>
     <div id="form_search_title">
       <%= form_tag refinery.shops_shops_path, :method => 'get' do %>
-        <%= submit_tag "Search", :class => "submit", :type => "image", :id => "submit", :src => "../images/submit2.png", :name => nil %>
-        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :class => "submit_title", :type => "image", :id => "submit_title", :src => "../images/submit2.png", :name => nil %>
+        <%= text_field_tag :search, params[:search], :id=>"search_title" %>
       <% end %>
     </div>	
   <% else %>  

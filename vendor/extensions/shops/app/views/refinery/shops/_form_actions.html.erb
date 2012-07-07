@@ -39,11 +39,13 @@
 <% end %>
 
 <div class='form-actions<%= ' form-actions-dialog' if from_dialog? %>'>
+
   <div class='form-actions-left'>
     <%= submit_tag submit_button_text,
                    :id => submit_button_id,
                    :name => nil,
                    :class => "wymupdate button",
+                   :type => "image",
                    :tooltip => submit_button_title unless hide_submit %>
 
     <%= render '/refinery/shops/continue_editing', :f => f if continue_editing -%>

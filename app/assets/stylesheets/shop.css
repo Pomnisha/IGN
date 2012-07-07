@@ -254,9 +254,7 @@ html ul#left_menu_body li ul.subnav li a {
 	width: 230px;
 	padding-left: 20px;
 }
-html ul#left_menu_body li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
-  background: #b82b2b; /*url(dropdown_linkbg.gif) no-repeat 10px center; */
-}
+
 
 #banner_left {
 	float: left;
@@ -275,7 +273,7 @@ html ul#left_menu_body li ul.subnav li a:hover { /*--Hover effect for subnav lin
 	background-image: url(../images/content_bg.png);
 	background-repeat: repeat-y;
 }
-#content h1{color:#fff;}
+#content h1{color:#fff; text-align: center;}
 .content_top_bot {
 	background-image: url(../images/content_top_bot.png);
 	background-repeat: no-repeat;
@@ -374,7 +372,6 @@ html ul#left_menu_body li ul.subnav li a:hover { /*--Hover effect for subnav lin
 	height: 300px;
 	width: 600px;	
   position:relative;
-  float: left;
 }
 #count_pages  {
 	padding-top: 25px;

@@ -11,7 +11,6 @@
 <% end %>
 <div class="categoryes">
     <div class="icon_category">        
-    
     <a href="<%= refinery.companies_company_path(c.id)%>">
       <% unless c.logo.nil? -%>
         <%= image_fu c.logo, '73x88' %>
@@ -21,9 +20,7 @@
     </a>
   </div>
     <div class="category_text">
-      <h2>
-        <a href="<%= refinery.companies_company_url(c.id) %>"><%= c.name.html_safe + "-" + c.short_description.html_safe %></a>
-      </h2>
+      <h2><a href="<%= refinery.companies_company_url(c.id) %>"><%= c.name.html_safe + "-" + c.short_description.html_safe %></a></h2>
       <p><%= c.description.html_safe %></p>
     </div>
   </div>

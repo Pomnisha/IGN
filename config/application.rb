@@ -68,5 +68,7 @@ module Ign6
       ApplicationController.send :include, RestrictAccessForMemberRole
       ApplicationController.send :before_filter, :restrict_access_for_member_role
     end
+    config.middleware.insert 1, 'Dragonfly::Middleware', :images
+    
   end
 end

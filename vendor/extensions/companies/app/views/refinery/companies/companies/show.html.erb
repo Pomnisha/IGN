@@ -17,7 +17,7 @@
 			  ymaps.ready(function () { 
 					var myMap = new ymaps.Map("YMapsID", {
 					center: [<%= "#{@company.map_latitude},#{@company.map_longtitude}" -%>],
-						zoom: 10,
+						zoom: 15,
 						type: "yandex#satellite"
 					}
 				);

@@ -1,29 +1,7 @@
-<div id="categoryes_body">
-<% i = 0 %>  
-<%- @companies.each do |c| %>
-<% i = i + 1 %>
-<% if i == 4 then%>
-  <%= render "refinery/slider2" %>
-<% end %>
-<div class="categoryes">
-    <div class="icon_category">        
-    
-    <a href="<%= refinery.companies_company_path(c.id)%>">
-      <% unless c.logo.nil? -%>
-        <%= image_fu c.logo, '73x88' %>
-      <% else -%>
-        <%= image_tag c.img.thumb('73x88').url if c.img_uid %>
-      <% end -%>
-    </a>
-  </div>
-    <div class="category_text">
-      <h2>
-        <a href="<%= refinery.companies_company_url(c.id) %>"><%= c.name.html_safe + "-" + c.short_description.html_safe %></a>
-      </h2>
-      <p><%= c.description.html_safe %></p>
-    </div>
-  </div>
-<%- end %>
-</div>
-
-<%= will_paginate @companies, previous_label: h("<-"), next_label: h("->")  %>
+<section id='records'>
+  <%= render 'records' %>
+</section>
+<aside id='actions'>
+  <%= render 'actions' %>
+</aside>
+<%= render '/refinery/admin/make_sortable', :tree => false if !searching? and ::Refinery::Companies::Admin::CompaniesController.sortable? and ::Refinery::Companies::Company.count > 1 %>

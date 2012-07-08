@@ -21,11 +21,13 @@ module Refinery
         @company = Company.new
       end
       def show
-        @company = Company.find(params[:id]).where(:visability => true)
+        @company = Company.where(:visability => true, :id => params[:id]).first
+        
+        redirect_to refinery.root_path unless !@company.nil?
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @company in the line below:
-        present(@page)
+        #present(@page)
       end
       
       def create

@@ -20,7 +20,7 @@
     </a>
   </div>
     <div class="category_text">
-      <h2><a href="<%= refinery.companies_company_url(c.id) %>"><%= c.name.html_safe + "-" + c.short_description.html_safe %></a></h2>
+      <h2><a href="<%= refinery.companies_company_url(c.id) %>"><%= c.name.html_safe + "-" + trancate c.short_description.html_safe, :length => 140 %></a></h2>
       <p><%= c.description.html_safe %></p>
     </div>
   </div>

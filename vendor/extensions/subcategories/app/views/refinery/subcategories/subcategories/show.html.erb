@@ -17,7 +17,7 @@
     <div class="category_text">
       <h2><a href="<%= refinery.shops_shop_url(s.id)%>"><%= s.name.html_safe %></a></h2>
       <a class="out_link" href="<%= s.url %>"><%= s.url %></a>
-      <%= s.short_description.html_safe %>
+      <%= truncate s.short_description.html_safe, :length => 140 %>
       <div class="line"></div>
       Телефон: <%= s.phone %>   e-mail: <%= s.e_mail  %>
     </div>

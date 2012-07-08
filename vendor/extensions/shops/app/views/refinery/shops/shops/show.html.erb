@@ -1,5 +1,5 @@
 <div class="onshop_container">      
-  <h1><%= Refinery::Categories::Category.find(Refinery::Subcategories::Subcategory.find(@shop.subcategory_id).id).name -%></h1>
+  <h1><%= Refinery::Categories::Category.find(Refinery::Subcategories::Subcategory.find(@shop.subcategory_id).category_id).name -%></h1>
   <%= link_to "редактировать", refinery.edit_shops_shop_path(@shop.id) if @shop.user == current_refinery_user %>
   <div class="onshop">
     <a class="shop_url" href="<%= @shop.url %>"><%= @shop.url -%></a>

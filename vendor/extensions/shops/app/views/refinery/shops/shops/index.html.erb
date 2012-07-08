@@ -13,7 +13,7 @@
       
       <h2><a href="<%= refinery.shops_shop_url(s.id)%>"><%= s.short_description.html_safe %></a></h2>
       <a class="out_link" href="<%= s.url %>"><%= s.url %></a>
-      <%= s.description.html_safe %>
+      <%= truncate s.description.html_safe, :length => 140 %>
       <div class="line"></div>
       Телефон: <%= s.phone %>   e-mail: <%= s.e_mail  %>
     </div>
@@ -22,10 +22,4 @@
 <div id="count_pages">
 <%= will_paginate @shops, previous_label: h("<-"), next_label: h("->")  %>
 </div>
-<div id="slider">
-    <div id="array_left"></div>
-    <div id="array_right"></div>
-    <div id="slide">
-      
-    </div>
-</div>      
+  <%= render "refinery/slider2" %>    

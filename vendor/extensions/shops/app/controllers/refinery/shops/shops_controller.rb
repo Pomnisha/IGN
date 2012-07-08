@@ -21,8 +21,9 @@ module Refinery
       end
       
       def show
-        @shop = Shop.find(params[:id]).where(:visability => true)
-
+        @shop = Shop.where(:visability => true, :id => params[:id]).first
+        
+        redirect_to refinery.root_path if @shop.nil?
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @shop in the line below:
 #        present(@page)

@@ -3,11 +3,11 @@ $(document).ready(function(){
     function() {
       $(this).addClass("subhover");
       $(this).find('ul').stop(true, true);
-      $(this).find('ul').slideDown();
+      $(this).find('ul').show();
     },
     function() {
       $(this).removeClass("subhover");
-      $(this).find('ul').slideUp('slow');
+      $(this).find('ul').hide();
     }
   );
 });

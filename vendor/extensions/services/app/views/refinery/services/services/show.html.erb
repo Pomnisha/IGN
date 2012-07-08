@@ -4,7 +4,7 @@
 
 <div id="categoryes_body">
 <% i = 0 %>  
-<%- @companies.each do |c| %>
+<%- @companies.where(:visability => true).each do |c| %>
 <% i = i + 1 %>
 <% if i == 4 then%>
   <%= render "refinery/slider2" %>

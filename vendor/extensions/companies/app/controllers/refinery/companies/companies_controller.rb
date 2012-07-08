@@ -14,14 +14,14 @@ module Refinery
 #        present(@page)
 
 #        @companies = Company.search(params[:search])
-        @companies = Company.search(params[:search]).page(params[:page]).per_page(5)        
+        @companies = Company.search(params[:search]).where(:visability => true).page(params[:page]).per_page(5)    
 
       end
       def new
         @company = Company.new
       end
       def show
-        @company = Company.find(params[:id])
+        @company = Company.find(params[:id]).where(:visability => true)
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @company in the line below:

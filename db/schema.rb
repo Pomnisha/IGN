@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120707012647) do
+ActiveRecord::Schema.define(:version => 20120707212409) do
 
   create_table "refinery_banners", :force => true do |t|
     t.string   "url"
@@ -180,12 +180,13 @@ ActiveRecord::Schema.define(:version => 20120707012647) do
     t.string   "vip_code"
     t.integer  "user_id"
     t.integer  "position"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.float    "map_latitude"
     t.float    "map_longtitude"
     t.string   "address"
     t.string   "img_uid"
+    t.boolean  "visability",        :default => false
   end
 
   create_table "refinery_subcategories", :force => true do |t|

@@ -1,5 +1,5 @@
 <% i = 0 %>
-<% @shops.each do |s| %>
+<% @shops.where(:visability => true).each do |s| %>
 <% i = i + 1 %>
 <% if i == 4 then%>
   <%= render "refinery/slider2" %>

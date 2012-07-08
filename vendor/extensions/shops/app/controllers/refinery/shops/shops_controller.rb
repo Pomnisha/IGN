@@ -12,7 +12,7 @@ module Refinery
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @shop in the line below:
  #       present(@page)
-        @shops = Shop.search(params[:search]).page(params[:page]).per_page(5)   
+        @shops = Shop.search(params[:search]).where(:visability => true).page(params[:page]).per_page(5)
 #        @shops = Shop.search(params[:search])
       end
       
@@ -21,7 +21,7 @@ module Refinery
       end
       
       def show
-        @shop = Shop.find(params[:id])
+        @shop = Shop.find(params[:id]).where(:visability => true)
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @shop in the line below:

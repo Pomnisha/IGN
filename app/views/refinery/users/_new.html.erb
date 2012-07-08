@@ -4,7 +4,7 @@
       <h1>Форма регистрации</h1>
   </header>
   
-<%= form_for :refinery_user, :html => {:id => 'regform'}, :url => refinery.refinery_user_registration_path do |f| -%>
+<%= form_for :user, :html => {:id => 'regform'}, :url => refinery.refinery_user_registration_path do |f| -%>
 
   <%= render '/refinery/admin/error_messages', :object => @user, :include_object_name => true %>
 

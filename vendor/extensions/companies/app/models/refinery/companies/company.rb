@@ -11,6 +11,8 @@ module Refinery
       belongs_to :user, :class_name => "Refinery::User"
       belongs_to :service, :class_name => "Refinery::Services::Service"
       belongs_to :logo, :class_name => '::Refinery::Image'
+      validates_acceptance_of :visability      
+      
       image_accessor :img
 
       def self.search(search)

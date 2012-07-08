@@ -10,7 +10,8 @@ module Refinery
       belongs_to :user, :class_name => "Refinery::User"
       belongs_to :subcategory, :class_name => "Refinery::Subcategories::Subcategory"
 #      validates :url, :presence => true, :uniqueness => true
-
+      validates_acceptance_of :visability
+      
       belongs_to :logo, :class_name => '::Refinery::Image'
       image_accessor :img
       

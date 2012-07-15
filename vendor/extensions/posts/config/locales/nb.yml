@@ -1,0 +1,30 @@
+nb:
+  refinery:
+    plugins:
+      posts:
+        title: Posts
+    posts:
+      admin:
+        posts:
+          actions:
+            create_new: Lag en ny Post
+            reorder: Endre rekkefølgen på Posts
+            reorder_done: Ferdig å endre rekkefølgen Posts
+          records:
+            title: Posts
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Posts enda. Klikk på "Lag en ny Post" for å legge til din første post.
+          post:
+            view_live_html: Vis hvordan denne post ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne post
+            delete: Fjern denne post permanent
+      posts:
+        show:
+          other: Andre Posts
+  activerecord:
+    attributes:
+      'refinery/posts/post':
+        body: Body
+        id: Id
+        topic_id: Topic
+        user_id: User

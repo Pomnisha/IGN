@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      posts:
+        title: Posts
+    posts:
+      admin:
+        posts:
+          actions:
+            create_new: Maak een nieuwe Post
+            reorder: Wijzig de volgorde van de Posts
+            reorder_done: Klaar met het wijzingen van de volgorde van de Posts
+          records:
+            title: Posts
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Posts. Druk op 'Maak een nieuwe Post' om de eerste aan te maken.
+          post:
+            view_live_html: Bekijk deze post op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze post
+            delete: Verwijder deze post voor eeuwig
+      posts:
+        show:
+          other: Andere Posts
+  activerecord:
+    attributes:
+      'refinery/posts/post':
+        body: Body
+        id: Id
+        topic_id: Topic
+        user_id: User

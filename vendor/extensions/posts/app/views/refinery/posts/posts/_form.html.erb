@@ -1,0 +1,29 @@
+<%= form_for [refinery, :posts, @post] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @post,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :body, "Текст комментария" -%>
+    <%= f.text_area :body  -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :topic_id, "Тема" -%>
+    <%= f.select :topic_id, Refinery::Topics::Topic.all.collect {|p| [ p.name, p.id ] }  -%>
+  </div>
+  
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.posts.admin.posts.post'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete') %>
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end %>

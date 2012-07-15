@@ -1,0 +1,31 @@
+
+<%= form_for [refinery, :topics_admin, @topic] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @topic,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :name , "Название"-%>
+    <%= f.text_field :name, :class => 'larger widest'  -%>
+
+  </div>
+
+  <div class='field'>
+    <%= f.label :category_id -%>
+    <%= f.select :category_id, Refinery::Categories::Category.all.collect {|p| [ p.name, p.id ] }  -%>
+
+  </div>
+  
+  
+  <div class='field'>
+    <%= f.label :visiable -%>
+    <%= f.check_box :visiable, :checked => @topic[:visiable]  -%>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.topics.admin.topics.topic'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @topic.name) %>
+<% end -%>

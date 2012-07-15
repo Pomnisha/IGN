@@ -1,0 +1,31 @@
+en:
+  refinery:
+    plugins:
+      topics:
+        title: Topics
+    topics:
+      admin:
+        topics:
+          actions:
+            create_new: Add New Topic
+            reorder: Reorder Topics
+            reorder_done: Done Reordering Topics
+          records:
+            title: Topics
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Topics yet. Click "Add New Topic" to add your first topic.
+          topic:
+            view_live_html: View this topic live <br/><em>(opens in a new window)</em>
+            edit: Edit this topic
+            delete: Remove this topic forever
+      topics:
+        show:
+          other: Other Topics
+  activerecord:
+    attributes:
+      'refinery/topics/topic':
+        name: Name
+        id: Id
+        category_id: Category
+        user_id: User
+        visiable: Visiable

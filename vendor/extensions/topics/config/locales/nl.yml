@@ -1,0 +1,31 @@
+nl:
+  refinery:
+    plugins:
+      topics:
+        title: Topics
+    topics:
+      admin:
+        topics:
+          actions:
+            create_new: Maak een nieuwe Topic
+            reorder: Wijzig de volgorde van de Topics
+            reorder_done: Klaar met het wijzingen van de volgorde van de Topics
+          records:
+            title: Topics
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Topics. Druk op 'Maak een nieuwe Topic' om de eerste aan te maken.
+          topic:
+            view_live_html: Bekijk deze topic op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze topic
+            delete: Verwijder deze topic voor eeuwig
+      topics:
+        show:
+          other: Andere Topics
+  activerecord:
+    attributes:
+      'refinery/topics/topic':
+        name: Name
+        id: Id
+        category_id: Category
+        user_id: User
+        visiable: Visiable

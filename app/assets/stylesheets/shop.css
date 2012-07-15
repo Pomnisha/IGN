@@ -168,6 +168,7 @@ ul#top_menu_body li:first-child {
 	padding-left: 88px;
 }
 #top_left_menu {
+  float: left;
 	background-image: url(../images/top_left_menu.png);
 	background-repeat: no-repeat;
 	height: 47px;
@@ -184,6 +185,65 @@ ul#top_menu_body li:first-child {
 	background-position: right;
 	margin-top: -9px;
 }
+
+#account {
+	position: relative;
+	float: left;
+	width: 254px;
+	background-image: url(../images/left_menu_bg.png);
+	background-repeat: repeat-y;
+	background-position: right;
+	height: 180px;
+}
+
+#account_name {
+	position: relative;
+	float: left;
+	width: 250px;
+	height: 36px;
+	margin-left: 2px;
+	background: url(../images/account_h1.png) no-repeat;
+	
+}
+
+#account_name  h5{
+	position: relative;
+	color: #fff;
+	text-shadow: #000 0 -1px;
+	top: 8px;
+	margin-left: 70px;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#account a{
+	position: relative;
+	color: #fff;
+	padding-bottom: 8px;
+	margin-left: 20px;
+	font-size: 13px;
+	float: left;
+  width:230px;
+}
+
+#account p{
+	position: relative;
+	color: #fff;
+	text-decoration: underline;
+	font-size: 13px;
+	float: right;
+	right: 20px;
+}
+
+#account p a{
+	position: relative;
+	color: #fff;
+	text-decoration: underline;
+	font-size: 13px;
+	float: right;
+	right: 20px;
+}
+
 ul#left_menu_body {
 	padding: 0 5px 0 13px;
 	list-style-position: inside;

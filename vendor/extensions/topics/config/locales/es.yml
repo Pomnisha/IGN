@@ -1,0 +1,32 @@
+es:
+  refinery:
+    plugins:
+      topics:
+        title: Topics
+#        article: masculino/femenino
+    topics:
+      admin:
+        topics:
+          actions:
+            create_new: Crear nuevo topic
+            reorder: Reordenar topics
+            reorder_done: Reordenación de topics completada
+          records:
+            title: Topics
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay topics todavía. Pulsa en "Crear nuevo Topic" para crear tu primer topic.
+          topic:
+            view_live_html: Ver este topic como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este topic
+            delete: Borrar este topic para siempre
+      topics:
+        show:
+          other: Otros topics
+  activerecord:
+    attributes:
+      'refinery/topics/topic':
+        name: Name
+        id: Id
+        category_id: Category
+        user_id: User
+        visiable: Visiable

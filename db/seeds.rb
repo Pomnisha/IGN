@@ -29,3 +29,9 @@ Refinery::Banners::Engine.load_seed
 
 # Added by Refinery CMS Menus extension
 Refinery::Menus::Engine.load_seed
+
+# Added by Refinery CMS Topics extension
+Refinery::Topics::Engine.load_seed
+
+# Added by Refinery CMS Posts extension
+Refinery::Posts::Engine.load_seed

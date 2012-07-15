@@ -9,11 +9,15 @@ PATH
       refinerycms-core (~> 2.0.4)
     refinerycms-menus (1.0)
       refinerycms-core (~> 2.0.4)
+    refinerycms-posts (1.0)
+      refinerycms-core (~> 2.0.4)
     refinerycms-services (1.0)
       refinerycms-core (~> 2.0.4)
     refinerycms-shops (1.0)
       refinerycms-core (~> 2.0.4)
     refinerycms-subcategories (1.0)
+      refinerycms-core (~> 2.0.4)
+    refinerycms-topics (1.0)
       refinerycms-core (~> 2.0.4)
 
 GEM
@@ -228,9 +232,11 @@ DEPENDENCIES
   refinerycms-companies!
   refinerycms-i18n (~> 2.0.0)
   refinerycms-menus!
+  refinerycms-posts!
   refinerycms-services!
   refinerycms-shops!
   refinerycms-subcategories!
+  refinerycms-topics!
   sass-rails (~> 3.2.3)
   sqlite3
   therubyracer

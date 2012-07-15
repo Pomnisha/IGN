@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Topics::Admin::TopicsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.topics_admin_topics_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_topics_admin_topic_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Topics::Admin::TopicsController.sortable? && ::Refinery::Topics::Topic.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Topics"),
+                 refinery.topics_admin_topics_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Topics"),
+                 refinery.topics_admin_topics_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

@@ -1,0 +1,30 @@
+fr:
+  refinery:
+    plugins:
+      posts:
+        title: Posts
+    posts:
+      admin:
+        posts:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Post
+            reorder: Réordonner les Posts
+            reorder_done: Fin de réordonnancement des Posts
+          records:
+            title: Posts
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Post. Cliquer sur "Créer un(e) nouve(au/l/lle) Post" pour créer votre premi(er/ère) post.'
+          post:
+            view_live_html: Voir ce(t/tte) post <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) post
+            delete: Supprimer définitivement ce(t/tte) post
+      posts:
+        show:
+          other: Autres Posts
+  activerecord:
+    attributes:
+      'refinery/posts/post':
+        body: Body
+        id: Id
+        topic_id: Topic
+        user_id: User

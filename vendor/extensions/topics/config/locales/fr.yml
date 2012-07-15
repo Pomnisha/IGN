@@ -1,0 +1,31 @@
+fr:
+  refinery:
+    plugins:
+      topics:
+        title: Topics
+    topics:
+      admin:
+        topics:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Topic
+            reorder: Réordonner les Topics
+            reorder_done: Fin de réordonnancement des Topics
+          records:
+            title: Topics
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Topic. Cliquer sur "Créer un(e) nouve(au/l/lle) Topic" pour créer votre premi(er/ère) topic.'
+          topic:
+            view_live_html: Voir ce(t/tte) topic <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) topic
+            delete: Supprimer définitivement ce(t/tte) topic
+      topics:
+        show:
+          other: Autres Topics
+  activerecord:
+    attributes:
+      'refinery/topics/topic':
+        name: Name
+        id: Id
+        category_id: Category
+        user_id: User
+        visiable: Visiable

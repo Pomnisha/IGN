@@ -1,0 +1,31 @@
+nb:
+  refinery:
+    plugins:
+      topics:
+        title: Topics
+    topics:
+      admin:
+        topics:
+          actions:
+            create_new: Lag en ny Topic
+            reorder: Endre rekkefølgen på Topics
+            reorder_done: Ferdig å endre rekkefølgen Topics
+          records:
+            title: Topics
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Topics enda. Klikk på "Lag en ny Topic" for å legge til din første topic.
+          topic:
+            view_live_html: Vis hvordan denne topic ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne topic
+            delete: Fjern denne topic permanent
+      topics:
+        show:
+          other: Andre Topics
+  activerecord:
+    attributes:
+      'refinery/topics/topic':
+        name: Name
+        id: Id
+        category_id: Category
+        user_id: User
+        visiable: Visiable

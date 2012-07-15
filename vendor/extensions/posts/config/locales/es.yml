@@ -1,0 +1,31 @@
+es:
+  refinery:
+    plugins:
+      posts:
+        title: Posts
+#        article: masculino/femenino
+    posts:
+      admin:
+        posts:
+          actions:
+            create_new: Crear nuevo post
+            reorder: Reordenar posts
+            reorder_done: Reordenación de posts completada
+          records:
+            title: Posts
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay posts todavía. Pulsa en "Crear nuevo Post" para crear tu primer post.
+          post:
+            view_live_html: Ver este post como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este post
+            delete: Borrar este post para siempre
+      posts:
+        show:
+          other: Otros posts
+  activerecord:
+    attributes:
+      'refinery/posts/post':
+        body: Body
+        id: Id
+        topic_id: Topic
+        user_id: User

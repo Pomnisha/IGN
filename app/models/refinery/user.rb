@@ -10,6 +10,10 @@ module Refinery
     has_many :plugins, :class_name => "UserPlugin", :order => "position ASC", :dependent => :destroy
     has_many :shops, :class_name => "Refinery::Shops::Shop", :dependent => :destroy
     has_many :companies, :class_name => "Refinery::Companies::Company", :dependent => :destroy
+    has_many :topics, :class_name => "Refinery::Topics::Topic", :dependent => :destroy
+    has_many :posts, :class_name => "Refinery::Posts::Post", :through => :topics, :dependent => :destroy
+    
+    
     friendly_id :username
 
     # Include default devise modules. Others available are:

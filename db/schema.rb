@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120707212409) do
+ActiveRecord::Schema.define(:version => 20120715200424) do
 
   create_table "refinery_banners", :force => true do |t|
     t.string   "url"
@@ -48,9 +48,10 @@ ActiveRecord::Schema.define(:version => 20120707212409) do
     t.string   "address"
     t.integer  "user_id"
     t.integer  "position"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.string   "img_uid"
+    t.boolean  "visability",        :default => false
   end
 
   create_table "refinery_images", :force => true do |t|
@@ -136,6 +137,15 @@ ActiveRecord::Schema.define(:version => 20120707212409) do
   add_index "refinery_pages", ["parent_id"], :name => "index_refinery_pages_on_parent_id"
   add_index "refinery_pages", ["rgt"], :name => "index_refinery_pages_on_rgt"
 
+  create_table "refinery_posts", :force => true do |t|
+    t.text     "body"
+    t.integer  "topic_id"
+    t.integer  "user_id"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "refinery_resources", :force => true do |t|
     t.string   "file_mime_type"
     t.string   "file_name"
@@ -192,6 +202,16 @@ ActiveRecord::Schema.define(:version => 20120707212409) do
   create_table "refinery_subcategories", :force => true do |t|
     t.string   "name"
     t.integer  "category_id"
+    t.integer  "position"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "refinery_topics", :force => true do |t|
+    t.string   "name"
+    t.integer  "category_id"
+    t.integer  "user_id"
+    t.boolean  "visiable"
     t.integer  "position"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

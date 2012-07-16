@@ -40,14 +40,7 @@
 
 <div class='form-actions<%= ' form-actions-dialog' if from_dialog? %>'>
   <div class='form-actions-left'>
-    <%= submit_tag submit_button_text,
-                   :id => submit_button_id,
-                   :name => nil,
-                  :type => "image",
-                   :class => "wymupdate button",
-                   :tooltip => submit_button_title unless hide_submit %>
 
-    <%= render '/refinery/companies/continue_editing', :f => f if continue_editing -%>
     <%= hidden_field_tag :continue_editing, false if continue_editing %>
 
     <%= local_assigns[:before_cancel_button] -%>
@@ -58,6 +51,16 @@
                 :class => "close_dialog button") unless hide_cancel %>
 
     <%= local_assigns[:after_cancel_button] -%>
+    
+    <%= submit_tag submit_button_text,
+                   :id => submit_button_id,
+                   :name => nil,
+                  :type => "image",
+                   :class => "wymupdate button",
+                   :tooltip => submit_button_title unless hide_submit %>
+
+    <%= render '/refinery/companies/continue_editing', :f => f if continue_editing -%>    
+    
   </div>
   <div class='form-actions-right'>
     <%= local_assigns[:before_delete_button] -%>

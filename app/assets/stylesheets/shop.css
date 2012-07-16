@@ -521,23 +521,32 @@ div.onshop p{
   height: 1230px;
 }
 
-#shop .button {
+#shop #submit_button {
 /*	margin-left: 220px;*/
 	margin-top: 20px;
 	background: url(../images/button.png) no-repeat;
 	width: 212px;
 	float: left;
 	height: 39px;
-	margin-left: 50px;
+	margin-left: 15px;
 	padding-bottom: 20px;
 	}
-
+  
+#shop #delete_button {
+	margin-top: 20px;
+	background: url(../images/delete.png) no-repeat;
+	padding-bottom: 20px;
+  float: right;
+  padding: 10px;
+  width: 184px;
+  height: 32px;
+}
 #shop .close_dialog {
   background: url(../images/cancel.png) no-repeat;
 	width: 139px;
 	height: 39px;
 	float:left;
-	margin-left: 130px;
+	margin-left: 10px;
 	margin-top: 20px;
 	padding-bottom: 20px;
 	
@@ -762,6 +771,12 @@ width: 150px;
 
 }
 
+#edit_button {
+	background: url(../images/edit.png) no-repeat;
+  float: right;
+  width: 184px;
+  height: 32px;
+}
 
 
 

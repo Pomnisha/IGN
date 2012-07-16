@@ -357,7 +357,7 @@ ul#left_menu_body li a {
 	border: #E8E8E7 1px solid;
 	margin: 0 auto;
 	background-image: url(../images/onshop_bg.png);
-	min-height: 489px;
+	min-height: 610px;
 	width: 620px;	
 }
 .shop_url {
@@ -463,23 +463,32 @@ ul#left_menu_body li a {
 
 }
 
-#company .button {
-/*	margin-left: 220px;*/
+#company #submit_button {
 	margin-top: 20px;
 	background: url(../images/button.png) no-repeat;
 	width: 212px;
 	float: left;
 	height: 39px;
-	margin-left: 50px;
+	margin-left: 15px;
 	padding-bottom: 20px;
 	}
+  
+#company #delete_button {
+	margin-top: 20px;
+	background: url(../images/delete.png) no-repeat;
+	padding-bottom: 20px;
+  float: right;
+  padding: 10px;
+  width: 184px;
+  height: 32px;
+}
 
 #company .close_dialog {
 background: url(../images/cancel.png) no-repeat;
 	width: 139px;
 	height: 39px;
 	float:left;
-	margin-left: 130px;
+	margin-left: 10px;
 	margin-top: 20px;
 	padding-bottom: 20px;
 	
@@ -561,4 +570,11 @@ background: url(../images/punkt.png) ;
 	background-image: url(../images/form_bottom.png);
 	height: 9px;
 	width: 640px;	
+}
+
+#edit_button {
+	background: url(../images/edit.png) no-repeat;
+  float: right;
+  width: 184px;
+  height: 32px;
 }

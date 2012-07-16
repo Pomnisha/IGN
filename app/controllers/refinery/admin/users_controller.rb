@@ -102,6 +102,8 @@ module Refinery
           redirect_to(main_app.refinery_admin_users_path) and return
         end
       end
+  
+
     end
   end
 end

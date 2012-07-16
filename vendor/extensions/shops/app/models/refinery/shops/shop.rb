@@ -11,6 +11,14 @@ module Refinery
       belongs_to :subcategory, :class_name => "Refinery::Subcategories::Subcategory"
 #      validates :url, :presence => true, :uniqueness => true
       
+      validates :url, :presence => true
+      validates :name, :presence => true
+      validates :short_description, :presence => true
+      validates :description, :presence => true
+      validates :subcategory_id, :presence => true
+      validates :city, :presence => true
+      validates :e_mail, :presence => true
+
       belongs_to :logo, :class_name => '::Refinery::Image'
       image_accessor :img
       

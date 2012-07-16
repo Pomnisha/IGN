@@ -12,6 +12,14 @@ module Refinery
       belongs_to :service, :class_name => "Refinery::Services::Service"
       belongs_to :logo, :class_name => '::Refinery::Image'
    
+      validates :url, :presence => true
+      validates :name, :presence => true
+      validates :short_description, :presence => true
+      validates :description, :presence => true
+      validates :service_id, :presence => true
+      validates :city, :presence => true
+      validates :e_mail, :presence => true
+      
       
       image_accessor :img
 

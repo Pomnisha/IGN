@@ -6,8 +6,19 @@ Ign6::Application.routes.draw do
   # If you would like to change where this extension is mounted, simply change the :at option to something different.
   #
   # We ask that you don't use the :as option here, as Refinery relies on it being the default of "refinery"
-  mount Refinery::Core::Engine, :at => '/'
+#  match '/user/:id/edit' => 'refinery/users#edit', :via => :get, :as => 'user_edit'
+  
 
+
+#  match '/user/:id/update' => '  refinery/users#create', :via => :post, :as => 'user_create'
+  mount Refinery::Core::Engine, :at => '/'
+  
+  
+  Refinery::Core::Engine.routes.append do
+    resources :users, :only => [:edit, :update]
+  end
+
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
   

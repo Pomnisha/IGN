@@ -1,9 +1,14 @@
 module Refinery
   class UsersController < Devise::RegistrationsController
 
+    crudify :'refinery/user',
+            :order => 'username ASC',
+            :title_attribute => 'username',
+            :xhr_paging => true
+    
     # Protect these actions behind an admin login
     before_filter :redirect?, :only => [:new, :create]
-
+    before_filter :correct_user, :only => [:edit, :update]
     helper Refinery::Core::Engine.helpers
     layout 'refinery/layouts/login'
 
@@ -31,6 +36,47 @@ module Refinery
       end
 
     end
+    
+      def edit
+#        redirect_unless_user_editable!
+
+#        @selected_plugin_names = @user.plugins.collect(&:name)
+      end
+
+     def update
+#        redirect_unless_user_editable!
+
+        # Store what the user selected.
+        @selected_role_names = params[:user].delete(:roles) || []
+        unless current_refinery_user.has_role?(:superuser) and Refinery::Authentication.superuser_can_assign_roles
+          @selected_role_names = @user.roles.collect(&:title)
+        end
+        @selected_plugin_names = params[:user][:plugins]
+
+        # Prevent the current user from locking themselves out of the User manager
+        if current_refinery_user.id == @user.id and (params[:user][:plugins].exclude?("refinery_users") || @selected_role_names.map(&:downcase).exclude?("refinery"))
+          flash.now[:error] = t('cannot_remove_user_plugin_from_current_user', :scope => 'refinery.admin.users.update')
+          render :edit
+        else
+          # Store the current plugins and roles for this user.
+          @previously_selected_plugin_names = @user.plugins.collect(&:name)
+          @previously_selected_roles = @user.roles
+          @user.roles = @selected_role_names.collect { |r| Refinery::Role[r.downcase.to_sym] }
+          if params[:user][:password].blank? and params[:user][:password_confirmation].blank?
+            params[:user].except!(:password, :password_confirmation)
+          end
+
+          if @user.update_attributes(params[:user])
+            redirect_to refinery.admin_users_path,
+                        :notice => t('updated', :what => @user.username, :scope => 'refinery.crudify')
+          else
+            @user.plugins = @previously_selected_plugin_names
+            @user.roles = @previously_selected_roles
+            @user.save
+            render :edit
+          end
+        end
+      end
 
     protected
 
@@ -43,6 +89,10 @@ module Refinery
     def refinery_users_exist?
       Refinery::Role[:refinery].users.any?
     end
-
+    
+    def correct_user
+      @user = Refinery::User.find(params[:id])
+      redirect_to refinery.root_path if current_refinery_user.id != @user.id
+    end
   end
 end

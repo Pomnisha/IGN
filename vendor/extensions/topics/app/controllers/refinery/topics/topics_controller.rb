@@ -1,3 +1,4 @@
+#encoding: UTF-8
 module Refinery
   module Topics
     class TopicsController < ::ApplicationController
@@ -19,8 +20,10 @@ module Refinery
       
       def show
         @topic = Topic.where(:visiable => true, :id => params[:id]).first
-        
         redirect_to refinery.root_path if @topic.nil?
+        @post = Refinery::Posts::Post.new if @post.nil?
+        @post.topic_id = @topic.id
+
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @topic in the line below:
 #        present(@page)
@@ -44,9 +47,10 @@ module Refinery
       
       def create 
         @topic = Topic.new(params[:topic])
+        @topic.visiable = false
         @topic.user_id = current_refinery_user
         if @topic.save
-          render action: "show", notice: 'Topic was successfully created.'
+          render action: "index",  notice: 'Созданная Вами тема находиться на визировании администратора сайта.'
         else
           render action: "new"
         end
@@ -54,7 +58,7 @@ module Refinery
       
       def update
         if @topic.update_attributes(params[:topic])
-          redirect_to refinery.shops_shop_path(@topic), notice: 'Topic was successfully created.'
+          redirect_to refinery.shops_shop_path(@topic), notice: 'Тема была обновлена.'
         else
           render action: "edit"
         end
@@ -63,7 +67,7 @@ module Refinery
       def destroy
       # object gets found by find_#{singular_name} function
       if @topic.destroy
-          redirect_to refinery.root_path, notice: 'The topic was deleted.'
+          redirect_to refinery.root_path, notice: 'Тема была удалена.'
         else
           render action: "show"
         end

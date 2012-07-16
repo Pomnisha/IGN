@@ -5,11 +5,24 @@
 <section>
   <h1><%= @topic.name %></h1>
   <% @topic.posts.each do |p| %>  
-    <p><%= p.user.username %> : <%= p.body.html_safe %> </p>
+    <p><span style="font-weight:bold;"><%= p.user.username %> :</span> <%= p.body.html_safe %> </p>
   <% end %>
+<div>
   
-<div ><%= link_to "Комментировать", refinery.new_posts_post_path(:topic => @topic.id) %></div>  
+<%= form_for [refinery, :posts, @post] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @post,
+              :include_object_name => true %>
+  
+  <%= f.text_area :body -%>
+  <%= f.hidden_field :topic_id , :value => @post.topic_id-%>
 
+  <%= f.submit :value => "Добавить комментарий"  %>
+
+<% end -%>
+
+</div>  
+<%= render "refinery/slider2" %>
 </section>
 
 

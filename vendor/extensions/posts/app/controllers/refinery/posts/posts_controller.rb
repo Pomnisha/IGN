@@ -10,7 +10,8 @@ module Refinery
         @post = Post.new(params[:post])
         @post.user_id = current_refinery_user
         if @post.save
-          render action: "index", notice: 'Post was successfully created.'
+          redirect_to refinery.topics_topic_path(@post.topic_id)
+#          render action: "index", notice: 'Post was successfully created.'
         else
           render action: "new"
         end

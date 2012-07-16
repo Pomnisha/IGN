@@ -374,6 +374,9 @@ html ul#left_menu_body li ul.subnav li a {
 	color:#FFF !important;
 	font-size: 13px;	
 }
+.category_text a{
+  color: #fff;
+}
 .category_text .out_link{
 	display: block;
 	background-color: #0A243F;
@@ -412,6 +415,12 @@ html ul#left_menu_body li ul.subnav li a {
 	min-height: 489px;
 	width: 620px;	
 }
+
+div.onshop p{
+  color: #fff;
+  text-indent :2em;
+}
+
 .shop_url {
 	padding-left: 19px;
 	color: #92D8FF;

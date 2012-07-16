@@ -3,7 +3,6 @@
               :object => @menu,
               :include_object_name => true %>
 
-  
   <div class='field'>
     <%= f.label :menu_type -%>
     <%= f.select :menu_type, (1..4).collect {|n| ["Тип #{n}", n]}   -%>
@@ -34,9 +33,18 @@
     <%= f.text_field :url  -%>
 
   </div>
-  
+
+
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
              :delete_title => t('delete', :scope => 'refinery.menus.admin.menus.menu'),
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @menu.menu_type) %>
 <% end -%>
+
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>  
+<% end %>

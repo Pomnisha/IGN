@@ -12,7 +12,8 @@ module Refinery
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.posts_admin_posts_path }
           plugin.pathname = root
           plugin.activity = {
-            :class_name => :'refinery/posts/post'
+            :class_name => :'refinery/posts/post',
+            :title => 'body'
           }
           
         end

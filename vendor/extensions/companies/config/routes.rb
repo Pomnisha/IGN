@@ -1,6 +1,7 @@
 Refinery::Core::Engine.routes.append do
 
   # Frontend routes
+  match '/companies/companies/my' => 'companies/companies#my', :as => 'my_companies'  
   namespace :companies, :path => '' do
     resources :companies do
       collection do

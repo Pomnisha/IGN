@@ -20,6 +20,10 @@ module Refinery
       def new
         @company = Company.new
       end
+      def my
+        @companies = current_refinery_user.companies.page(params[:page]).per_page(5)
+        render action: "my"
+      end
       def show
         @company = Company.where(:visability => true, :id => params[:id]).first
         

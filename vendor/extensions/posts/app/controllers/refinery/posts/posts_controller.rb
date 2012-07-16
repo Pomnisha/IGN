@@ -4,7 +4,7 @@ module Refinery
       before_filter :correct_user ,:only => [:edit, :update, :destroy]
       before_filter :find_all_posts
 
-      crudify :'refinery/posts/post', :xhr_paging => true
+      crudify :'refinery/posts/post', :title_attribute => 'body', :xhr_paging => true
 
       def create 
         @post = Post.new(params[:post])

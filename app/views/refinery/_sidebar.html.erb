@@ -2,8 +2,8 @@
 	  <div id="account_name"><h5>ЛИЧНЫЙ КАБИНЕТ</h5></div>
 	  <%= link_to "Добавить магазин", refinery.new_shops_shop_path %>
 	  <%= link_to "Добавить услугу", refinery.new_companies_company_path %>
-	  <a> Мои магазины - <span><%= current_refinery_user.shops.count %></span></a>
-	  <a> Мои услуги - <span><%= current_refinery_user.companies.count %></span></a>
+	  <%= link_to "Мои магазины - #{current_refinery_user.shops.count}", refinery.my_shops_path %>
+	  <%= link_to "Мои услуги - #{current_refinery_user.companies.count}", refinery.my_companies_path %>
 	  <a> Управление профилем </a>
 	  	 <div class="clear"></div>
 	  <p><%= link_to "Выйти", refinery.destroy_refinery_user_session_path, :id => 'logout' %></p>

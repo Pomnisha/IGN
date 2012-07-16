@@ -3,7 +3,6 @@
   <%= link_to "редактировать данные", refinery.edit_companies_company_path(@company.id) if @company.user == current_refinery_user %>
   <div class="onshop">
     <a class="shop_url" href="<%= @company.url %>"><%= @company.url -%></a>        
-    <%= link_to "редактировать данные", refinery.edit_companies_company_path(@company.id) if @company.user == current_refinery_user %>
     <h2><%= @company.name.html_safe -%></h2>
     <%= @company.description.html_safe -%>
     <div class="contacts">

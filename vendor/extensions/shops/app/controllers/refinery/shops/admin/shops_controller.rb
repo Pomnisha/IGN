@@ -4,7 +4,7 @@ module Refinery
       class ShopsController < ::Refinery::AdminController
 
         crudify :'refinery/shops/shop',
-                :title_attribute => 'url', :xhr_paging => true
+                :title_attribute => 'name', :xhr_paging => true
 
       end
     end

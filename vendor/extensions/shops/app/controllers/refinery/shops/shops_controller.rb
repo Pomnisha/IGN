@@ -16,6 +16,11 @@ module Refinery
 #        @shops = Shop.search(params[:search])
       end
       
+      def my
+        @shops = current_refinery_user.shops.page(params[:page]).per_page(5)
+        render action: "my"
+      end
+      
       def new
         @shop = Shop.new
       end

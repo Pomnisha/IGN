@@ -1,11 +1,9 @@
 Refinery::Core::Engine.routes.append do
 
   # Frontend routes
+  get '/shops/shops/my' => 'shops/shops#my', :as => 'my_shops'
   namespace :shops, :path => '' do
     resources :shops do
-      collection do
-        post :create_asset
-      end
     end
   end  
 

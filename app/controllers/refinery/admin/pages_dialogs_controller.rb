@@ -13,7 +13,7 @@ module Refinery
 
         @pages = ::Refinery::Page.roots.paginate(:page => params[:page], :per_page => ::Refinery::Page.per_page(true))
 
-        @pages = @pages.with_globalize if ::Refinery.i18n_enabled?
+        pages = @pages.with_globalize if ::Refinery.i18n_enabled?
 
         if ::Refinery::Plugins.registered.names.include?('refinery_files')
             @resources = Resource.paginate(:page => params[:resource_page], :per_page => Resource.per_page(true)).

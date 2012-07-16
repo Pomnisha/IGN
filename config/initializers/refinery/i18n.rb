@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 Refinery::I18n.configure do |config|
-  # config.enabled = true
+  config.enabled = false
 
   config.default_locale = :ru
 

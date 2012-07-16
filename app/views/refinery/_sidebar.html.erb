@@ -4,7 +4,7 @@
 	  <%= link_to "Добавить услугу", refinery.new_companies_company_path %>
 	  <%= link_to "Мои магазины - #{current_refinery_user.shops.count}", refinery.my_shops_path %>
 	  <%= link_to "Мои услуги - #{current_refinery_user.companies.count}", refinery.my_companies_path %>
-	  <%= link_to "Управление профилем", refinery.edit_user_path(current_refinery_user.id) %>
+	  <%= link_to "Управление профилем", main_app.settings_edit_path %>
 	  	 <div class="clear"></div>
 	  <p><%= link_to "Выйти", refinery.destroy_refinery_user_session_path, :id => 'logout' %></p>
 	  </div>

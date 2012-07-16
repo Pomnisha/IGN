@@ -11,7 +11,7 @@
   <%= stylesheet_link_tag "application", "formatting", "theme" %>
   <%= stylesheet_link_tag "main" if controller_name == "pages" %>
   <%= stylesheet_link_tag "welcome" if controller_name == "static" %>
-  <%= stylesheet_link_tag "shop" if ["shops", "categories", "subcategories", "topics", "posts"].include?(controller_name) %>
+  <%= stylesheet_link_tag "shop" if ["shops", "categories", "settings", "subcategories", "topics", "posts"].include?(controller_name) %>
   <%= stylesheet_link_tag "service" if ["services", "companies"].include?(controller_name) %>  
   <%= stylesheet_link_tag "box" if controller_name == "static" %>
   <%= stylesheet_link_tag "banner" %>
@@ -20,8 +20,6 @@
   <%= render '/refinery/google_analytics' %>
   <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag 'modernizr-min' %>
-  <!--%= javascript_include_tag 'aform' %-->  
-  <!--%= javascript_include_tag 'slider' %-->  
   <%= javascript_include_tag 'box' %>
   <%= javascript_include_tag 'banner' %>
   <%= javascript_include_tag 'static' %>

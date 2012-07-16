@@ -1,6 +1,9 @@
 Ign6::Application.routes.draw do
 
   match '/welcome' => 'static#welcome', :as => 'welcome_page'
+    
+  match "/profile/edit" => "settings#edit", :via => :get, :as => "settings_edit"
+  match "/profile/update" => "settings#update", :via => :put, :as => "settings_update"    
   # This line mounts Refinery's routes at the root of your application.
   # This means, any requests to the root URL of your application will go to Refinery::PagesController#home.
   # If you would like to change where this extension is mounted, simply change the :at option to something different.
@@ -12,13 +15,12 @@ Ign6::Application.routes.draw do
 
 #  match '/user/:id/update' => '  refinery/users#create', :via => :post, :as => 'user_create'
   mount Refinery::Core::Engine, :at => '/'
-  
-  
+
   Refinery::Core::Engine.routes.append do
     resources :users, :only => [:edit, :update]
   end
 
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
   

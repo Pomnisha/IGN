@@ -39,7 +39,7 @@ module Refinery
     
       def edit
 #        redirect_unless_user_editable!
-
+  
 #        @selected_plugin_names = @user.plugins.collect(&:name)
       end
 

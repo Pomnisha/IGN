@@ -10,7 +10,7 @@ module Refinery
         @post = Post.new(params[:post])
         @post.user_id = current_refinery_user
         if @post.save
-          render action: "show", notice: 'Post was successfully created.'
+          render action: "index", notice: 'Post was successfully created.'
         else
           render action: "new"
         end

@@ -1,18 +1,20 @@
-<%= form_for [refinery, :topics, @topic] do |f| -%>
+<h1>Создание темы форума</h1>
+<%= form_for [refinery, :topics, @topic],:html => { :id => "topic"} do |f| -%>
+<div id="form_top"> </div>
   <%= render '/refinery/admin/error_messages',
               :object => @topic,
               :include_object_name => true %>
 
   
   <div class='field'>
-    <%= f.label :name, "Название" -%>
-    <%= f.text_field :name  -%>
+    <%= f.label :name, "Название"  -%>
+    <%= f.text_field :name, :class => "punkt"  -%>
 
   </div>
   
   <div class='field'>
     <%= f.label :category_id -%>
-    <%= f.select :category_id, Refinery::Categories::Category.all.collect {|p| [ p.name, p.id ] }  -%>
+    <%= f.select :category_id, Refinery::Categories::Category.all.collect {|p| [ p.name, p.id ] }, :class => "cat"  -%>
 
   </div>
   
@@ -22,3 +24,5 @@
              :delete_title => t('delete', :scope => 'refinery.topics.admin.topics.topic'),
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @topic.name) %>
 <% end -%>
+<div id="form_bottom"> </div>
+  <%= render "refinery/slider2" %>

@@ -11,7 +11,9 @@ module Refinery
       validates :name, :presence => true, :uniqueness => true
       belongs_to :logo, :class_name => '::Refinery::Image'
       has_many :subcategories, :class_name => "Refinery::Subcategories::Subcategory"
+      has_many :topics, :class_name => "Refinery::Topics::Topic"
       has_many :shops, :through => :subcategories
+      
     end
   end
 end

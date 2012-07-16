@@ -2,50 +2,14 @@
   <%= @topic.name %>
 <% end %>
 
-<% content_for :body_content_left do %>
-  <section>
-    <h1>Name</h1>
-    <p>
-      <%=raw @topic.name %>
-    </p>
-  </section>
-  <section>
-    <h1>Id</h1>
-    <p>
-      <%=raw @topic.id %>
-    </p>
-  </section>
-  <section>
-    <h1>Category</h1>
-    <p>
-      <%=raw @topic.category_id %>
-    </p>
-  </section>
-  <section>
-    <h1>User</h1>
-    <p>
-      <%=raw @topic.user_id %>
-    </p>
-  </section>
-  <section>
-    <h1>Visiable</h1>
-    <p>
-      <%=raw @topic.visiable %>
-    </p>
-  </section>
-<% end %>
+<section>
+  <h1><%= @topic.name %></h1>
+  <% @topic.posts.each do |p| %>  
+    <p><%= p.user.username %> : <%= p.body.html_safe %> </p>
+  <% end %>
+  
+<div ><%= link_to "Комментировать", refinery.new_posts_post_path(:topic => @topic.id) %></div>  
 
-<% content_for :body_content_right do %>
-  <aside>
-    <h2><%= t('.other') %></h2>
-    <ul id="topics">
-      <% @topics.each do |topic| %>
-        <li>
-          <%= link_to topic.name, refinery.topics_topic_path(topic) %>
-        </li>
-      <% end %>
-    </ul>
-  </aside>
-<% end %>
+</section>
 
-<%= render '/refinery/content_page' %>
+

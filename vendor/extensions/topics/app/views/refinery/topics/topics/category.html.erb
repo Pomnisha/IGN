@@ -1,13 +1,12 @@
-<% Refinery::Categories::Category.all.each do |c| %>
-  <% if c.topics.count > 0 then %>
+<% if @topics.count > 0 then %>
   <ul id="topics_category">
-    <h1><%= link_to c.name, refinery.category_topics_path(c.id) %></h1>
-    <% @topics.first(5).each do |topic| %>
+    <h1><%= link_to @category.name, refinery.category_topics_path(@category) %></h1>
+    <% @topics.each do |topic| %>
       <li class="topic">
         <%= link_to (truncate topic.name, :length => 100), refinery.topics_topic_path(topic) %>
       </li>
     <% end %>
   </ul>
-  <% end %>
-<% end %>    
+<% end %>
+
 <div ><%= link_to "Новая тема", refinery.new_topics_topic_path %></div>  

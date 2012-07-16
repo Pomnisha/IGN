@@ -1,10 +1,13 @@
 Refinery::Core::Engine.routes.append do
 
   # Frontend routes
+  get '/topics/category/:category' => 'topics/topics#category', :as => 'category_topics'
   namespace :topics do
     resources :topics do
     end
   end
+
+  
   
   # Admin routes
   namespace :topics, :path => '' do

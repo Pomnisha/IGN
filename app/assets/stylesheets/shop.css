@@ -242,6 +242,7 @@ ul#top_menu_body li:first-child {
 	font-size: 13px;
 	float: right;
 	right: 20px;
+  width: 40px;
 }
 
 ul#left_menu_body {
@@ -608,3 +609,92 @@ background: url(../images/punkt.png) ;
 }
 
 
+#topic .punkt {
+background: url(../images/punkt.png) ;
+	height: 15px;
+	width: 333px;	
+	float: left;
+	}
+
+#topic .cat {
+background: url(../images/cat.png) ;
+	height: 34px;
+	width: 314px;	
+	float: left;
+	}
+  
+#topic .field {
+padding-top: 5px;
+width:100%;
+float: left;
+clear: right;
+}
+#topic .field input, #topic .field textarea, #topic .field select{
+padding: 10px;
+border: none;
+float: left;
+}
+
+#topic label {
+color: #000;
+float: left;
+text-align: right;
+font-size: 14px;
+font-weight: bold;
+padding-left: 10px;
+padding-right: 10px;
+width: 150px;
+}
+
+#topic{
+	margin: 0 auto;
+	background: url(../images/form_bg.png) repeat-y;
+	width: 640px;	
+  height: 150px;
+}
+
+
+
+#post .punkt {
+background: url(../images/punkt.png) ;
+	height: 15px;
+	width: 333px;	
+	float: left;
+	}
+
+#post .cat {
+background: url(../images/cat.png) ;
+	height: 34px;
+	width: 314px;	
+	float: left;
+	}
+  
+#post .field {
+padding-top: 5px;
+width:100%;
+float: left;
+clear: right;
+}
+#post .field input, #post .field textarea, #post .field select{
+padding: 10px;
+border: none;
+float: left;
+}
+
+#post label {
+color: #000;
+float: left;
+text-align: right;
+font-size: 14px;
+font-weight: bold;
+padding-left: 10px;
+padding-right: 10px;
+width: 150px;
+}
+
+#post{
+	margin: 0 auto;
+	background: url(../images/form_bg.png) repeat-y;
+	width: 640px;	
+  height: 450px;
+}

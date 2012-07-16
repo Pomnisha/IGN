@@ -26,6 +26,17 @@ module Refinery
 #        present(@page)
       end
       
+      def category
+
+        @topics = Topic.where(:visiable => true, :category_id => params[:category]).all
+        redirect_to refinery.root_path if @topics.nil?        
+        @category = Refinery::Categories::Category.find(params[:category])
+        # you can use meta fields from your model instead (e.g. browser_title)
+        # by swapping @page for @topic in the line below:
+#        present(@page)
+      end
+
+      
       def edit
       # object gets found by find_#{singular_name} function
       @topic = Topic.find(params[:id])

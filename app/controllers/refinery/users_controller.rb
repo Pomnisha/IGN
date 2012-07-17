@@ -12,6 +12,7 @@ module Refinery
     helper Refinery::Core::Engine.helpers
     layout 'refinery/layouts/login'
 
+    
     def new
       @user = User.new
     end
@@ -26,7 +27,9 @@ module Refinery
         flash[:message] = "<h2>#{t('welcome', :scope => 'refinery.users.create', :who => @user.username).gsub(/\.$/, '')}.</h2>".html_safe
 
         sign_in(@user)
-        render :partial => 'refinery/users/success'
+#        render :partial => 'refinery/users/success'
+        self.deliver_signup_notification
+        redirect_to refinery.root_path
 #        redirect_back_or_default(refinery.root_path)
 #        redirect_back_or_default(refinery.admin_root_path)
       else
@@ -94,5 +97,10 @@ module Refinery
       @user = Refinery::User.find(params[:id])
       redirect_to refinery.root_path if current_refinery_user.id != @user.id
     end
+    
+    def deliver_signup_notification
+      ::UserMailer.signup_notification(current_refinery_user).deliver
+    end
+    
   end
 end

@@ -28,7 +28,7 @@ module Refinery
           else
             @user.roles = @selected_role_names.collect { |r| Refinery::Role[r.downcase.to_sym] }
           end
-
+          self.deliver_signup_notification
           redirect_to refinery.admin_users_path, :notice => t('created', :what => @user.username, :scope => 'refinery.crudify')
 #          render :partial => 'refinery/users/success'
         else
@@ -102,7 +102,10 @@ module Refinery
           redirect_to(main_app.refinery_admin_users_path) and return
         end
       end
-  
+
+      def deliver_signup_notification
+        ::UserMailer.signup_notification(@user).deliver
+      end      
 
     end
   end

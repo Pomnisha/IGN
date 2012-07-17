@@ -1,7 +1,9 @@
 module Refinery
   module Shops
     class ShopsController < ::ApplicationController
+      before_filter :add_to_history, :only => [:show]
 
+  
       before_filter :find_all_shops
 #      before_filter :find_page:
       before_filter :correct_user ,:only => [:edit, :update, :destroy]
@@ -86,6 +88,13 @@ module Refinery
         @shop = Shop.find(params[:id])
         redirect_to refinery.root_path unless current_refinery_user.id == @shop.user_id
       end
+    
+      def add_to_history 
+        session[:history] ||= [] 
+        session[:history].unshift({"shop_id" => params[:id]}) 
+        session[:history].pop while session[:history].length > 4 
+      end 
+      
     end
   end
 end

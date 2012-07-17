@@ -70,5 +70,6 @@ module Ign6
     end
     config.middleware.insert 1, 'Dragonfly::Middleware', :images
     
+
   end
 end

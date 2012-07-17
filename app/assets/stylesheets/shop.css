@@ -279,7 +279,7 @@ ul#left_menu_body li a {
 }
 
 ul#left_menu_body li:hover {
-	background-color: #b82b2b; /*069BEF, 20b2fd*/ 
+/*	background-color: #b82b2b; 069BEF, 20b2fd*/ 
 }
 
 ul#left_menu_body li a{
@@ -294,7 +294,10 @@ ul#left_menu_body li span { /*--Drop down trigger styles--*/
 	height: 35px;
 	float: left;
 }
-ul#left_menu_body li span.subhover {background-position: center bottom; cursor: pointer;} /*--Hover effect for trigger--*/
+ul#left_menu_body li subhover {
+  background-position: center bottom; cursor: pointer;
+  background-color: #b82b2b;
+  } /*--Hover effect for trigger--*/
 ul#left_menu_body li ul.subnav {
 	font-weight: bold;
   list-style: none;

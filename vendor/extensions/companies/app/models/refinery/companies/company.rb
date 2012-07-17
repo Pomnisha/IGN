@@ -5,7 +5,7 @@ module Refinery
       self.table_name = 'refinery_companies'
 
       attr_accessible :url, :name, :short_description, :description, :city, :phone, :working_time, :e_mail, :address, :position,
-                      :map_latitude, :map_longtitude, :logo_id, :service_id,:img_uid, :img, :retained_img, :visability
+                      :map_latitude, :map_longtitude, :logo_id, :service_id,:img_uid, :img, :retained_img, :visability, :vip_code
       acts_as_indexed :fields => [:url, :name, :short_description, :description, :city, :phone, :working_time, :address]
 
 #      validates :url, :presence => true, :uniqueness => true

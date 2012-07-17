@@ -55,6 +55,10 @@
     <%= f.label :address -%>
     <%= f.text_field :address, :class => "punkt" -%>
   </div>  
+  <div class='field'>
+    <%= f.label :vip_code -%>
+    <%= f.text_field :vip_code  -%>
+  </div>   
   <%= image_tag @company.img.thumb('155x98').url if @company.img_uid %>
   <div class="field">
     <%= f.label :img, "Загрузить логотип"%>

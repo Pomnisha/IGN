@@ -3,7 +3,7 @@
 Refinery::I18n.configure do |config|
   config.enabled = true
 
-  config.default_locale = :en
+  config.default_locale = :ru
 
   # config.current_locale = :en
 

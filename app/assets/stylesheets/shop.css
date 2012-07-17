@@ -777,6 +777,10 @@ width: 150px;
   width: 184px;
   height: 32px;
 }
+#edit_button_div {
+  width:100%;
+    margin: 5px;
+}
 
 
 

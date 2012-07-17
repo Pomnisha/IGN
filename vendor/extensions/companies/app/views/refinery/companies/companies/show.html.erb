@@ -9,6 +9,7 @@
       Телефон: <%= @company.phone.html_safe -%>  <br />
       E-mail: <%= @company.e_mail  -%><br />
       Режим работы: <%= @company.working_time.html_safe -%></div>
+    <div id="edit_button_div"><%= link_to "", refinery.edit_companies_company_path(@company.id), :id => "edit_button" if @company.user == current_refinery_user %></div>      
     <div id="YMapsID" class="map">
     <% if !@company.map_latitude.nil? and !@company.map_longtitude.nil? then%>  
 		<script>
@@ -43,7 +44,7 @@
 		</script>
 	<% end %>
     </div>
-    <div><%= link_to "", refinery.edit_companies_company_path(@company.id), :id => "edit_button" if @company.user == current_refinery_user %></div>
+    
   </div>
 </div>
   <%= render "refinery/slider2" %>

@@ -357,7 +357,7 @@ ul#left_menu_body li a {
 	border: #E8E8E7 1px solid;
 	margin: 0 auto;
 	background-image: url(../images/onshop_bg.png);
-	min-height: 610px;
+	min-height: 489px;
 	width: 620px;	
 }
 .shop_url {
@@ -577,4 +577,8 @@ background: url(../images/punkt.png) ;
   float: right;
   width: 184px;
   height: 32px;
+}
+#edit_button_div {
+  width:100%;
+  margin: 5px;
 }

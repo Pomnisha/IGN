@@ -1,3 +1,4 @@
+#encoding: utf-8
 module Refinery
   module Shops
     class Shop < Refinery::Core::BaseModel
@@ -11,13 +12,13 @@ module Refinery
       belongs_to :subcategory, :class_name => "Refinery::Subcategories::Subcategory"
 #      validates :url, :presence => true, :uniqueness => true
       
-      validates :url, :presence => true
-      validates :name, :presence => true
-      validates :short_description, :presence => true
-      validates :description, :presence => true
-      validates :subcategory_id, :presence => true
-      validates :city, :presence => true
-      validates :e_mail, :presence => true
+      validates :url, :presence => {:message => "Поле Адрес сайта должно быть заполненным."}
+      validates :name, :presence => { :message => "Поле Название магазина должно быть заполненным." }
+      validates :short_description, :presence => { :message => "Поле Краткое описание должно быть заполненным."}
+      validates :description, :presence => { :message => "Поле Описание должно быть заполненным."}
+      validates :subcategory_id, :presence => { :message => "Категория должна быть выбрана."}
+      validates :city, :presence => {:message => "Поле Город должно быть заполненным."}
+      validates :e_mail, :presence => { :message => "Поле Электронный адрес должно быть заполненным."}
 
       belongs_to :logo, :class_name => '::Refinery::Image'
       image_accessor :img

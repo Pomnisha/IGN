@@ -121,7 +121,8 @@ $(document).ready(function(){
     
     
     var reg_options = { 
-    target: '#reg_f', 
+    target: '#reg_f',
+    beforeSubmit: beforeSubmitRegForm,
     success: showResponseReg   
     }; 
     
@@ -132,7 +133,6 @@ $(document).ready(function(){
     
     var log_options = { 
     target: '#log_f',
-    success: showResponseLog   
     }; 
     
     $('#logform').live("submit", function(){
@@ -140,15 +140,21 @@ $(document).ready(function(){
       return false;
     });
 
-
-   
 });
 
+
+function beforeSubmitRegForm () {
+  $('#reg_f').css({'display': "none"});
+}
+
+function beforeSubmitLogForm () {
+  $('#log_f').css({'display': "none"});
+}
 
 function showResponseReg(responseText, statusText, xhr, $form)  { 
     if (responseText.indexOf("success") != -1) {window.location = "/"}
     else {
-
+      $('#reg_f').css({'display': "block"});
     }
 } 
 

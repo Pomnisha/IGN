@@ -1,3 +1,4 @@
+#encoding: utf-8
 module Refinery
   module Companies
     class Company < Refinery::Core::BaseModel
@@ -12,14 +13,13 @@ module Refinery
       belongs_to :service, :class_name => "Refinery::Services::Service"
       belongs_to :logo, :class_name => '::Refinery::Image'
    
-      validates :url, :presence => true
-      validates :name, :presence => true
-      validates :short_description, :presence => true
-      validates :description, :presence => true
-      validates :service_id, :presence => true
-      validates :city, :presence => true
-      validates :e_mail, :presence => true
-      
+      validates :url, :presence => {:message => "Поле Адрес сайта должно быть заполненным."}
+      validates :name, :presence => { :message => "Поле Название магазина должно быть заполненным." }
+      validates :short_description, :presence => { :message => "Поле Краткое описание должно быть заполненным."}
+      validates :description, :presence => { :message => "Поле Описание должно быть заполненным."}
+      validates :service_id, :presence => { :message => "Тип услуг должен быть выбран."}
+      validates :city, :presence => {:message => "Поле Город должно быть заполненным."}
+      validates :e_mail, :presence => { :message => "Поле Электронный адрес должно быть заполненным."}
       
       image_accessor :img
 

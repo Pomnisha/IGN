@@ -9,8 +9,12 @@
       <a href="<%= refinery.shops_shop_url(s.id)%>">
       <% unless s.logo.nil? -%>
         <%= image_fu s.logo, '155x98' %>
-      <% else -%>
-        <%= image_tag s.img.thumb('155x98').url if s.img_uid %>
+      <% else  -%>
+        <% if s.img_uid %>
+          <%= image_tag s.img.thumb('155x98').url %>
+        <% else -%>
+          <%= image_tag("noimage.jpg") %>
+        <% end %>
       <% end -%>
       </a>
     </div>
@@ -27,3 +31,4 @@
 <div id="count_pages">
 <%= will_paginate @shops, previous_label: h("<-"), next_label: h("->")  %>
 </div>
+

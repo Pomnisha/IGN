@@ -1,0 +1,16 @@
+<div id="last">
+	<div class="name">Последние просмотренные магазины:</div>
+  <%if !session[:history].nil? %>
+    <% for cur in session[:history][0..3] -%> 
+    <% s = Refinery::Shops::Shop.find(cur["shop_id"]) %>
+      <div class="last_content">
+        <div class="last_shop"> <%= link_to s.name.html_safe, refinery.shops_shop_path(cur["shop_id"]) %> </div>
+        <div class="description"> <%= truncate s.description.html_safe, :length => 150 %></div>
+      </div>    
+    <% end -%> 
+  <% end %>  
+</div>
+
+
+
+

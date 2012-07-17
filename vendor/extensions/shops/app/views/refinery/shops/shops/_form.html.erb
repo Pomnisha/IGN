@@ -50,7 +50,11 @@
     <%= f.label :vip_code -%>
     <%= f.text_field :vip_code  -%>
   </div>   
-  <%= image_tag @shop.img.thumb('155x98').url if @shop.img_uid %>
+    <% if @shop.img_uid %>
+      <%= image_tag @shop.img.thumb('155x98').url %>
+    <% else -%>
+      <%= image_tag("noimage.jpg") %>
+    <% end %>
   <div class="field">
     <%= f.label :img, "Загрузить логотип"%>
     <%= f.file_field :img %>

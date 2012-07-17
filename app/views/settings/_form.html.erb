@@ -1,5 +1,6 @@
+ <div id="form_top"> </div>
 <%= form_for @user, :url => main_app.settings_update_path , :html => {:id => 'profile'} do |f| %>
- 
+
   <%= render '/refinery/admin/error_messages', :object => @user, :include_object_name => true %>
 
   <div class='field'>
@@ -32,4 +33,6 @@
              :delete_title => t('delete', :scope => 'refinery.admin.users'),
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @user.username) %>
 <% end %>
+ <div id="form_bottom"> </div>
 
+  <%= render "refinery/slider2" %>

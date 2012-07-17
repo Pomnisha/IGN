@@ -45,6 +45,7 @@
 }
 #slides2 {
 	margin-left: 5px;
+  margin-top: 10px;
 	padding: 27px 50px 27px 46px;
 	position: relative;
 	background-image: url(../images/slider_bg.png);

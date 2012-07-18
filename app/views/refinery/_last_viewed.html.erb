@@ -1,6 +1,6 @@
-<div id="last">
-	<div class="name">Последние просмотренные магазины:</div>
-  <%if !session[:history].nil? %>
+<%if !session[:history].nil? %>
+  <div id="last">
+	  <div class="name">Последние просмотренные магазины:</div>
     <% for cur in session[:history][0..3] -%> 
     <% s = Refinery::Shops::Shop.find(cur["shop_id"]) %>
       <div class="last_content">
@@ -8,8 +8,8 @@
         <div class="description"> <%= truncate s.description.html_safe, :length => 150 %></div>
       </div>    
     <% end -%> 
-  <% end %>  
-</div>
+  </div>
+<% end %>  
 
 
 

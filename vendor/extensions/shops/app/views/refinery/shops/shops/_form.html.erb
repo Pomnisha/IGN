@@ -48,7 +48,7 @@
   </div>
   <div class='field'>
     <%= f.label :vip_code -%>
-    <%= f.text_field :vip_code  -%>
+    <%= f.text_field :vip_code, :class => "punkt"  -%>
   </div>   
     <% if @shop.img_uid %>
       <%= image_tag @shop.img.thumb('155x98').url %>

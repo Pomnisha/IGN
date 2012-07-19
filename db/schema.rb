@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120719014627) do
+ActiveRecord::Schema.define(:version => 20120719051443) do
 
   create_table "refinery_banners", :force => true do |t|
     t.string   "url"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20120719014627) do
     t.boolean  "popular"
     t.string   "color"
     t.string   "color_active", :default => "#B82B2B"
+    t.string   "text_color"
   end
 
   create_table "refinery_companies", :force => true do |t|

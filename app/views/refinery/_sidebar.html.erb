@@ -13,8 +13,8 @@
 <!--left menu.............................................................................-->  
     <ul id="left_menu_body">
       <% Refinery::Categories::Category.all.each do |c| %>
-        <li style ="background-color: <%= c.color %>">
-          <%= link_to c.name, refinery.categories_category_path(c.id) %>
+        <li style ="background-color: <%= c.color %>; color: <%= c.text_color %> ">
+          <%= link_to c.name, refinery.categories_category_path(c.id), :style => "color: #{c.text_color}" %>
           <ul class="subnav">
             <% c.subcategories.each do |s| %>
               <li><%= link_to s.name, refinery.subcategories_subcategory_path(s.id) %></li>

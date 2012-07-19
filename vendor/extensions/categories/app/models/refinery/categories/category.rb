@@ -4,7 +4,7 @@ module Refinery
 
       self.table_name = 'refinery_categories'
 
-      attr_accessible :name, :logo_id, :popular, :color, :position
+      attr_accessible :name, :logo_id, :popular, :color, :text_color, :position
 
       acts_as_indexed :fields => [:name]
 

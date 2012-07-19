@@ -1,3 +1,4 @@
+#encoding: utf-8
 require 'devise'
 require 'friendly_id'
 
@@ -19,7 +20,7 @@ module Refinery
     # Include default devise modules. Others available are:
     # :token_authenticatable, :confirmable, :lockable and :timeoutable
     if self.respond_to?(:devise)
-      devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
+      devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :authentication_keys => [:login]
     end
 
     # Setup accessible (or protected) attributes for your model
@@ -28,8 +29,18 @@ module Refinery
     attr_accessor :login
     attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :plugins, :login
 
-    validates :username, :presence => true, :uniqueness => true
+    validates_presence_of :username, :message => 'Поле имя пользователя должно быть заполнено.'
+    validates_uniqueness_of :username, :message => 'Такое имя пользователя уже используеться.'
 
+    validates_presence_of   :email, :message => 'Поле e-mail должно быть заполнено.'
+    validates_uniqueness_of :email, :allow_blank => true, :message => 'Такой e-mail уже используеться.'
+#    validates_format_of     :email, :email_format => {:message => 'Неправильный формат e-mail адреса.'}, :allow_blank => true, :if => :email_changed?
+
+    validates_presence_of     :password, :message => 'Пароль должен быть указан.'
+    validates_confirmation_of :password, :message => 'Пароль не совпадает с подтверждением.'
+    validates_length_of       :password, :within => 4..20, :allow_blank => true
+    
+    
     class << self
       # Find user by email or username.
       # https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign_in-using-their-username-or-email-address

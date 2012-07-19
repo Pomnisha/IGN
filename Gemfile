@@ -36,6 +36,7 @@ gem 'haml'
 gem 'rack-cache', :require => 'rack/cache'
 gem 'dragonfly', '~>0.9.12'
 gem "devise-async"
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

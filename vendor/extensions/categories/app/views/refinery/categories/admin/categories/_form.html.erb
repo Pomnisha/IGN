@@ -21,6 +21,12 @@
   </div>
   
   <div class='field'>
+    <%= f.label :position -%>
+    <%= f.text_field :position  -%>
+
+  </div>
+  
+  <div class='field'>
     <%= f.label :logo -%>
     <%= render '/refinery/admin/image_picker',
                :f => f,

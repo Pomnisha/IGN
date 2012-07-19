@@ -22,7 +22,10 @@
     <%= f.label :password_confirmation, "Подтверждение пароля"  %>
     <%= f.password_field :password_confirmation, :autocomplete => 'off' %>
   </div>
-
+  <div class='field'>
+    <%= f.label "VIP код:" %>
+    <%= f.text_field :vip_code %>
+  </div> 
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
              :hide_delete => !current_refinery_user.can_delete?(@user),

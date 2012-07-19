@@ -67,7 +67,7 @@
     width: 390px;
     color: #41403C;    
     background: none repeat scroll 0 0 #EAEAEA;
-    height: auto;
+    height: 15px;
     padding: 0 15px 1em;
     margin: 0 auto;
     position: relative;
@@ -83,7 +83,6 @@
     font-weight: bold;
     line-height: 30px;
     padding-bottom: 0;
-    padding-top: 15px;
     text-align: center;
     vertical-align: middle;
     margin-bottom: 0;
@@ -99,7 +98,7 @@
     height: 40px;
     position: relative;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 13px;
     display: block;
     text-align: left;
 

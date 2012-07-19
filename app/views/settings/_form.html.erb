@@ -26,6 +26,11 @@
     <%= f.label :password_confirmation, "Подтверждение пароля"  %>
     <%= f.password_field :password_confirmation, :autocomplete => 'off', :class => 'punkt' %>
   </div>
+  
+  <div class='field'>
+    <%= f.label "VIP код:" %>
+    <%= f.text_field :vip_code, :class => 'punkt' %>
+  </div> 
 
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,

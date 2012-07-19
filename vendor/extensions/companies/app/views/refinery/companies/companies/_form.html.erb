@@ -57,7 +57,11 @@
   </div>  
   <div class='field'>
     <%= f.label :vip_code -%>
-    <%= f.text_field :vip_code, :class => "punkt"  -%>
+    <% if action_name == 'new' %>
+      <%= f.text_field :vip_code, :class => "punkt", :value => current_refinery_user.vip_code  -%>
+    <% else %>
+      <%= f.text_field :vip_code, :class => "punkt"  -%>    
+    <% end %>
   </div> 
     <% if @company.img_uid %>
       <%= image_tag @company.img.thumb('155x98').url %>

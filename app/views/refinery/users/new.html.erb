@@ -23,6 +23,11 @@
     <%= f.password_field :password_confirmation %>
   </div>
 
+  <div class='field'>
+    <%= f.label "VIP код:" %>
+    <%= f.text_field :vip_code %>
+  </div>  
+  
   <div class='clearfix'>
     <div class='field forgot_password'>
       <%= link_to "Я уже зарегистрированный позьлователь", refinery.new_refinery_user_session_path %>

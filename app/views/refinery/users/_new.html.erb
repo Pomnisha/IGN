@@ -23,8 +23,12 @@
   <div class='field'>
     <%= f.label "Подтверждение пароля:" %>
     <%= f.password_field :password_confirmation %>
+  </div>  
+  <div class='field'>
+    <%= f.label "VIP код:" %>
+    <%= f.text_field :vip_code %>
   </div>
-
+  
   <%= render '/refinery/admin/form_actions', :f => f,
              :submit_button_id => "reg_submit",
              :submit_continue => false,

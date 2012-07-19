@@ -6,6 +6,9 @@ module Refinery
   class User < Refinery::Core::BaseModel
     extend FriendlyId
 
+  
+    
+    
     has_and_belongs_to_many :roles, :join_table => :refinery_roles_users
 
     has_many :plugins, :class_name => "UserPlugin", :order => "position ASC", :dependent => :destroy
@@ -27,17 +30,17 @@ module Refinery
     # :login is a virtual attribute for authenticating by either username or email
     # This is in addition to a real persisted field like 'username'
     attr_accessor :login
-    attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :plugins, :login
+    attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :plugins, :login, :vip_code
 
-    validates_presence_of :username, :message => 'Поле имя пользователя должно быть заполнено.'
-    validates_uniqueness_of :username, :message => 'Такое имя пользователя уже используеться.'
+    validates_presence_of :username, :message => 'Поле имя пользователя должно быть заполнено.', :if => :email_required?
+    validates_uniqueness_of :username, :message => 'Такое имя пользователя уже используеться.', :allow_blank => true, :if => :email_changed?
 
     validates_presence_of   :email, :message => 'Поле e-mail должно быть заполнено.'
     validates_uniqueness_of :email, :allow_blank => true, :message => 'Такой e-mail уже используеться.'
-#    validates_format_of     :email, :email_format => {:message => 'Неправильный формат e-mail адреса.'}, :allow_blank => true, :if => :email_changed?
+    validates_format_of     :email, :with  => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/, :message => 'Неправильный формат e-mail адреса.', :if => :email_changed?
 
-    validates_presence_of     :password, :message => 'Пароль должен быть указан.'
-    validates_confirmation_of :password, :message => 'Пароль не совпадает с подтверждением.'
+    validates_presence_of     :password, :message => 'Пароль должен быть указан.', :if => :password_required?
+    validates_confirmation_of :password, :message => 'Пароль не совпадает с подтверждением.', :if => :password_required?
     validates_length_of       :password, :within => 4..20, :allow_blank => true
     
     
@@ -111,6 +114,18 @@ module Refinery
     def to_param
       to_s.parameterize
     end
+      
+    def password_required?
+      !persisted? || !password.nil? || !password_confirmation.nil?
+    end
 
+    def email_required?
+      true
+    end
+    
+    module ClassMethods
+        Devise::Models.config(self, :email_regexp, :password_length)
+    end
+    
   end
 end

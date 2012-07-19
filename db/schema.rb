@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120717185546) do
+ActiveRecord::Schema.define(:version => 20120719014627) do
 
   create_table "refinery_banners", :force => true do |t|
     t.string   "url"
@@ -243,6 +243,7 @@ ActiveRecord::Schema.define(:version => 20120717185546) do
     t.datetime "reset_password_sent_at"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+    t.string   "vip_code"
   end
 
   add_index "refinery_users", ["id"], :name => "index_refinery_users_on_id"

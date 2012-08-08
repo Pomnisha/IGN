@@ -10,7 +10,7 @@ if current_refinery_user.nil? && home_page?
       "#{controller_path}" != 'refinery/sessions' &&
       "#{controller_path}" != 'refinery/passwords'
       redirect_to refinery.new_refinery_user_session_path
-    elsif !controller_path.to_s.match('admin').nil? && !current_refinery_user.nil? && !current_refinery_user.has_role?("Refinery")
+    elsif !controller_path.to_s.match('admin').nil? && !current_refinery_user.nil? && !current_refinery_user.has_role?("Superuser")
       redirect_to refinery.root_path
     end
 #    flash[:notice]="Please become a member with us before accessing the blog."

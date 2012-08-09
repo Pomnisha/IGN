@@ -4,7 +4,7 @@ module Refinery
       layout 'refinery/services'
 #      before_filter :find_all_services
 #      before_filter :find_page
-      before_filter :allow_users_to_see_services
+#      before_filter :allow_users_to_see_services
 
       def index
         # you can use meta fields from your model instead (e.g. browser_title)

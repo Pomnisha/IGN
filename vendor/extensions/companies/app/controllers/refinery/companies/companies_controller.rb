@@ -5,7 +5,7 @@ module Refinery
       before_filter :allow_users_to_see_services
       before_filter :find_all_companies
 #      before_filter :find_page
-      before_filter :correct_user ,:only => [:edit, :update, :destroy]
+#      before_filter :correct_user ,:only => [:edit, :update, :destroy]
       
       crudify :'refinery/companies/company', :title_attribute => 'url', :xhr_paging => true
       def index

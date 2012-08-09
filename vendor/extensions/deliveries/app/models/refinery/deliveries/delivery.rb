@@ -10,6 +10,51 @@ module Refinery
       validates :entity, :presence => true
       validates_inclusion_of :entity, :in => Delivery::ENTITIES
       
+      
+      def send_a_post
+        if self.entity == "users" then
+          @entities = Refinery::User.where('city LIKE ?', "%#{self.city}%")
+          
+          @entities.each do |en|        
+            DeliveryMailer.package_to_send_user(self, en).deliver
+          end
+          
+          
+        elsif self.entity == "companies" then
+          if !self.service_id.nil? then 
+            @entities = Refinery::Services::Service.find(self.service_id).companies.where('city LIKE ?', "%#{self.city}%")
+          elsif !self.category_id.nil? then
+            @entities = Refinery::Companies::Company.where('city LIKE ?', "%#{self.city}%")
+          end
+          
+          @entities.each do |en|        
+            DeliveryMailer.package_to_send(self, en).deliver
+          end
+          
+          
+        elsif self.entity == "shops" then
+          if !self.subcategory_id.nil? then 
+            @entities = Refinery::Subcategories::Subcategory.find(self.subcategory_id).shops.where('city LIKE ?', "%#{self.city}%")
+          elsif !self.category_id.nil? then
+            @entities = Refinery::Categories::Category.find(self.category_id).shops.where('city LIKE ?', "%#{self.city}%")
+          else
+            @entities = Refinery::Shops.where('city LIKE ?', "%#{self.city}%")
+          end
+          
+          
+          @entities.each do |en|        
+            DeliveryMailer.package_to_send(self, en).deliver
+          end
+          
+          
+        end
+        
+        self.status = 'done'
+        self.save
+        
+      end
+      
+      
     end
   end
 end

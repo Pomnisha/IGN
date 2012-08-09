@@ -58,7 +58,7 @@ Ign6::Application.configure do
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
     :address  => "smtp.timeweb.ru",
-    :port  => 25,
+    :port  => "25",
     :user_name  => "admin@ign.su",
     :password  => "osiris",
     :authentication  => :login

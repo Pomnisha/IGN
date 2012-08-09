@@ -16,7 +16,7 @@ module Refinery
           @entities = Refinery::User.where('city LIKE ?', "%#{self.city}%")
           
           @entities.each do |en|        
-            DeliveryMailer.package_to_send_user(self, en).deliver
+            DeliveryMailer.delay.package_to_send_user(self, en)
           end
           
           
@@ -28,7 +28,7 @@ module Refinery
           end
           
           @entities.each do |en|        
-            DeliveryMailer.package_to_send(self, en).deliver
+            DeliveryMailer.delay.package_to_send(self, en)
           end
           
           
@@ -43,7 +43,7 @@ module Refinery
           
           
           @entities.each do |en|        
-            DeliveryMailer.package_to_send(self, en).deliver
+            DeliveryMailer.delay.package_to_send(self, en)
           end
           
           

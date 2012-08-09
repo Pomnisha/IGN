@@ -10,7 +10,7 @@ module Refinery
         def create 
           @delivery = Delivery.new(params[:delivery])
           if @delivery.save
-            @delivery.delay.send_a_post
+            @delivery.send_a_post
             redirect_to refinery.deliveries_admin_deliveries_url
           else
             render action: "new"

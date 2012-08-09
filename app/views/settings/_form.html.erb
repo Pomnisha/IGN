@@ -12,7 +12,10 @@
     <%= f.email_field :email, :class => 'punkt' %>
   </div>
   </br>
-  
+  <div class='field'>
+    <%= f.label :city, "Город"  %>
+    <%= f.text_field :city, :class => 'punkt' %>
+  </div>  
     <% if @user.persisted? %>
       <%= content_tag(:br) %>
       <%= content_tag(:span, 'Оставте эти поля пустыми, если не хотите менять пароль') %>

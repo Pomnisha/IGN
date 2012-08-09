@@ -11,6 +11,11 @@
     <%= f.text_field :email %>
   </div>
   <div class='field'>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+  
+  <div class='field'>
     <%= f.label :password %>
     <%= f.password_field :password, :autocomplete => 'off' %>
     <% if @user.persisted? %>

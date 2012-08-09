@@ -4,8 +4,19 @@ module Refinery
       class DeliveriesController < ::Refinery::AdminController
 
         crudify :'refinery/deliveries/delivery',
-                :title_attribute => 'entity', :xhr_paging => true
+                :title_attribute => 'subject', :xhr_paging => true
 
+                
+        def create 
+          @delivery = Delivery.new(params[:delivery])
+          if @delivery.save
+            @delivery.delay.send_a_post
+            render action: "index"
+          else
+            render action: "new"
+          end
+        end                
+                
       end
     end
   end

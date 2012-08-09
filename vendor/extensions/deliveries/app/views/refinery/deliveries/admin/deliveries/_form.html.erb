@@ -6,7 +6,7 @@
   
   <div class='field'>
     <%= f.label :entity , "Объект рассылки"-%>
-    <select name="delivery_entity" id="delivery_entity">
+    <select name="delivery[entity]" id="delivery_entity">
       <option value="users">"Пользователи"</option>
       <option value="shops">"Магазины"</option>
       <option value="companies">"Услуги"</option>
@@ -27,15 +27,17 @@
   </div>
   
   <div class='field'>
- 
-  </div>
-  
-  <div class='field'>
     <%= f.label :city, "Город" -%>
     <%= f.text_field :city  -%>
 
   </div>
 
+  <div class='field'>
+   <%= f.label :subject, "Тема письма" -%>
+    <%= f.text_field :subject -%>
+  </div>
+
+  
   <div class='field'>
     <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
       <ul id='page_parts'>

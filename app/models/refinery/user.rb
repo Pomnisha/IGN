@@ -30,7 +30,7 @@ module Refinery
     # :login is a virtual attribute for authenticating by either username or email
     # This is in addition to a real persisted field like 'username'
     attr_accessor :login
-    attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :plugins, :login, :vip_code
+    attr_accessible :email, :city, :password, :password_confirmation, :remember_me, :username, :plugins, :login, :vip_code
 
     validates_presence_of :username, :message => 'Поле имя пользователя должно быть заполнено.', :if => :email_required?
     validates_uniqueness_of :username, :message => 'Такое имя пользователя уже используеться.', :allow_blank => true, :if => :email_changed?

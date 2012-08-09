@@ -4,11 +4,7 @@
 
   </span>
   <span class='actions'>
-    
-    <%= link_to refinery_icon_tag("application_go.png"), refinery.deliveries_delivery_path(delivery),
-        :title => t('.view_live_html'),
-        :target => "_blank" %>
-    
+
     <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_deliveries_admin_delivery_path(delivery),
          :title => t('.edit') %>
     <%= link_to refinery_icon_tag("delete.png"), refinery.deliveries_admin_delivery_path(delivery),

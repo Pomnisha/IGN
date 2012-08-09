@@ -6,6 +6,9 @@ module Refinery
         crudify :'refinery/deliveries/delivery',
                 :title_attribute => 'subject', :xhr_paging => true
 
+        def index
+          @deliveries = Delivery.all
+        end
                 
         def create 
           @delivery = Delivery.new(params[:delivery])

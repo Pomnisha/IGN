@@ -1,0 +1,33 @@
+nb:
+  refinery:
+    plugins:
+      deliveries:
+        title: Deliveries
+    deliveries:
+      admin:
+        deliveries:
+          actions:
+            create_new: Lag en ny Delivery
+            reorder: Endre rekkefølgen på Deliveries
+            reorder_done: Ferdig å endre rekkefølgen Deliveries
+          records:
+            title: Deliveries
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Deliveries enda. Klikk på "Lag en ny Delivery" for å legge til din første delivery.
+          delivery:
+            view_live_html: Vis hvordan denne delivery ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne delivery
+            delete: Fjern denne delivery permanent
+      deliveries:
+        show:
+          other: Andre Deliveries
+  activerecord:
+    attributes:
+      'refinery/deliveries/delivery':
+        entity: Entity
+        category_id: Category
+        subcategory_id: Subcategory
+        service_id: Service
+        city: City
+        status: Status
+        ids: Ids

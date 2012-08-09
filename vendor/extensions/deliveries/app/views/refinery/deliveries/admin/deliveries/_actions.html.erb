@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Deliveries::Admin::DeliveriesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.deliveries_admin_deliveries_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_deliveries_admin_delivery_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Deliveries::Admin::DeliveriesController.sortable? && ::Refinery::Deliveries::Delivery.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Deliveries"),
+                 refinery.deliveries_admin_deliveries_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Deliveries"),
+                 refinery.deliveries_admin_deliveries_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

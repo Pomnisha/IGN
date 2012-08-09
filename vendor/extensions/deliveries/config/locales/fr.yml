@@ -1,0 +1,33 @@
+fr:
+  refinery:
+    plugins:
+      deliveries:
+        title: Deliveries
+    deliveries:
+      admin:
+        deliveries:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Delivery
+            reorder: Réordonner les Deliveries
+            reorder_done: Fin de réordonnancement des Deliveries
+          records:
+            title: Deliveries
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Delivery. Cliquer sur "Créer un(e) nouve(au/l/lle) Delivery" pour créer votre premi(er/ère) delivery.'
+          delivery:
+            view_live_html: Voir ce(t/tte) delivery <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) delivery
+            delete: Supprimer définitivement ce(t/tte) delivery
+      deliveries:
+        show:
+          other: Autres Deliveries
+  activerecord:
+    attributes:
+      'refinery/deliveries/delivery':
+        entity: Entity
+        category_id: Category
+        subcategory_id: Subcategory
+        service_id: Service
+        city: City
+        status: Status
+        ids: Ids

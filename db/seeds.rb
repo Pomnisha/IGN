@@ -35,3 +35,6 @@ Refinery::Topics::Engine.load_seed
 
 # Added by Refinery CMS Posts extension
 Refinery::Posts::Engine.load_seed
+
+# Added by Refinery CMS Deliveries extension
+Refinery::Deliveries::Engine.load_seed

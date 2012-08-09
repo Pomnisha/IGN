@@ -1,0 +1,33 @@
+en:
+  refinery:
+    plugins:
+      deliveries:
+        title: Deliveries
+    deliveries:
+      admin:
+        deliveries:
+          actions:
+            create_new: Add New Delivery
+            reorder: Reorder Deliveries
+            reorder_done: Done Reordering Deliveries
+          records:
+            title: Deliveries
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Deliveries yet. Click "Add New Delivery" to add your first delivery.
+          delivery:
+            view_live_html: View this delivery live <br/><em>(opens in a new window)</em>
+            edit: Edit this delivery
+            delete: Remove this delivery forever
+      deliveries:
+        show:
+          other: Other Deliveries
+  activerecord:
+    attributes:
+      'refinery/deliveries/delivery':
+        entity: Entity
+        category_id: Category
+        subcategory_id: Subcategory
+        service_id: Service
+        city: City
+        status: Status
+        ids: Ids

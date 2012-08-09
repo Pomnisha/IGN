@@ -1,0 +1,34 @@
+es:
+  refinery:
+    plugins:
+      deliveries:
+        title: Deliveries
+#        article: masculino/femenino
+    deliveries:
+      admin:
+        deliveries:
+          actions:
+            create_new: Crear nuevo delivery
+            reorder: Reordenar deliveries
+            reorder_done: Reordenación de deliveries completada
+          records:
+            title: Deliveries
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay deliveries todavía. Pulsa en "Crear nuevo Delivery" para crear tu primer delivery.
+          delivery:
+            view_live_html: Ver este delivery como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este delivery
+            delete: Borrar este delivery para siempre
+      deliveries:
+        show:
+          other: Otros deliveries
+  activerecord:
+    attributes:
+      'refinery/deliveries/delivery':
+        entity: Entity
+        category_id: Category
+        subcategory_id: Subcategory
+        service_id: Service
+        city: City
+        status: Status
+        ids: Ids

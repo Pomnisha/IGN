@@ -1,7 +1,6 @@
 module RestrictAccessForMemberRole
   def restrict_access_for_member_role
-#    redirect_to welcome_page_path if !(current_user.try(:has_role? => "Member"))
-if current_refinery_user.nil? && home_page? 
+    if current_refinery_user.nil? && home_page? 
       redirect_to main_app.welcome_page_path
     elsif current_refinery_user.nil? &&
       "#{controller_name}##{action_name}" != 'static#welcome' &&
@@ -13,7 +12,5 @@ if current_refinery_user.nil? && home_page?
     elsif !controller_path.to_s.match('admin').nil? && !current_refinery_user.nil? && !current_refinery_user.has_role?("Superuser")
       redirect_to refinery.root_path
     end
-#    flash[:notice]="Please become a member with us before accessing the blog."
-     #or some other destination path that exists
   end
 end

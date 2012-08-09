@@ -44,7 +44,7 @@ module Refinery
 
       def create 
         @shop = Shop.new(params[:shop])
-        @shop.user_id = current_refinery_user
+        @shop.user_id = current_refinery_user.id
         if @shop.save
           render action: "show", notice: 'Shop was successfully created.'
         else

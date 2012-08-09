@@ -36,7 +36,7 @@ module Refinery
       
       def create
         @company = Company.new(params[:company])
-        @company.user_id = current_refinery_user
+        @company.user_id = current_refinery_user.id
         if @company.save
           render action: "show", notice: 'Company was successfully created.'
         else

@@ -35,6 +35,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'haml'
 gem 'rack-cache', :require => 'rack/cache'
 gem 'dragonfly', '~>0.9.12'
+gem 'delayed_job_active_record'
 #gem "devise-async"
 
 # To use ActiveModel has_secure_password
@@ -71,3 +72,4 @@ gem 'refinerycms-banners', :path => 'vendor/extensions'
 gem 'refinerycms-menus', :path => 'vendor/extensions'
 gem 'refinerycms-topics', :path => 'vendor/extensions'
 gem 'refinerycms-posts', :path => 'vendor/extensions'
+gem 'refinerycms-deliveries', :path => 'vendor/extensions'

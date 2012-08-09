@@ -1,0 +1,33 @@
+nl:
+  refinery:
+    plugins:
+      deliveries:
+        title: Deliveries
+    deliveries:
+      admin:
+        deliveries:
+          actions:
+            create_new: Maak een nieuwe Delivery
+            reorder: Wijzig de volgorde van de Deliveries
+            reorder_done: Klaar met het wijzingen van de volgorde van de Deliveries
+          records:
+            title: Deliveries
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Deliveries. Druk op 'Maak een nieuwe Delivery' om de eerste aan te maken.
+          delivery:
+            view_live_html: Bekijk deze delivery op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze delivery
+            delete: Verwijder deze delivery voor eeuwig
+      deliveries:
+        show:
+          other: Andere Deliveries
+  activerecord:
+    attributes:
+      'refinery/deliveries/delivery':
+        entity: Entity
+        category_id: Category
+        subcategory_id: Subcategory
+        service_id: Service
+        city: City
+        status: Status
+        ids: Ids

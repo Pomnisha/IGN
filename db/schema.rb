@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120719051443) do
+ActiveRecord::Schema.define(:version => 20120808204946) do
 
   create_table "refinery_banners", :force => true do |t|
     t.string   "url"
@@ -56,6 +56,20 @@ ActiveRecord::Schema.define(:version => 20120719051443) do
     t.string   "img_uid"
     t.boolean  "visability",        :default => false
     t.string   "vip_code"
+  end
+
+  create_table "refinery_deliveries", :force => true do |t|
+    t.string   "entity"
+    t.integer  "category_id"
+    t.integer  "subcategory_id"
+    t.integer  "service_id"
+    t.string   "city"
+    t.string   "status"
+    t.text     "ids"
+    t.integer  "position"
+    t.text     "body"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "refinery_images", :force => true do |t|

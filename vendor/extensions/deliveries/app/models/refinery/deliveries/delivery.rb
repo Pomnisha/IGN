@@ -14,7 +14,9 @@ module Refinery
       def send_a_post
         if self.entity == "users" then
           @entities = Refinery::User.where('city LIKE ?', "%#{self.city}%")
-          
+
+          @entities.each {|en| a = a + "#{en.id};"}
+          self.ids = a
           @entities.each do |en|        
             DeliveryMailer.delay.package_to_send_user(self, en)
           end
@@ -26,7 +28,9 @@ module Refinery
           elsif !self.category_id.nil? then
             @entities = Refinery::Companies::Company.where('city LIKE ?', "%#{self.city}%")
           end
-          
+
+          @entities.each {|en| a = a + "#{en.id};"}
+          self.ids = a
           @entities.each do |en|        
             DeliveryMailer.delay.package_to_send(self, en)
           end
@@ -41,7 +45,8 @@ module Refinery
             @entities = Refinery::Shops.where('city LIKE ?', "%#{self.city}%")
           end
           
-          
+          @entities.each {|en| a = a + "#{en.id};"}
+          self.ids = a
           @entities.each do |en|        
             DeliveryMailer.delay.package_to_send(self, en)
           end

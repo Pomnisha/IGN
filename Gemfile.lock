@@ -69,8 +69,6 @@ GEM
       orm_adapter (~> 0.0.3)
       railties (~> 3.1)
       warden (~> 1.1.1)
-    devise-async (0.3.0)
-      devise (>= 1.1)
     dragonfly (0.9.12)
       rack
     erubis (2.7.0)
@@ -221,7 +219,6 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
-  devise-async
   dragonfly (~> 0.9.12)
   fog
   haml

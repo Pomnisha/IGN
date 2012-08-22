@@ -104,7 +104,7 @@ module Refinery
       end
 
       def deliver_signup_notification
-        ::UserMailer.signup_notification(@user).deliver
+        ::UserMailerMy.signup_notification(@user).deliver
       end      
 
     end

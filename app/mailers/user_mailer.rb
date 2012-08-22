@@ -1,5 +1,5 @@
 #encoding: utf-8
-class UserMailer < ActionMailer::Base
+class UserMailerMy < ActionMailer::Base
   default :from => "admin@ign.su"
   def signup_notification(user)
     @user = user

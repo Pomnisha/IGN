@@ -48,9 +48,12 @@ Ign6::Application.configure do
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
 
+  
   # Disable delivery errors, bad email addresses will be ignored
+
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { :host => 'www.ign.su' }
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address  => "smtp.timeweb.ru",
@@ -65,7 +68,7 @@ Ign6::Application.configure do
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
-
+  config.i18n.default_locale = :ru
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
@@ -73,3 +76,10 @@ Ign6::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 end
+ActionMailer::Base.smtp_settings = {
+    :address  => "smtp.timeweb.ru",
+    :port  => 25,
+    :user_name  => "admin@ign.su",
+    :password  => "osiris",
+    :authentication  => :login
+}

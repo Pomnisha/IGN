@@ -10,10 +10,9 @@ module RestrictAccessForMemberRole
       "#{controller_path}" != 'refinery/sessions' &&
       "#{controller_path}" != 'refinery/passwords'
       redirect_to refinery.new_refinery_user_session_path
-#    elsif 
-#    if 
-# !controller_path.to_s.match('admin').nil? && !current_refinery_user.nil? && !current_refinery_user.has_role?("Refinery")
-#      redirect_to refinery.root_path
+    end
+    if !controller_path.to_s.match('admin').nil? && !current_refinery_user.nil? && !current_refinery_user.has_role?("Refinery")
+      redirect_to refinery.root_path
     end
 #    flash[:notice]="Please become a member with us before accessing the blog."
      #or some other destination path that exists

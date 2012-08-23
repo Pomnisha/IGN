@@ -5,7 +5,7 @@ module Refinery
 
     before_filter :store_password_reset_return_to, :only => [:update]
     def store_password_reset_return_to
-      session[:'refinery_user_return_to'] = refinery.admin_root_path
+      session[:'refinery_user_return_to'] = refinery.root_path
     end
     protected :store_password_reset_return_to
 
@@ -21,8 +21,7 @@ module Refinery
     # GET /registrations/password/edit?reset_password_token=abcdef
     def edit
       if params[:reset_password_token] and (@refinery_user = User.where(:reset_password_token => params[:reset_password_token]).first).present?
-#        respond_with(@refinery_user)
-        redirect_to refinery.root_path
+        respond_with(@refinery_user)
       else
         redirect_to refinery.new_refinery_user_password_path,
                     :flash => ({ :error => t('code_invalid', :scope => 'refinery.users.reset') })

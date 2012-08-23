@@ -21,7 +21,8 @@ module Refinery
     # GET /registrations/password/edit?reset_password_token=abcdef
     def edit
       if params[:reset_password_token] and (@refinery_user = User.where(:reset_password_token => params[:reset_password_token]).first).present?
-        respond_with(@refinery_user)
+#        respond_with(@refinery_user)
+        redirect_to refinery.root_path
       else
         redirect_to refinery.new_refinery_user_password_path,
                     :flash => ({ :error => t('code_invalid', :scope => 'refinery.users.reset') })

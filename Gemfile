@@ -61,6 +61,7 @@ gem 'refinerycms-i18n', '~> 2.0.0'
 #  gem 'refinerycms-search', '~> 2.0.0'
 #  gem 'refinerycms-page-images', '~> 2.0.0'
 
+
 gem 'refinerycms-categories', :path => 'vendor/extensions'
 gem 'refinerycms-subcategories', :path => 'vendor/extensions'
 gem 'refinerycms-shops', :path => 'vendor/extensions'

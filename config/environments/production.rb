@@ -56,12 +56,14 @@ Ign6::Application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
     :address  => "smtp.timeweb.ru",
     :port  => 25,
     :user_name  => "admin@ign.su",
     :password  => "osiris",
     :authentication  => :login
   }
+
   # Enable threaded mode
   # config.threadsafe!
 
@@ -76,10 +78,4 @@ Ign6::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 end
-ActionMailer::Base.smtp_settings = {
-    :address  => "smtp.timeweb.ru",
-    :port  => 25,
-    :user_name  => "admin@ign.su",
-    :password  => "osiris",
-    :authentication  => :login
-}
+
